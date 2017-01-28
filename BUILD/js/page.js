@@ -18,11 +18,30 @@ function updateHeader ()
 function main () 
 {
 	$("*").removeClass ("hideOnStart");
-	//SetupModernizr ();
-	//updateHeader ();
+
+	$("img.hisrc, .hisrc img").hisrc({
+		minKbpsForHighBandwidth: 300,
+		speedTestUri: "img/50k.jpg",
+		speedTestKB: 50,
+		speedTestExpireMinutes: 20,
+		srcIsLowResolution: true,
+		// Debug
+		forcedBandwidth: true, 
+	});
+
+	$("img.hisrc_two, .hisrc_two img").hisrc({
+		minKbpsForHighBandwidth: 300,
+		speedTestUri: "img/50k.jpg",
+		speedTestKB: 50,
+		speedTestExpireMinutes: 20,
+		srcIsLowResolution: false,
+		// Debug
+		forcedBandwidth: true, 
+	});
+	
+	updateHeader ();
+	$(window).scroll(updateHeader);
 };
 
+$.hisrc.speedTest();
 $(document).ready (main);
-
-$(window).scroll(updateHeader);
-
