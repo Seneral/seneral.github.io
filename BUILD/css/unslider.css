@@ -67,3 +67,29 @@
 	background: var(--secondaryCol);
 	cursor: default;
 }
+
+
+/* Slide Buttons */
+.slidebtn {
+	position: absolute;
+	width: 10%;
+	height: 100%;
+	z-index: 4;
+
+	background: black;
+	opacity: 0.2;
+	border: 0;
+
+	color: white;
+	font-size: 60px;
+
+	cursor: pointer;
+}
+.left {
+	float: left;
+	left: 0;
+}
+.right {
+	float: right;
+	right: 0;
+}
