@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+<title>Terrain Painter - A TC2 extension</title>
+
+
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+	
+<header class="header headerheight">
+	<div class="container">
+		<!-- Title on the left side of the header -->
+		<div class="headerLogo">
+			<a href="..\index.html">Seneral</a>
+		</div>
+
+		<!-- Navigation on the right side of the header -->
+		<div class="headerNav">
+			<!-- Dropdown Menu for mobile -->
+			<div class="menuDropdown">
+				<input id="burgerToggle" class="menuDDtoggle" type="checkbox">
+				<label for="burgerToggle" content-toggled="&#735;" class="menuButton">&#9776;</label>
+				<div class="menuDDbody">
+					<a class="" href="..\index.html">Home</a>
+
+					<a class="curNav" href="..\index.html">Terrain Painter</a>
+					<a class="" href="documentation.html"> - Documentation</a>
+					<a class="" href="tutorials.html"> - Tutorials</a>
+
+					<!--
+					<a class="" href="../NodeEditor/index.html">Node Editor</a>
+					<a class="" href="../NodeEditor/about.html"> - About</a>
+					<a class="" href="../NodeEditor/documentation.html"> - Documentation</a>		
+
+					<a class="" href="../ErosionSimulation/index.html">Erosion Simulation</a>
+					-->
+
+					<a class="" href="..\aboutme.html">About Me</a>
+					<a class="" href="..\contact.html">Contact</a>
+				</div>
+			</div>
+
+			<!-- Navigation Bar for desktop & co -->
+			<ul class="navlist">
+			
+				<li><a class="" href="..\index.html">Home</a></li>
+				<li class="dropdown">
+					<a class="dropdownbtn curNav" href="..\index.html">Terrain Painter</a>
+					<div class="dd-body dd-floating">
+						<!--<a class="" href="about.html">About</a>-->
+						<a class="" href="documentation.html">Documentation</a>
+						<a class="" href="tutorials.html">Tutorials</a>
+					</div>
+				</li>
+				<!--<li class="dropdown">
+					<a class="dropdownbtn" href="../NodeEditor/index.html">Node Editor</a>
+					<div class="dd-body dd-floating">
+						<a class="" href="../NodeEditor/about.html">About</a>
+						<a class="" href="../NodeEditor/documentation.html">Documentation</a>
+					</div>
+				</li>
+				<li><a class="" href="../ErosionSimulation/index.html">Erosion Simulation</a></li>-->
+				<li><a class="" href="..\aboutme.html">About Me</a></li>
+				<li><a class="" href="..\contact.html">Contact</a></li>
+			
+			</ul>
+		</div>
+	</div>
+</header>
+<!-- Offset content so header doesn't overlap anything -->
+<div class="headerheight"/> </div>
+
+
+	
+<div class="banner">
+	<img class="bannerImg" src="../img/TerrainPainter/title.jpg">
+	<div class="bannerOverlay">
+		<div class="bannerText">
+			<div class="bannerTextCentered">
+				<br> <br> <big>TC2 Node Painter</big> <br> <br> Paint on TC2 nodes right inside the editor! <br> Advanced brush for whole forests and biomes! <br>
+				<!--<br> <big>TC2 Node Painter</big> <br> <br> TC2 Node painting extension <br>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<div class="content">
+		<div class="container">
+			<div class="mainContent">
+
+				
+<h1>Terrain Painter</h1>
+
+<big>Have you ever wanted more control over your procedurally generated terrains in TC2? Then this extension is for you!</big> <br>
+<br>
+<div style="color:var(--selectCol)">
+	This is an extension for <a href="https://www.assetstore.unity3d.com/en/#!/content/65563">Terrain Composer 2</a>, a terrain generation tool developed by Nathaniel Doldersum, and only works with it!
+</div> <br>
+
+<h4> What is TC2 Painter? </h4>
+TC2 Painter allows you to paint TC2 nodes directly in the editor, greatly improving your terrain creation workflow, both procedual and painted. <br>
+It helps procedural terrain creators wanting more control over their terrain aswell as terrain painters laying out there terrain manually by offering more options on what to paint.
+Using this tool you can paint everything, from simple heights and splats over stone fields and forests to whole biomes with little setup required thanks to TC2's simple node editor interface. <br>
+<br>
+
+<h4> How TC2 Painter will improve your procedural terrain generation workflow: </h4>
+<ul>
+	<li> No need to switch between image editor and TC2 anymore </li>
+	<li> You don't have to rely on noise to get your positioning right </li>
+	<li> Extend your normal brush capabilities to conditional painting </li>
+	<li> Save/Load any image and edit it with an advanced toolset right inside Unity </li>
+</ul>
+
+<h4> Prefer manual painting over procedural generation? This is why TC2 Painter is still perfect for you: </h4>
+<ul>
+	<li> You can paint your terrains as you used to, but add additional conditions to your strokes </li>
+	<li> You can not only paint height, splats and objects, but anything from stone fields over forests to whole biomes </li>
+	<li> Works with multiple terrains out-of-the-box </li>
+</ul>
+
+<h4> Why TC2? </h4>
+<ul>
+	<li> TC2 is as flexible as terrain generation could possibly get </li>
+	<li> By utilizing the power of your GPU it is really fast </li>
+	<li> The node-based structure allows for an easy setup </li>
+	<li> It is a 'Blending Powerhouse', allowing you to paint anything through it's mask </li>
+</ul>
+<br>
+
+<h2> Features </h2> 
+<ul>
+	<li> Works with any TC2 node (e.g. mask) in every output </li>
+	<li> Up to 32Bit grayscale and 2k resolution </li>
+	<li> Multiple terrain tiles and any node transformation supported! </li>
+	<li> Paint both on the terrain in the scene view and in the GUI preview </li>
+	<li> 9 Painting modes including smoothen/contrast </li>
+	<li> Shortcuts for adjusting the brush while painting </li>
+	<li> Brush presets </li>
+	<li> Extendable brush database with high quality 512x512 brushes and functions </li>
+	<li> Seperate undo system for the canvas </li>
+	<li> Realtime modifications and tools </li>
+	<li> Raw/Image import and export </li>
+	<li> Works at runtime with TC2 </li>
+	<li> Lots of settings to customize </li>
+</ul>
+<br>
+
+<b> Upcoming features: </b> <br>
+<ul>
+	<li> Multiple outputs for multiple layers (e.g. splat painting) </li>
+	<li> Improved generation performance through closer interaction between TC2 and Painter extension </li>
+</ul>
+<br>
+
+<b>What else to know about TC2 Painter: </b> <br>
+<ul>
+	<li> It is a script component for your Nodes, but can be added to any GameObject in the scene, specifying one or multiple node targets seperately </li>
+	<li> It is fully GPU powered, using standard shaders, theoretically making it possible to be run on every device when decoupled from TC2 </li>
+	<li> It has an extendable brush database and many high quality 512 brushes included from <a href="http://www.asilefx.net/catalog/product_info.php?products_id=120">asileFX</a> </li>
+	<li> Includes a Gaussian-function brush with adjustable falloff </li>
+	<li> Includes full clean C# and shader source code! </li>
+</ul>
+<br>
+
+<br>
+<h2> Showcase </h2>
+Want to see TC2 Painter in action? Watch this first demo video: <br>
+<iframe class="embedYT" src="https://www.youtube.com/embed/D9NpL2kLyjc" allowfullscreen></iframe>
+<br>
+<br>
+Here are some examples made with the presets of TC2: <br> 
+<br> 
+<img class="pageImg" src="../img/TerrainPainter/Screen_HeightPainting.jpg"> <br>
+Terrain Height Painting with auto-splatmapping <br>
+<br>
+<img class="pageImg" src="../img/TerrainPainter/Screen_BiomePainting.jpg"> <br>
+Painting biomes by assigning canvas to height, splat, etc. masks <br>
+<br>
+
+
+<br>
+
+
+				
+			</div>
+		</div>
+	</div>
+
+	
+<br>
+<br>
+<footer>
+<p>Page developed by Seneral</p>
+<p>Contact: <a href="mailto:contact@seneral.dev">contact@seneral.dev</a></p>
+</footer>
+<br>
+
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/modernizr-min.js"></script>
+	<script type="text/javascript" src="../js/page.js"></script>
+	
+	
+
+
+</body>
+</html>
