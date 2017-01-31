@@ -24,56 +24,36 @@
 			<a href="index.html">Seneral</a>
 		</div>
 
-		<!-- Navigation on the right side of the header -->
-		<div class="headerNav">
-			<!-- Dropdown Menu for mobile -->
-			<div class="menuDropdown">
-				<input id="burgerToggle" class="menuDDtoggle" type="checkbox">
-				<label for="burgerToggle" content-toggled="&#735;" class="menuButton">&#9776;</label>
-				<div class="menuDDbody">
-					<a class="" href="index.html">Home</a>
+		<!-- Navigation controls on the right side of the header - main dropdown by default for mobile and navigation bar for desktop -->
+		<div class="navHeader">
+			<nav class="navList">
+				<input id="burgerToggle" class="navToggle" type="checkbox">
+				<label for="burgerToggle" content-toggled="&#735;" class="navButton">&#9776;</label>
 
-					<a class="" href="TerrainPainter/index.html">Terrain Painter</a>
-					<a class="" href="TerrainPainter/documentation.html"> - Documentation</a>
-					<a class="" href="TerrainPainter/tutorials.html"> - Tutorials</a>
-
+				<div class="navContent">
+					<a class="navItem" href="index.html">Home</a>
+					<div class="navGroup">
+						<a class="navItem" href="TerrainPainter/index.html">Terrain Painter</a>
+						<div class="navGroupContent">
+							<a class="navItem" href="TerrainPainter/documentation.html">Documentation</a>
+							<a class="navItem" href="TerrainPainter/tutorials.html">Tutorials</a>
+						</div>
+					</div>
 					<!--
-					<a class="" href="NodeEditor/index.html">Node Editor</a>
-					<a class="" href="NodeEditor/about.html"> - About</a>
-					<a class="" href="NodeEditor/documentation.html"> - Documentation</a>		
-
-					<a class="" href="ErosionSimulation/index.html">Erosion Simulation</a>
+					<div class="navGroup">
+						<a class="navItem" href="NodeEditor/index.html">Node Editor</a>
+						<div class="navGroupContent">
+							<a class="navItem" href="NodeEditor/about.html">About</a>
+							<a class="navItem" href="NodeEditor/documentation.html">Documentation</a>
+						</div>
+					</div>
+					<a class="navItem" href="ErosionSimulation/index.html">Erosion Simulation</a>
 					-->
-
-					<a class="curNav" href="">About Me</a>
-					<a class="" href="contact.html">Contact</a>
+					<a class="navItem curNav" href="">About Me</a>
+					<a class="navItem" href="contact.html">Contact</a>
 				</div>
-			</div>
-
-			<!-- Navigation Bar for desktop & co -->
-			<ul class="navlist">
 			
-				<li><a class="" href="index.html">Home</a></li>
-				<li class="dropdown">
-					<a class="dropdownbtn" href="TerrainPainter/index.html">Terrain Painter</a>
-					<div class="dd-body dd-floating">
-						<!--<a class="" href="TerrainPainter/about.html">About</a>-->
-						<a class="" href="TerrainPainter/documentation.html">Documentation</a>
-						<a class="" href="TerrainPainter/tutorials.html">Tutorials</a>
-					</div>
-				</li>
-				<!--<li class="dropdown">
-					<a class="dropdownbtn" href="NodeEditor/index.html">Node Editor</a>
-					<div class="dd-body dd-floating">
-						<a class="" href="NodeEditor/about.html">About</a>
-						<a class="" href="NodeEditor/documentation.html">Documentation</a>
-					</div>
-				</li>
-				<li><a class="" href="ErosionSimulation/index.html">Erosion Simulation</a></li>-->
-				<li><a class="curNav" href="">About Me</a></li>
-				<li><a class="" href="contact.html">Contact</a></li>
-			
-			</ul>
+			</nav>
 		</div>
 	</div>
 </header>
@@ -93,11 +73,11 @@
 <h1>About Me</h1>
 My name is Seneral, aka <a href="https://forum.unity3d.com/members/seneral.638015/" target="_blank">Seneral</a>, and I am a german student at the age of 16. <br>
 I'm also a passionate Unity developer and especially love programming it's editor. <br>
-My greatest fascination about developmenet is (interactive) procedural/parametric modeling of levels, characters and terrain. <br>
+My greatest fascination about development is (interactive) procedural/parametric modeling of levels, characters and terrain. <br>
 <br>
-My hobby began with 3D-modeling in Blender, which I put to practice for the <a href="http://tesrenewal.com/">TESRenewal: Skywind</a> project in 2014. 
+My hobby began with 3D-modeling in Blender, which I put to practice for the <a href="http://tesrenewal.com/" target="_blank">TESRenewal: Skywind</a> project in 2014. 
 Shortly using the Blender Game Engine, I started developing with Unity in 2013 and quickly focused on editor tools. <br>
-I published my first project in March 2015 which has now become the popular opensource <a href="https://github.com/Baste-RainGames/Node_Editor">Node Editor Framework</a>.
+I published my first project in March 2015 which has now become the popular opensource <a href="https://github.com/Baste-RainGames/Node_Editor" target="_blank">Node Editor Framework</a>.
 My other projects range from <a href="https://gist.github.com/Seneral" target="_blank">small IMGUI hacks</a> over character and mesh generation tools 
 to a <a href="https://www.dropbox.com/sh/a8f49zwjbry2h10/AAA6NQ6zJXrDLx3l88pK57N9a?dl=0" target="_blank">GPU Erosion Simulation</a> 
 and <a href="TerrainPainter/index.html">TC2 Painter</a>. <br>
@@ -115,13 +95,13 @@ Next to programming, I also do athletics and live my fascination for copters in 
 	</div>
 
 	
-<br>
-<br>
 <footer>
-<p>Page developed by Seneral</p>
-<p>Contact: <a href="mailto:contact@seneral.dev">contact@seneral.dev</a></p>
+	<br> <br>
+	Page developed by Seneral 
+	<br> <br>
+	Contact: <a href="mailto:contact@seneral.dev">contact@seneral.dev</a>
+	<br> <br>
 </footer>
-<br>
 
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
