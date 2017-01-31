@@ -160,47 +160,47 @@ body {
 /* Disabling dropdown button, displaying navList horizontally as a bar with subContent as dropdowns on hover */
 @media screen and (min-width: 40em) {
 	/* Disable main dropdown*/
-	.navButton {
+	html.supports-no-touchevents .navButton {
 		display: none
 	}
-	.navContent {
+	html.supports-no-touchevents .navContent {
 		display: block;
 		top: 0;
 		background: none;
 		box-shadow: none;
 	}
 	/* Display content as bar */
-	.navContent > a, .navContent > div {
+	html.supports-no-touchevents .navContent > a, .navContent > div {
 		display: inline-block;
 	}
-	.navItem:hover {
+	html.supports-no-touchevents .navItem:hover {
 		background-color: inherit;
 		color: inherit;
 	}
 	/* Setup dropdowns for subContent */
-	.navGroupContent {
+	html.supports-no-touchevents .navGroupContent {
 		display: none;
 		background: var(--primaryCol);
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
 		position: absolute;
 		min-width: 160px;
 	}
-	.navGroupContent .navItem {
+	html.supports-no-touchevents .navGroupContent .navItem {
 		padding: 12px 16px;
 		text-decoration: none;
 		display: block;
 	}
-	.navGroupContent .navItem:before {
+	html.supports-no-touchevents .navGroupContent .navItem:before {
 		content: none;
 	}
-	.navGroupContent .navItem:hover {
+	html.supports-no-touchevents .navGroupContent .navItem:hover {
 		background-color: var(--secondaryCol);
 		color: var(--primaryCol);
 	}
-	.navGroup:hover .navGroupContent {
+	html.supports-no-touchevents .navGroup:hover .navGroupContent {
 		display: block;
 	}
-	.navGroup:hover {
+	html.supports-no-touchevents .navGroup:hover {
 		background: var(--primaryCol);
 	}
 }
