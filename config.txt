@@ -3,12 +3,12 @@ BUILD :: "BUILD"
 RELATIVEPATHS :: TRUE
 
 {
+	// Fill in frame with more static content layed out to other classes
 	%HEADER :: "header.html"
 	%FOOTER :: "footer.html"
 
 	// To mark the current page in the navigation bar
-	<a class="" href="$CURPAGE"> :: <a class="curNav" href="$CURPAGE">
-	<a class="dropdownbtn" href="$CURPAGE"> :: <a class="dropdownbtn curNav" href="$CURPAGE">
+	<a class="navItem" href="$CURPAGE"> :: <a class="navItem curNav" href="$CURPAGE">
 
 	// Page metadata and links
 	%HEADLINKS :: "$CURPAGE"
@@ -18,11 +18,6 @@ RELATIVEPATHS :: TRUE
 	%BANNER :: "$CURPAGE"
 	%CONTENT :: "$CURPAGE"
 
-	// To allow referencing these generic informations elsewhere on the page
-	%ABOUTME :: "source/aboutme.html%CONTENT"
-	%CONTACT :: "source/contact.html%CONTENT"
-
 	// Filler Content
 	%LOREMIPSUM :: "LoremIpsum.html"
-
 }
