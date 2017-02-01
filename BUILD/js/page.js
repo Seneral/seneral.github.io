@@ -26,7 +26,7 @@ function main ()
 		speedTestExpireMinutes: 20,
 		srcIsLowResolution: true,
 		// Debug
-		forcedBandwidth: true, 
+		/*forcedBandwidth: true, */
 	});
 
 	$("img.hisrc_two, .hisrc_two img").hisrc({
@@ -36,7 +36,7 @@ function main ()
 		speedTestExpireMinutes: 20,
 		srcIsLowResolution: false,
 		// Debug
-		forcedBandwidth: true, 
+		/*forcedBandwidth: true, */
 	});
 	
 	updateHeader ();

@@ -7,11 +7,11 @@ RELATIVEPATHS :: TRUE
 	%HEADER :: "header.html"
 	%FOOTER :: "footer.html"
 
-	// To mark the current page in the navigation bar
+	// Mark the current page in the navigation bar
 	<a class="navItem" href="$CURPAGE"> :: <a class="navItem curNav" href="$CURPAGE">
 
 	// Page metadata and links
-	%HEADLINKS :: "$CURPAGE"
+	%HEAD :: "$CURPAGE"
 	%SCRIPTS :: "$CURPAGE"
 
 	// Page Content
