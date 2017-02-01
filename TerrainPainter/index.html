@@ -6,13 +6,15 @@
 	<meta http-equiv="expires" content="360"> <!-- 1 day -->
 	<meta name="keywords" content="Seneral, Unity, Developer">
 
+	<script async type="text/javascript" src="../js/modernizr-min.js"></script>
+
 	
 <title>Terrain Painter - A TC2 extension</title>
 <meta name="description" content="TC2 Painter extension - Paint directly on nodes!">
 <meta name="keywords" content="TC2, TC2 Painter, Terrain Painter">
 
 
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
 </head>
 <body>
 
@@ -33,7 +35,7 @@
 				<div class="navContent">
 					<a class="navItem" href="..\index.html">Home</a>
 					<div class="navGroup">
-						<a class="navItem curNav" href="index.html">Terrain Painter</a>
+						<a class="navItem curNav" href="index.html">TC2 Node Painter</a>
 						<div class="navGroupContent">
 							<a class="navItem" href="documentation.html">Documentation</a>
 							<a class="navItem" href="tutorials.html">Tutorials</a>
@@ -63,7 +65,7 @@
 
 	
 <div class="banner hisrc">
-	<img class="bannerImg" src="../img/TerrainPainter/title_LQ.jpg" data-1x="../img/TerrainPainter/title_MQ.jpg" data-2x="../img/TerrainPainter/title_HQ.jpg">
+	<img class="bannerImg ratio16-6" src="../img/TerrainPainter/title_LQ.jpg" data-1x="../img/TerrainPainter/title_MQ.jpg" data-2x="../img/TerrainPainter/title_HQ.jpg">
 	<div class="bannerOverlay">
 		<div class="bannerText">
 			<div class="bannerTextCentered">
@@ -77,6 +79,9 @@
 
 	<!-- Page Content -->
 	<div class="content">
+
+		<!--%SIDE-->
+
 		<div class="container">
 			<div class="mainContent">
 
@@ -89,13 +94,13 @@
 	This is an extension for <a href="https://www.assetstore.unity3d.com/en/#!/content/65563" target="_blank">Terrain Composer 2</a>, a terrain generation tool developed by Nathaniel Doldersum, and only works with it!
 </div> <br>
 
-<h4> What is TC2 Painter? </h4>
-TC2 Painter allows you to paint TC2 nodes directly in the editor, greatly improving your terrain creation workflow, both procedual and painted. <br>
+<h4> What is TC2 Node Painter? </h4>
+TC2 Node Painter allows you to paint TC2 nodes directly in the editor, greatly improving your terrain creation workflow, both procedual and painted. <br>
 It helps procedural terrain creators wanting more control over their terrain aswell as terrain painters laying out there terrain manually by offering more options on what to paint.
 Using this tool you can paint everything, from simple heights and splats over stone fields and forests to whole biomes with little setup required thanks to TC2's simple node editor interface. <br>
 <br>
 
-<h4> How TC2 Painter will improve your procedural terrain generation workflow: </h4>
+<h4> How TC2 Node Painter will improve your procedural terrain generation workflow: </h4>
 <ul>
 	<li> No need to switch between image editor and TC2 anymore </li>
 	<li> You don't have to rely on noise to get your positioning right </li>
@@ -103,7 +108,7 @@ Using this tool you can paint everything, from simple heights and splats over st
 	<li> Save/Load any image and edit it with an advanced toolset right inside Unity </li>
 </ul>
 
-<h4> Prefer manual painting over procedural generation? This is why TC2 Painter is still perfect for you: </h4>
+<h4> Prefer manual painting over procedural generation? This is why TC2 Node Painter is still perfect for you: </h4>
 <ul>
 	<li> You can paint your terrains as you used to, but add additional conditions to your strokes </li>
 	<li> You can not only paint height, splats and objects, but anything from stone fields over forests to whole biomes </li>
@@ -144,7 +149,7 @@ Using this tool you can paint everything, from simple heights and splats over st
 </ul>
 <br>
 
-<b>What else to know about TC2 Painter: </b> <br>
+<b>What else to know about TC2 Node Painter: </b> <br>
 <ul>
 	<li> It is a script component for your Nodes, but can be added to any GameObject in the scene, specifying one or multiple node targets seperately </li>
 	<li> It is fully GPU powered, using standard shaders, theoretically making it possible to be run on every device when decoupled from TC2 </li>
@@ -156,7 +161,7 @@ Using this tool you can paint everything, from simple heights and splats over st
 
 <br>
 <h2> Showcase </h2>
-Want to see TC2 Painter in action? Watch this first demo video: <br>
+Want to see TC2 Node Painter in action? Watch this first demo video: <br>
 <iframe class="embedYT" src="https://www.youtube.com/embed/D9NpL2kLyjc" allowfullscreen></iframe>
 <br>
 <br>
@@ -178,6 +183,8 @@ Painting biomes by assigning canvas to height, splat, etc. masks <br>
 		</div>
 	</div>
 
+	<span class="debug"></span>
+
 	
 <footer>
 	<br> <br>
@@ -189,10 +196,9 @@ Painting biomes by assigning canvas to height, splat, etc. masks <br>
 
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="../js/modernizr-min.js"></script>
 	<script type="text/javascript" src="../js/hisrc-min.js"></script>
 	<script type="text/javascript" src="../js/page.js"></script>
-	
+
 	
 
 
