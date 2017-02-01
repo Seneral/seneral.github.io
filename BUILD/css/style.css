@@ -37,15 +37,6 @@ body {
 	margin: 0 auto;
 	padding: 0;
 }
-@media screen and (min-width: 40em) { 
-	.container { padding: 0 1%; }
-}
-@media screen and (min-width: 65em) { 
-	.container { width: 85%; }
-}
-@media screen and (min-width: 90em) { 
-	.container { width: 70%; }
-}
 
 
 /*#region HEADER*/
@@ -393,6 +384,42 @@ img.sideImg {
 /*#endregion CONTENT */
 
 
+/*#region SIDE */
+
+.sideNav {
+	float: none;
+	width: 100%;
+
+	margin: 0;
+	padding: 1em;
+
+	border-style: outset;
+	border-width: 4px;
+	border-color: var(--secondaryCol);
+	border-radius: 2px;
+
+	background: var(--backCol);
+	color: var(--secondaryCol);
+}
+.sideNavLinks {
+	margin: 0;
+	padding: 0;
+}
+.sideNavLinks li {
+	padding: 0.2em 0;
+	list-style: none;
+}
+.sideNavLinks a {
+	text-decoration: none;
+}
+/* Ensures that the sections the nav links point to are visible when focused */
+.section:target {
+	padding-top: 60px;
+}
+
+/*#endregion SIDE */
+
+
 /*#region FOOTER */
 
 footer {
@@ -401,3 +428,15 @@ footer {
 }
 
 /*#endregion FOOTER */
+
+@media screen and (min-width: 40em) { 
+	.container { padding: 0 1%; }
+}
+@media screen and (min-width: 65em) { 
+	.container { width: 85%; }
+	.sideNav { width: 83%; margin: 10px auto; margin: 1vw auto; }
+}
+@media screen and (min-width: 90em) { 
+	.container { width: 70%; }
+	.sideNav { width: 15%; float: left; }
+}

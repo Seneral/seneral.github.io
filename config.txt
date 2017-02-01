@@ -17,6 +17,7 @@ RELATIVEPATHS :: TRUE
 	// Page Content
 	%BANNER :: "$CURPAGE"
 	%CONTENT :: "$CURPAGE"
+	%SIDE :: "$CURPAGE"
 
 	// Filler Content
 	%LOREMIPSUM :: "LoremIpsum.html"
