@@ -11,9 +11,9 @@ function getDefaultFontSize ()
 	return getNumericalProp (document.body, 'font-size', 16);
 }
 function resetProperty (element, property) {
-	// Both should work
-	element[0].style.removeProperty (property);
+	// Both should work, but just in case one isn't supported
 	element.css(property, '');
+	element[0].style.removeProperty (property);
 }
 
 
