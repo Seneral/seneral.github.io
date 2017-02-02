@@ -14,7 +14,9 @@ body {
 	overflow: scroll;
 	overflow-x: hidden;
 
+	background: #383838;
 	background: var(--primaryCol);
+	color: #B4B4B4;
 	color: var(--secondaryCol);
 	font-family: "Calibri";
 }
@@ -30,6 +32,7 @@ body {
 	background: transparent;
 }
 ::-webkit-scrollbar-thumb {
+	background: #3181E7;
 	background: var(--selectCol);
 }
 
@@ -52,7 +55,9 @@ body {
 	z-index: 5;
 	padding-left: 5%;
 	
+	background-color: #222222;
 	background-color: var(--backCol);
+	color: #EEEEEE;
 	color: var(--frontCol);
 }
 .headerheight {
@@ -99,6 +104,8 @@ body {
 	top: 3em; /* headerHeight */
 	left: 0;
 	right: 0;
+
+	background: #383838;
 	background: var(--primaryCol);
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
 }
@@ -111,15 +118,19 @@ body {
 }
 .navItem:hover {
 	text-decoration: underline;
+	background-color: #B4B4B4;
 	background-color: var(--secondaryCol);
+	color: #383838;
 	color: var(--primaryCol);
 }
 .navItem.curNav:hover {
 	text-decoration: none;
+	color: #3181E7;
 	color: var(--selectCol);
 }
 .navItem.curNav {
 	font-weight: bold;
+	color: #3181E7;
 	color: var(--selectCol);
 }
 .navGroupContent .navItem:before {
@@ -135,6 +146,7 @@ body {
 
 	font-size: 1.6em;
 	font-weight: bold;
+	color: #EEEEEE;
 	color: var(--frontCol);
 	border: 0;
 	outline: none;
@@ -142,6 +154,7 @@ body {
 	padding: 0.4em 0.6em;
 }
 .navToggle:checked ~ .navButton {
+	background: #B4B4B4;
 	background: var(--secondaryCol);
 	content: attr(content-toggled);
 }
@@ -178,6 +191,7 @@ body {
 	/* Setup dropdowns for subContent */
 	html.supports-no-touchevents .navGroupContent {
 		display: none;
+		background: #383838;
 		background: var(--primaryCol);
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
 		position: absolute;
@@ -192,13 +206,16 @@ body {
 		content: none;
 	}
 	html.supports-no-touchevents .navGroupContent .navItem:hover {
+		background-color: #B4B4B4;
 		background-color: var(--secondaryCol);
+		color: #383838;
 		color: var(--primaryCol);
 	}
 	html.supports-no-touchevents .navGroup:hover .navGroupContent {
 		display: block;
 	}
 	html.supports-no-touchevents .navGroup:hover {
+		background: #383838;
 		background: var(--primaryCol);
 	}
 }
@@ -253,6 +270,7 @@ img.ratio16-6 {
 	font-size: 3vw;
 	font-size: calc(8px + 2.5vw);
 
+	color: #EEEEEE;
 	color: var(--frontCol);
 	text-shadow: 0px 0px 0.2em black, 0px 0px 0.2em black, 0px 0px 0.2em black;
 }
@@ -281,6 +299,7 @@ img.ratio16-6 {
 .content {
 	padding: 0;
 	margin: 1vw 0;
+	background: #383838;
 	background: var(--primaryCol);
 }
 .mainContent {
@@ -290,10 +309,12 @@ img.ratio16-6 {
 	margin: 1vw 0;
 
 	background: #FFFFFF;
+	color: #383838;
 	color: var(--primaryCol);
 
 	border-style: outset;
 	border-width: 6px;
+	border-color: #B4B4B4;
 	border-color: var(--secondaryCol);
 	border-radius: 4px;
 
@@ -342,7 +363,9 @@ button.pageButton:active, button.titleButton:active {
 	color: var(--selectCol);
 }
 button.pageButton {
+	border-color: #383838;
 	border-color: var(--primaryCol);
+	color: #383838;
 	color: var(--primaryCol);
 }
 button.pageButton:hover {
@@ -351,11 +374,15 @@ button.pageButton:hover {
 }
 button.titleButton {
 	box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+	border-color: #EEEEEE;
 	border-color: var(--frontCol);
+	color: #EEEEEE;
 	color: var(--frontCol);
 }
 button.titleButton:hover {
+	border-color: #B4B4B4;
 	border-color: var(--secondaryCol);
+	color: #B4B4B4;
 	color: var(--secondaryCol);
 }
 /* Links */
@@ -386,10 +413,13 @@ button.titleButton:hover {
 
 	border-style: outset;
 	border-width: 4px;
+	border-color: #B4B4B4;
 	border-color: var(--secondaryCol);
 	border-radius: 2px;
 
+	background: #222222;
 	background: var(--backCol);
+	color: #B4B4B4;
 	color: var(--secondaryCol);
 }
 .sideNavLinks {
