@@ -19,46 +19,49 @@ function resetProperty (element, property) {
 
 function updateScrollPos () 
 {
-	var $window = $(window), $header = $('.header'), $sideNav = $('.sideNav');
-	var defaultOffset = $sideNav.offset ().top, defaultMargin = parseFloat ($sideNav.css('margin-top')), padding = 85, defaultFontSize = getDefaultFontSize ();
-	//$(".debug").text ("Values: defaultOffset: " + defaultOffset + "; defaultMargin: " + defaultMargin + "!");
-	var update = function () {
-		/* Side Navigation box */
-		//$(".debug").text ($window.width () + " > " + (90*defaultFontSize) +" && " + $window.scrollTop() + " > " + (offset - padding + defaultMargin));
-		if ($window.width () > (90*defaultFontSize) && $window.scrollTop() > (defaultOffset + defaultMargin - padding)) {
-			$sideNav.css('marginTop', $window.scrollTop() - (defaultOffset - padding)); // Overwrite css margin-top to push sideNav down
-			//$(".debug").text ("Adjusting with current offset " + $sideNav.offset ().top + " and current margin " + parseFloat ($sideNav.css('margin-top')) + 
-			//	" and with defaultOffset: " + defaultOffset + " and defaultMargin " + defaultMargin + "!");
-		} else {
+	var $window = $(window), $sideNav = $('.sideNav');
+	if ($sideNav.length)
+	{ /* Side Navigation box */
+		var defaultOffset = $sideNav.offset ().top, defaultMargin = parseFloat ($sideNav.css('margin-top')), padding = 65, defaultFontSize = getDefaultFontSize ();
+		//$(".debug").text ("Values: defaultOffset: " + defaultOffset + "; defaultMargin: " + defaultMargin + "; defaultFontSize: " + defaultFontSize);
+		var update = function () {
+			//$(".debug").text ($window.width () + " > " + (90*defaultFontSize) +" && " + $window.scrollTop() + " > " + (defaultOffset - padding + defaultMargin));
+			if ($window.width () > (90*defaultFontSize) && $window.scrollTop() > (defaultOffset + defaultMargin - padding)) {
+				$sideNav.css('marginTop', $window.scrollTop() - (defaultOffset - padding)); // Overwrite css margin-top to push sideNav down
+				//$(".debug").text ("Adjusting with current offset " + $sideNav.offset ().top + " and current margin " + parseFloat ($sideNav.css('margin-top')) + 
+				//	" and with defaultOffset: " + defaultOffset + " and defaultMargin " + defaultMargin + "!");
+			} else {
+				resetProperty ($sideNav, 'marginTop');
+				resetProperty ($sideNav, 'margin-top');
+				//$(".debug").text ("Reset to defaultOffset: " + defaultOffset + " and defaultMargin " + defaultMargin + "!");
+			}
+		};
+		$(window).scroll(update);
+		$(window).resize(function () {
+			/* Update default values  */
 			resetProperty ($sideNav, 'marginTop');
 			resetProperty ($sideNav, 'margin-top');
-			//$(".debug").text ("Reset to defaultOffset: " + defaultOffset + " and defaultMargin " + defaultMargin + "!");
-		}
-		/* Make fixed header transparent over image (have to remove headerHeight offset) */
-		/*$("#debug").text("scrollTop:" + $(document).scrollTop());*/
-		/*if ($window.scrollTop() == 0) {
-			$header.css( { 
-				'background-color':'transparent',
-				'color':'black'
-			});
-		} else {
-			$header.css({ 
-				'background-color':'var(--backCol)',
-				'color':'var(--frontCol)'
-			});
-		}*/
-	};
-	$(window).scroll(update);
-	$(window).resize(function () {
-		/* Update default values  */
-		resetProperty ($sideNav, 'marginTop');
-		resetProperty ($sideNav, 'margin-top');
-		defaultMargin = parseFloat ($sideNav.css('margin-top'));
-		defaultOffset = $sideNav.offset ().top;
+			defaultMargin = parseFloat ($sideNav.css('margin-top'));
+			defaultOffset = $sideNav.offset ().top;
+			update ();
+			//$(".debug").text ("Resized! Updating values to defaultOffset: " + defaultOffset + " and defaultMargin: " + defaultMargin + "!");
+		});
 		update ();
-		//$(".debug").text ("Resized! Updating values to defaultOffset: " + defaultOffset + " and defaultMargin: " + defaultMargin + "!");
-	});
-	update ();
+	}
+
+	/* Make fixed header transparent over image (have to remove headerHeight offset) */
+	/*$("#debug").text("scrollTop:" + $(document).scrollTop());*/
+	/*if ($window.scrollTop() == 0) {
+		$header.css( { 
+			'background-color':'transparent',
+			'color':'black'
+		});
+	} else {
+		$header.css({ 
+			'background-color':'var(--backCol)',
+			'color':'var(--frontCol)'
+		});
+	}*/
 }
 
 function setupHiSrc () 
