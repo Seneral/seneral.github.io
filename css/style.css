@@ -14,12 +14,13 @@ body {
 	overflow: scroll;
 	overflow-x: hidden;
 
+	background: #383838;
 	background: var(--primaryCol);
+	color: #B4B4B4;
 	color: var(--secondaryCol);
 	font-family: "Calibri";
 }
 .bodyStyle {
-	font-size: 16px;
 }
 * {
 	box-sizing: border-box;
@@ -30,6 +31,7 @@ body {
 	background: transparent;
 }
 ::-webkit-scrollbar-thumb {
+	background: #3181E7;
 	background: var(--selectCol);
 }
 
@@ -52,7 +54,9 @@ body {
 	z-index: 5;
 	padding-left: 5%;
 	
+	background-color: #222222;
 	background-color: var(--backCol);
+	color: #EEEEEE;
 	color: var(--frontCol);
 }
 .headerheight {
@@ -93,12 +97,17 @@ body {
 }
 /* Base for Main dropdown */
 .navContent {
-	position: relative;
+	position: absolute;
 	display: none;
 	width: 100%;
+	max-height: 800%;
+	max-height: 80vh;
+	overflow: auto;
 	top: 3em; /* headerHeight */
 	left: 0;
 	right: 0;
+
+	background: #383838;
 	background: var(--primaryCol);
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
 }
@@ -111,15 +120,19 @@ body {
 }
 .navItem:hover {
 	text-decoration: underline;
+	background-color: #B4B4B4;
 	background-color: var(--secondaryCol);
+	color: #383838;
 	color: var(--primaryCol);
 }
 .navItem.curNav:hover {
 	text-decoration: none;
+	color: #3181E7;
 	color: var(--selectCol);
 }
 .navItem.curNav {
 	font-weight: bold;
+	color: #3181E7;
 	color: var(--selectCol);
 }
 .navGroupContent .navItem:before {
@@ -133,8 +146,8 @@ body {
 	background: none;
 	height: 100%;
 
-	font-size: 1.6em;
-	font-weight: bold;
+	font-size: 160%;
+	color: #EEEEEE;
 	color: var(--frontCol);
 	border: 0;
 	outline: none;
@@ -142,12 +155,12 @@ body {
 	padding: 0.4em 0.6em;
 }
 .navToggle:checked ~ .navButton {
+	background: #B4B4B4;
 	background: var(--secondaryCol);
 	content: attr(content-toggled);
 }
 .navToggle:checked ~ .navContent {
 	display: block;
-	position: absolute;
 }
 
 /* -- Header Navigation Bar (overwrite) on devices without touch support and with a window width which fits the header -- */
@@ -157,12 +170,11 @@ body {
 	html.supports-no-touchevents .navButton {
 		display: none
 	}
-	html.supports-no-touchevents .navToggle:checked ~ .navContent {
-		position: relative;
-	}
 	html.supports-no-touchevents .navContent {
 		position: relative;
 		display: block;
+		max-height: none;
+		overflow: visible;
 		top: 0;
 		background: none;
 		box-shadow: none;
@@ -178,10 +190,11 @@ body {
 	/* Setup dropdowns for subContent */
 	html.supports-no-touchevents .navGroupContent {
 		display: none;
+		background: #383838;
 		background: var(--primaryCol);
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
 		position: absolute;
-		min-width: 160px;
+		min-width: 10em;
 	}
 	html.supports-no-touchevents .navGroupContent .navItem {
 		padding: 12px 16px;
@@ -192,13 +205,16 @@ body {
 		content: none;
 	}
 	html.supports-no-touchevents .navGroupContent .navItem:hover {
+		background-color: #B4B4B4;
 		background-color: var(--secondaryCol);
+		color: #383838;
 		color: var(--primaryCol);
 	}
 	html.supports-no-touchevents .navGroup:hover .navGroupContent {
 		display: block;
 	}
 	html.supports-no-touchevents .navGroup:hover {
+		background: #383838;
 		background: var(--primaryCol);
 	}
 }
@@ -249,10 +265,11 @@ img.ratio16-6 {
 	width: 100%;
 	height: 100%;
 
-	font-size: 28px;
+	font-size: 320%;
 	font-size: 3vw;
 	font-size: calc(8px + 2.5vw);
 
+	color: #EEEEEE;
 	color: var(--frontCol);
 	text-shadow: 0px 0px 0.2em black, 0px 0px 0.2em black, 0px 0px 0.2em black;
 }
@@ -281,19 +298,22 @@ img.ratio16-6 {
 .content {
 	padding: 0;
 	margin: 1vw 0;
+	background: #383838;
 	background: var(--primaryCol);
 }
 .mainContent {
-	padding: 10px 40px 80px 20px;
+	/*padding: 10px 40px 80px 20px;*/
+	padding: 1em 1em 4em 1em;
 	padding: 1vh 4vw 6vh 2vw;
-	margin: 10px 0;
-	margin: 1vw 0;
+	margin: 0;
 
 	background: #FFFFFF;
+	color: #383838;
 	color: var(--primaryCol);
 
 	border-style: outset;
 	border-width: 6px;
+	border-color: #B4B4B4;
 	border-color: var(--secondaryCol);
 	border-radius: 4px;
 
@@ -337,26 +357,46 @@ button.pageButton, button.titleButton {
 	border-width: 0.1em;
 	border-radius: 0.25em;
 }
-button.pageButton:active, button.titleButton:active {
-	border-color: var(--selectCol);
-	color: var(--selectCol);
-}
 button.pageButton {
+	border-color: #383838;
 	border-color: var(--primaryCol);
+	color: #383838;
 	color: var(--primaryCol);
 }
 button.pageButton:hover {
-	border-color: var(--secondaryCol);
-	color: var(--secondaryCol);
+	background: rgba(55, 55, 55, 0.2);
+	color: #3181E7;
+	color: var(--selectCol);
+}
+button.pageButton:active {
+	background: rgba(55, 55, 55, 0.4);
+	border-color: #3181E7;
+	border-color: var(--selectCol);
+	color: #3181E7;
+	color: var(--selectCol);
 }
 button.titleButton {
-	box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+	box-shadow: 1px 2px 10px black, 1px 2px 10px black;
+	background: rgba(55, 55, 55, 0.4);
+	border-color: #EEEEEE;
 	border-color: var(--frontCol);
+	color: #EEEEEE;
 	color: var(--frontCol);
 }
 button.titleButton:hover {
+	background: rgba(55, 55, 55, 0.6);
+	border-color: #B4B4B4;
 	border-color: var(--secondaryCol);
+	color: #B4B4B4;
 	color: var(--secondaryCol);
+}
+button.titleButton:active {
+	box-shadow: 2px 4px 20px black, 2px 4px 20px black;
+	background: rgba(55, 55, 55, 0.8);
+	border-color: #3181E7;
+	border-color: var(--selectCol);
+	color: #3181E7;
+	color: var(--selectCol);
 }
 /* Links */
 .content a:link, footer a:link {
@@ -382,14 +422,18 @@ button.titleButton:hover {
 	width: auto;
 
 	margin: 0;
+	margin-bottom: 10px;
 	padding: 1em;
 
 	border-style: outset;
 	border-width: 4px;
+	border-color: #B4B4B4;
 	border-color: var(--secondaryCol);
 	border-radius: 2px;
 
+	background: #222222;
 	background: var(--backCol);
+	color: #B4B4B4;
 	color: var(--secondaryCol);
 }
 .sideNavLinks {
@@ -421,23 +465,29 @@ footer {
 /*#endregion FOOTER */
 
 /* Adjust text size based on available text width in window */
-@media screen and (min-width: 30em) { 
-	.bodyStyle { font-size: 17px; }
+/*@media screen and (max-width: 30em) { 
+	.bodyStyle { font-size: 100%; }
+}*/
+@media screen and (min-width: 100em) { 
+	.bodyStyle { font-size: 105%; }
 }
 @media screen and (min-width: 120em) { 
-	.bodyStyle { font-size: 18px; }
+	.bodyStyle { font-size: 110%; }
 }
 @media screen and (min-width: 140em) { 
-	.bodyStyle { font-size: 19px; }
+	.bodyStyle { font-size: 118%; }
 }
 @media screen and (min-width: 160em) { 
-	.bodyStyle { font-size: 20px; }
+	.bodyStyle { font-size: 126%; }
 }
 @media screen and (min-width: 180em) { 
-	.bodyStyle { font-size: 21px; }
+	.bodyStyle { font-size: 134%; }
 }
 @media screen and (min-width: 200em) { 
-	.bodyStyle { font-size: 22px; }
+	.bodyStyle { font-size: 142%; }
+}
+@media screen and (min-width: 220em) { 
+	.bodyStyle { font-size: 150%; }
 }
 
 /* Manage horizontal layout based on window size */
