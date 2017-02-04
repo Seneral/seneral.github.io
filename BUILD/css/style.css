@@ -252,6 +252,10 @@ img.ratio16-7 {
 img.ratio16-6 {
 	min-height: 37.50vw;
 }
+.bannerSmall {
+	height: calc(43.75vw - 100px);
+	overflow: hidden;
+}
 /* Overlay Text */
 .bannerOverlay {
 	position: absolute;
@@ -271,7 +275,7 @@ img.ratio16-6 {
 
 	color: #EEEEEE;
 	color: var(--frontCol);
-	text-shadow: 0px 0px 0.2em black, 0px 0px 0.2em black, 0px 0px 0.2em black;
+	text-shadow: 0px 0px 0.2em black, 0px 0px 0.2em black, 0px 0px 0.2em black, 0px 0px 0.2em black;
 }
 .bannerTextCentered {
 	display: table-cell;
