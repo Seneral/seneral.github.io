@@ -50,7 +50,7 @@ function updateScrollPos ()
 	}
 
 	/* Make fixed header transparent over image (have to remove headerHeight offset) */
-	/*$("#debug").text("scrollTop:" + $(document).scrollTop());*/
+	/*$(".debug").text("scrollTop:" + $(document).scrollTop());*/
 	/*if ($window.scrollTop() == 0) {
 		$header.css( { 
 			'background-color':'transparent',
@@ -66,35 +66,55 @@ function updateScrollPos ()
 
 function setupHiSrc () 
 {
-	$("img.hisrc, .hisrc img").hisrc({
-		minKbpsForHighBandwidth: 300,
-		speedTestUri: "img/50k.jpg",
-		speedTestKB: 50,
-		speedTestExpireMinutes: 20,
+	// Setup different variations of HiSrc, each only responsible for replacing
+	// Do not perform a speed test on their own
+
+	// Applies to banners (width:100%), which are available in 800, 1600 and 2400 horizontal sizes:
+	var $banners = $(".banner.hisrc img.bannerImg");
+	$banners.hisrc({
+		speedTestUri: '', // Don't do another speed test
 		srcIsLowResolution: true,
-		// Debug
-		/*forcedBandwidth: true, */
+		// Set banner specific sizes
+		minHDSize: 1600,
+		minRetinaSize: 2400,
+	});
+	
+	// Applies to all other images only having medium and high quality versions
+	var $normalImgs = $("img.hisrc, hisrc img").not($banners);
+	$normalImgs.hisrc({
+		speedTestUri: '', // Don't do another speed test
+		srcIsLowResolution: true,
+		// Set minimum screen size for high quality version
+		minHDSize: 1200,
+		minRetinaSize: 2200,
 	});
 
-	$("img.hisrc_two, .hisrc_two img").hisrc({
-		minKbpsForHighBandwidth: 300,
-		speedTestUri: "img/50k.jpg",
-		speedTestKB: 50,
-		speedTestExpireMinutes: 20,
-		srcIsLowResolution: false,
-		// Debug
-		/*forcedBandwidth: true, */
+	// Screen size can increase, usually due to moving window to a higher-res second screen or changing orientation
+	var initialWidth = screen.width;
+	$(window).resize(function () {
+		if (screen.width > initialWidth)
+		{ // Reload higher quality content suitable for the new resolution, but only if it is needed
+			initialWidth = screen.width;
+			setupHiSrc ();
+		}
 	});
 }
 
 function main () 
 {
 	$("*").removeClass ("hideOnStart");
-
 	setupHiSrc ();
-
 	updateScrollPos ();
 };
 
-$.hisrc.speedTest();
+// Perform the first and only speed test of hiSrc
+$.hisrc.speedTest ({
+	minKbpsForHighBandwidth: 200,
+	speedTestUri: "https://seneral.github.io/img/50K.jpg",
+	speedTestKB: 50,
+	speedTestExpireMinutes: 20,
+	secondChance: true, // Enable second chance for desktop
+	/*forcedBandwidth: 'high',*/ // Debug
+});
+
 $(document).ready (main);
