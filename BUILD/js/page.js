@@ -110,7 +110,7 @@ function main ()
 // Perform the first and only speed test of hiSrc
 $.hisrc.speedTest ({
 	minKbpsForHighBandwidth: 200,
-	speedTestUri: "img/50K.jpg",
+	speedTestUri: "https://seneral.github.io/img/50K.jpg",
 	speedTestKB: 50,
 	speedTestExpireMinutes: 20,
 	secondChance: true, // Enable second chance for desktop
