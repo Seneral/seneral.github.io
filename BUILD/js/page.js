@@ -110,11 +110,15 @@ function main ()
 // Perform the first and only speed test of hiSrc
 $.hisrc.speedTest ({
 	minKbpsForHighBandwidth: 200,
-	speedTestUri: "https://seneral.github.io/img/50K.jpg",
+	speedTestUri: "img/50K.jpg",
 	speedTestKB: 50,
 	speedTestExpireMinutes: 20,
 	secondChance: true, // Enable second chance for desktop
 	/*forcedBandwidth: 'high',*/ // Debug
 });
+
+/*$(document).on('speedTestComplete.hisrc', function () {
+	$(".debug").text("Network: " + $.hisrc.bandwidth + " (" + $.hisrc.connectionKbps + "Kbps) in " + $.hisrc.connectionType + " network!");
+});*/
 
 $(document).ready (main);
