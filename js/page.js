@@ -117,4 +117,8 @@ $.hisrc.speedTest ({
 	/*forcedBandwidth: 'high',*/ // Debug
 });
 
+/*$(document).on('speedTestComplete.hisrc', function () {
+	$(".debug").text("Network: " + $.hisrc.bandwidth + " (" + $.hisrc.connectionKbps + "Kbps) in " + $.hisrc.connectionType + " network!");
+});*/
+
 $(document).ready (main);

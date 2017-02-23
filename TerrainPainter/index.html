@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="expires" content="360"> <!-- 1 day -->
 	<meta name="keywords" content="Seneral, Unity, Developer">
+	<link rel="icon" type="image/ico" href="../img/icon/favicon.ico">
 
 	<script async type="text/javascript" src="../js/modernizr-min.js"></script>
 
@@ -23,7 +24,10 @@
 	<div class="container">
 		<!-- Title on the left side of the header -->
 		<div class="headerLogo">
-			<a href="..\index.html">Seneral</a>
+			<a href="..\index.html">
+				<img src="../img/icon/FavIcon_tiny.png">
+				<span>Seneral</span>
+			</a>
 		</div>
 
 		<!-- Navigation controls on the right side of the header - main dropdown by default for mobile and navigation bar for desktop -->
@@ -35,7 +39,7 @@
 				<div class="navContent">
 					<a class="navItem" href="..\index.html">Home</a>
 					<div class="navGroup">
-						<a class="navItem curNav" href="index.html">TC2 Node Painter</a>
+						<a class="navItem curNav" href="index.html">Node Painter</a>
 						<div class="navGroupContent">
 							<a class="navItem" href="documentation.html">Documentation</a>
 							<a class="navItem" href="tutorials.html">Tutorials</a>
@@ -74,6 +78,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="bannerShadowBottom"></div>
 </div>
 
 
@@ -86,7 +91,7 @@
 				<div class="mainContent">
 
 					
-<h1>Terrain Painter</h1>
+<h1>TC2 Node Painter</h1>
 
 <big>Have you ever wanted more control over your procedurally generated terrains in TC2? Then this extension is for you!</big> <br>
 <br>
@@ -112,6 +117,7 @@ Using this tool you can paint everything, from simple heights and splats over st
 <ul>
 	<li> You can paint your terrains as you used to, but add additional conditions to your strokes </li>
 	<li> You can not only paint height, splats and objects, but anything from stone fields over forests to whole biomes </li>
+	<li> You can layer different painting sessions together and modify them individually in a non-destructive way! </li>
 	<li> Works with multiple terrains out-of-the-box </li>
 </ul>
 
@@ -122,17 +128,33 @@ Using this tool you can paint everything, from simple heights and splats over st
 	<li> The node-based structure allows for an easy setup </li>
 	<li> It is a 'Blending Powerhouse', allowing you to paint anything through it's mask </li>
 </ul>
+<br> <br>
+
+<big>All images made using TC2 default resources and presets:</big> <br>
 <br>
+
+<a class="noLinkStyle" href="../img/TerrainPainter/Screen_HeightPainting_HQ.jpg" target="_blank">
+	<img class="pageImg hisrc" src="../img/TerrainPainter/Screen_HeightPainting_LQ.jpg" data-1x="../img/TerrainPainter/Screen_HeightPainting_MQ.jpg" data-2x="../img/TerrainPainter/Screen_HeightPainting_HQ.jpg" alt="Simple terrain height painting setup with auto-splatmapping and additional detail">
+<br> Simple terrain height painting setup with auto-splatmapping and additional detail <br>
+</a> 
+<br>
+
+<a class="noLinkStyle" href="../img/TerrainPainter/Screen_BiomePainting_HQ.jpg" target="_blank">
+	<img class="pageImg hisrc" src="../img/TerrainPainter/Screen_BiomePainting_LQ.jpg" data-1x="../img/TerrainPainter/Screen_BiomePainting_MQ.jpg" data-2x="../img/TerrainPainter/Screen_BiomePainting_HQ.jpg" alt="Biome painting setup with Grasslands and Desert Mountains, assigning the canvas to both height and splat masks">
+<br> Biome painting setup with Grasslands and Desert Mountains, assigning the canvas to both height and splat masks <br>
+</a> 
+<br> <br>
 
 <h2> Features </h2> 
 <ul>
 	<li> Works with any TC2 node (e.g. mask) in every output </li>
+	<li> Three modes for different use cases: Grayscale, Color and Multi-Grayscale </li>
 	<li> Up to 32Bit grayscale and 2k resolution </li>
 	<li> Multiple terrain tiles and any node transformation supported! </li>
 	<li> Paint both on the terrain in the scene view and in the GUI preview </li>
 	<li> 9 Painting modes including smoothen/contrast </li>
 	<li> Shortcuts for adjusting the brush while painting </li>
-	<li> Brush presets </li>
+	<li> Brush and color preset system </li>
 	<li> Extendable brush database with high quality 512x512 brushes and functions </li>
 	<li> Seperate undo system for the canvas </li>
 	<li> Realtime modifications and tools </li>
@@ -166,17 +188,6 @@ Using this tool you can paint everything, from simple heights and splats over st
 <iframe class="embedYT" src="https://www.youtube.com/embed/D9NpL2kLyjc" allowfullscreen></iframe>
 <br>
 <br>
-<br>
-<big>All images made using TC2 default resources and presets:</big> <br>
-<br>
-<a href="../img/TerrainPainter/Screen_HeightPainting_HQ.jpg" target="_blank"><img class="pageImg hisrc" src="../img/TerrainPainter/Screen_HeightPainting_LQ.jpg" data-1x="../img/TerrainPainter/Screen_HeightPainting_MQ.jpg" data-2x="../img/TerrainPainter/Screen_HeightPainting_HQ.jpg"></a><br>
-Simple terrain height painting setup with auto-splatmapping and additional detail
-<br>
-<br>
-<a href="../img/TerrainPainter/Screen_BiomePainting_HQ.jpg" target="_blank"><img class="pageImg hisrc" src="../img/TerrainPainter/Screen_BiomePainting_LQ.jpg" data-1x="../img/TerrainPainter/Screen_BiomePainting_MQ.jpg" data-2x="../img/TerrainPainter/Screen_BiomePainting_HQ.jpg"></a> <br>
-Biome painting setup with Grasslands and Desert Mountains, assigning the canvas to both height and splat masks
-<br>
-<br>
 
 
 					
@@ -196,7 +207,7 @@ Biome painting setup with Grasslands and Desert Mountains, assigning the canvas 
 </footer>
 
 
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script> <!-- https://code.jquery.com/jquery-3.1.1.min.js -->
 		<script type="text/javascript" src="../js/hisrc-min.js"></script>
 		<script type="text/javascript" src="../js/page.js"></script>
 
