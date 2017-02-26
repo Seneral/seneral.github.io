@@ -1,25 +1,17 @@
-function getNumericalProp (element, property, defaultValue) 
-{
-	try {
-		return parseFloat(window.getComputedStyle(element, null).getPropertyValue(property));
-	} catch (err) {
-		return defaultValue;
-	}
+// UTILITY
+function getNumericalProp (element, property, defaultValue) { 
+	try { return parseFloat(window.getComputedStyle(element, null).getPropertyValue(property)); } 
+	catch (err) { return defaultValue; }
 }
-function getDefaultFontSize () 
-{
+function getDefaultFontSize () {
 	return getNumericalProp (document.body, 'font-size', 16);
 }
-function resetProperty (element, property) {
-	// Both should work, but just in case one isn't supported
-	element.css(property, '');
-	element[0].style.removeProperty (property);
+function resetProperty (element, property) { // Both should work, but just in case one isn't supported
+	element.css(property, ''); element[0].style.removeProperty (property);
 }
-
-
-function updateScrollPos () 
-{
-	var $window = $(window), $sideNav = $('.sideNav');
+// STICKY PANELS
+function initiateStickyPanels () {
+	var $window = $(window), $sideNav = $('.sticky');
 	if ($sideNav.length)
 	{ /* Side Navigation box */
 		var defaultOffset = $sideNav.offset ().top, defaultMargin = parseFloat ($sideNav.css('margin-top')), padding = 65, defaultFontSize = getDefaultFontSize ();
@@ -48,24 +40,9 @@ function updateScrollPos ()
 		});
 		update ();
 	}
-
-	/* Make fixed header transparent over image (have to remove headerHeight offset) */
-	/*$(".debug").text("scrollTop:" + $(document).scrollTop());*/
-	/*if ($window.scrollTop() == 0) {
-		$header.css( { 
-			'background-color':'transparent',
-			'color':'black'
-		});
-	} else {
-		$header.css({ 
-			'background-color':'var(--backCol)',
-			'color':'var(--frontCol)'
-		});
-	}*/
 }
-
-function setupHiSrc () 
-{
+// HISRC ADAPTIVE IMAGE LOADING
+function setupHiSrc () {
 	// Setup different variations of HiSrc, each only responsible for replacing
 	// Do not perform a speed test on their own
 
@@ -99,26 +76,55 @@ function setupHiSrc ()
 		}
 	});
 }
+// GOOGLE ANALYTICS CONTROL
+var gaProperty = 'UA-92606737-1';
+var disableGA = 'ga-disable-' + gaProperty;
+function gaCheck () {
+	if (document.cookie.indexOf(disableGA + '=true') > -1)
+		window[disableGA] = true; // Cookie set to disble GA
+	else if (document.cookie.indexOf(disableGA + '=false') > -1)
+		window[disableGA] = false; // Cookie set to allow GA
+	else
+		$('.cookieNote').show (); // Cookie not yet set - show cookie note
+}
+function gaOptout () { setGADisable (true); }
+function gaAgree () { setGADisable (false); }
+function setGADisable (toggle) {
+	document.cookie = disableGA + '=' + toggle + '; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	window[disableGA] = toggle;
+	$('.cookieNote').hide ();
+	if (toggle == true) alert ("Analytics have been disabled! Cookies: " + document.cookie);
+}
+function gaStart () {
+	(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
+		i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+		a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+		a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', gaProperty, 'auto');
+	ga('send', 'pageview');
+}
 
-function main () 
-{
-	$("*").removeClass ("hideOnStart");
-	setupHiSrc ();
-	updateScrollPos ();
-};
+// ON START
 
 // Perform the first and only speed test of hiSrc
 $.hisrc.speedTest ({
 	minKbpsForHighBandwidth: 200,
-	speedTestUri: "http://seneral.dev/img/50K.jpg",
+	speedTestUri: "http://www.seneral.dev/img/50K.jpg",
 	speedTestKB: 50,
 	speedTestExpireMinutes: 20,
 	secondChance: true, // Enable second chance for desktop
 	/*forcedBandwidth: 'high',*/ // Debug
 });
-
 /*$(document).on('speedTestComplete.hisrc', function () {
 	$(".debug").text("Network: " + $.hisrc.bandwidth + " (" + $.hisrc.connectionKbps + "Kbps) in " + $.hisrc.connectionType + " network!");
 });*/
 
-$(document).ready (main);
+// Start JS Routines
+$(document).ready (function () {
+	$("*").removeClass ("hideOnStart");
+	setupHiSrc ();
+	initiateStickyPanels ();
+	gaCheck ();
+	gaStart ();
+});
