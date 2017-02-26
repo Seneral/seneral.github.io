@@ -126,5 +126,5 @@ $(document).ready (function () {
 	setupHiSrc ();
 	initiateStickyPanels ();
 	gaCheck ();
-	gaStart ();
+	// gaStart has already been called right when html was loaded
 });
