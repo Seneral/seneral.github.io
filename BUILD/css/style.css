@@ -620,9 +620,13 @@ button.titleButton:active {
 	margin: 0.5em 0.4em;
 }
 
-.cookieNote button {
+.cookieNote > div, .cookieNote > button {
 	float: right;
+}
+
+.cookieNote button {
 	width: 8em;
+	max-width: 40%;
 	margin: 0.5em 0.8em;
 
 	border-color: #EEEEEE;
