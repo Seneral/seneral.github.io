@@ -485,10 +485,10 @@ button {
 	text-shadow: inherit;
 	color: inherit;
 }
-button.pageButton, button.titleButton {
+button.base {
 	cursor: pointer;
 	padding: 0.25em 0.5em;
-	margin: 0.5em  0.4em;
+	margin: 0.5em 0.4em;
 	border-style: solid;
 	border-width: 0.1em;
 	border-radius: 0.25em;
@@ -594,6 +594,59 @@ button.titleButton:active {
 }
 
 /*#endregion SIDE */
+
+/*#region COOKIE NOTE */
+
+.cookieNote {
+	display: none;
+	position: fixed;
+	bottom: 0;
+
+	width: 100%;
+	padding: 0.2em 1em;
+	font-size: 100%;
+
+	background-color: black;
+	background-color: var(--backCol);
+	background-color: rgba(15,15,15,0.8);
+
+	color: #EEEEEE;
+	color: var(--frontCol);
+}
+
+.cookieNote span {
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	margin: 0.5em 0.4em;
+}
+
+.cookieNote button {
+	float: right;
+	width: 8em;
+	margin: 0.5em 0.8em;
+
+	border-color: #EEEEEE;
+	border-color: var(--frontCol);
+	color: #EEEEEE;
+	color: var(--frontCol);
+}
+.cookieNote button:hover {
+	border-color: #B4B4B4;
+	border-color: var(--secondaryCol);
+	color: #B4B4B4;
+	color: var(--secondaryCol);
+}
+.cookieNote button:active {
+	border-color: #3181E7;
+	border-color: var(--selectCol);
+	color: #3181E7;
+	color: var(--selectCol);
+}
+
+
+
+
+/*#endregion COOKIE NOTE */
 
 
 /*#region FOOTER */
