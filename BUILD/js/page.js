@@ -93,7 +93,7 @@ function setGADisable (toggle) {
 	document.cookie = disableGA + '=' + toggle + '; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
 	window[disableGA] = toggle;
 	$('.cookieNote').hide ();
-	if (toggle == true) alert ("Analytics have been disabled! Cookies: " + document.cookie);
+	//if (toggle == true) alert ("Analytics have been disabled!");
 }
 function gaStart () {
 	(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
