@@ -25,7 +25,9 @@
 	<ul class="panelLinks">
 		<li><a href="#GettingStarted">Getting Started</a></li>
 		<li><a href="#Interface">Interface</a></li>
+		<li><a href="#CanvasFormats">Canvas Formats</a></li>
 		<li><a href="#BlendModes">Blend Modes</a></li>
+		<li><a href="#Presets">Presets</a></li>
 	</ul>
 </div>
 <div class="sidePanel right linkBox sticky">
@@ -43,19 +45,19 @@
 <!--START%CONTENT-->
 <h1>Documentation</h1>
 
-<h2 class="section" id="GettingStarted"> Getting Started </h2>
+<h2 class="section" id="GettingStarted">Getting Started</h2>
 <p>
 	<ol>
 		<li> Get <a href="http://www.terraincomposer.com" target="_blank">TerrainComposer 2</a> from the <a href="https://www.assetstore.unity3d.com/en/#!/content/65563" target="_blank">Asset Store</a>, download and import it. </li>
 		<li> Get TC2 Node Painter from the <a href="">Asset Store</a>, download and import it. </li>
 		<li> Create a new TC2 project through the TC2 window ('Window/Power of Nature Software/Terrain Composer 2') </li>
-		<li> Add a node to the graph for painting, eg. in the height output </li>
+		<li> Add a node to the graph for painting, eg. in the height output - it will automatically be turned to an apropriate Image node in the next step. </li>
 		<li> Add the NodePainter script to that Node. You will be presented with the TC2 Node Painter UI </li>
 		<li> Create a new canvas by specifying a desired resolution and start painting! </li>
 	</ol>
 </p>
 
-<h2 class="section" id="Interface"> Interface Explanation </h2>
+<h2 class="section" id="Interface">Interface Explanation</h2>
 <p>
 	<a href="img/TerrainPainter/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="img/TerrainPainter/Screen_GUI_LQ.jpg" data-1x="img/TerrainPainter/Screen_GUI_MQ.jpg" data-2x="img/TerrainPainter/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
 
@@ -64,7 +66,7 @@
 		This section is for creating, loading and saving the canvas. <br>
 		When there is no canvas loaded, you can create a canvas using the GUI in the outlined box, specifying size and color/grayscale format. <br>
 		Canvas IO works for both raw and png image formats. To load a png file, drag it into the 'Import' object field, and save it using the button next to it.
-		Raw files can be handled in up to 32Bit using the 'Import Raw' and 'Export Raw' buttons below. <br>
+		Raw files can be handled in up to 16Bit using the 'Import Raw' and 'Export Raw' buttons below. <br>
 		Under this region are two Undo buttons.
 	</p>
 
@@ -83,19 +85,25 @@
 		Only shown when in Color mode, this region allows you to edit the color and it's intensity and save it to a preset bar next to it's header.
 	</p>
 
+	<h3> Multi Channels </h3>
+	<p>
+		Only shown when in Multi mode, you can select and modify the individual channels here.
+	</p>
+
 	<h3> Brush </h3>
 	<p>
 		This region is for editing the current brush and once again saving it to the numerated brush preset bar next to the header. <br>
-		You can choose between various brush shapes here, the first one being an adjustable functionm the others being 512px brush textures.
+		You can choose between various brush shapes here, the first one being an adjustable function, the others being 512px brush textures.
 		The mode dropdown let's you choose between different blending modes of the brush. For a detailed overview on these, see 'Blend Modes Explanation' below.
-		Furthermore you can adjust size, intensity and additional mode-specific options like Factor and Bias here.
-		Finally, the clamp color mode allows you to clamp your input to the current selected color/value or 1.
+		Furthermore you can adjust size, intensity and additional mode-specific options like Target and Bias here.
+		Finally, a clamp option allows you to clamp your input to 0-1.
 	</p>
 
 	<h3> Modifications </h3>
 	<p>
 		This regions applies post-effects onto the canvas, not affecting the currently saved canvas until applied. When any modification is active, a warning symbol appears next to the header. <br>
-		Clamp 0-1 clamps the canvas to the values 0 to 1, after adjusting the brightness and contrast using the sliders below.
+		<!--Clamp 0-1 clamps the canvas to the values 0 to 1, after adjusting the brightness and contrast using the sliders below.-->
+		You can adjust the overall contrast and brightness, aswell as those of individual channels when in color mode.
 		As it is a post-effect until explicitly applied to the canvas, you can reset and apply them using the apropriate buttons. <br>
 		Additionally, not being a post-effect modification, you can set the canvas to an uniforma value/color in this region.
 	</p>
@@ -108,16 +116,50 @@
 	</p>
 </p>
 
+<h2 class="section" id="CanvasFormats">Canvas Formats</h2>
+<p>
+	The term 'canvas format' has to be understood in an untraditional sense. Internally, the canvas is always RGBA. <br>
+	Instead, the canvas format specifies how you can use the canvas and for what purpose. <br>
+	These are the three formats you have to choose from when creating a canvas:
+
+	<h4> Grayscale </h4>
+	<p>
+		A grayscale canvas is useful for height painting and simple masks in any output. 
+	</p>
+
+	<h4> Color </h4>
+	<p>
+		A color canvas is not directly used in any output but is there for various reasons. It can be used for applications outside of TC2 or to get interesting results when mixing and blending the individual channels together (TC2 interprets them as max(r,g,b,a)). The color region is only shown here and you also get per-channel modifications.
+	</p>
+
+	<h4> Multi-Grayscale </h4>
+	<p>
+		This complex format allows you to paint grayscale in multiple channels, similar to splat painting - except that it is not only used for splats, but for e.g. multiple different biomes or forests. <br>
+		This canvas format is also potentially consisting of multiple textures, each of the channels corresponds to one channel on the textures - that means, the painter uses one texture each 4 channels. <br>
+		Using this format shows the Multi Channel region, where you can select and edit a channel.
+		You can also choose to <b>normalize the channel values</b> in the brush region, which is strongly recommended because overlapping channels will fight, and the channel which is the highest in TC2 wins, which usually gives unwanted results. But this also dramatically slows down painting when using 8 or more channels.
+	</p>
+</p>
+
 <h2 class="section" id="BlendModes">Blend Modes Explanation</h2>
 <p>
-	There are 8 blend modes available:
+	There are 4 major blend modes available:
 	<ul>
-		<li>Add / Sustract: <br> Add or substract the brush value to/from the canvas</li>
-		<li>Multiply / Divide: <br> Multiply or Divide the additionally specified Factor with the strength of the brush value with the node value</li>
-		<li>Overlay, Screen: <br> Alternative blend modes to add values ontop of the canvas with smoother response</li>
-		<li>Smoothen / Contrast: <br> Decrease or Increase details on the canvas texture with detail level specified through the bias property</li>
+		<li><b>Add / Sustract:</b><br> This is a basic addition (or subsraction when holding shift) of the intensity onto the canvas. </li>
+		<li><b>Lerp:</b><br> This mode lerps the canvas to the specified target, getting smoother the closer it is to the target (in contrast to Replace).
+						Intensity sets the speed of the lerp.
+						This can also be used as a smoother add brush and can be inverted by holding shift (sets 1-target). </li>
+		<li><b>Replace:</b><br> Linearly replaces the canvas value with the target value at the speed specified by the intensity. This mode can also be inverted by holding shift (sets 1-target). </li>
+		<li><b>Smoothen / Contrast:</b><br> Decrease or Increase details on the canvas texture with detail level specified through the bias property (shift to switch in between). </li>
 	</ul>
 </p>
+
+<h2 class="section" id="Presets">Color/Brush Presets</h2>
+<p>
+	The preset system is available to both color and brush regions. You can load a preset by clicking on it's button, even it it's collapsed state, and create one by clicking the plus button. You delete them by right-clicking and selecting 'Delete' from the shown contect menu. <br>
+	These presets are saved to your Editor
+</p>
+
 <!--END%CONTENT-->
 
 
