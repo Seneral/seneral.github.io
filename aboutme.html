@@ -16,6 +16,21 @@
 
 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+
+	<script type="text/javascript">
+		var gaProperty = 'UA-92606737-1';
+		var disableGA = 'ga-disable-' + gaProperty;
+		if (document.cookie.indexOf(disableGA + '=true') > -1)
+			window[disableGA] = true; // Cookie set to disble GA
+		(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
+			i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+			a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+			a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', gaProperty, 'auto');
+		ga('set', 'anonymizeIp', true);
+		ga('send', 'pageview');
+	</script>
 </head>
 <body>
 	<div class="bodyStyle">
@@ -26,7 +41,8 @@
 		<div class="headerLogo">
 			<a href="index.html">
 				<img src="img/Icon/FavIcon_tiny.png">
-				<span>Seneral</span>
+				<span>Seneral <div class="smallName">Seneral</div></span>
+				
 			</a>
 		</div>
 
@@ -86,7 +102,7 @@ My greatest fascination about development is (interactive) procedural/parametric
 <br>
 My hobby began with 3D-modeling in Blender, which I put to practice for the <a href="http://tesrenewal.com/" target="_blank">TESRenewal: Skywind</a> project in 2014. 
 Shortly using the Blender Game Engine, I started developing with Unity in 2013 and quickly focused on editor tools. <br>
-I published my first project in March 2015 which has now become the popular opensource <a href="https://github.com/Baste-RainGames/Node_Editor" target="_blank">Node Editor Framework</a>.
+I published my first project in March 2015 which has now become the popular opensource <a href="https://github.com/Seneral/Node_Editor" target="_blank">Node Editor Framework</a>.
 My other projects range from <a href="https://gist.github.com/Seneral" target="_blank">small IMGUI hacks</a> over character and mesh generation tools 
 to a <a href="https://www.dropbox.com/sh/a8f49zwjbry2h10/AAA6NQ6zJXrDLx3l88pK57N9a?dl=0" target="_blank">GPU Erosion Simulation</a> 
 and <a href="TerrainPainter/index.html">TC2 Node Painter</a>. <br>
@@ -123,20 +139,6 @@ Next to programming, I also do athletics and live my fascination for copters in 
 	<br> <br>
 </footer>
 
-
-		<script type="text/javascript">
-			var gaProperty = 'UA-92606737-1';
-			var disableGA = 'ga-disable-' + gaProperty;
-			if (document.cookie.indexOf(disableGA + '=true') > -1)
-				window[disableGA] = true; // Cookie set to disble GA
-			(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
-				i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
-				a=s.createElement(o),m=s.getElementsByTagName(o)[0];
-				a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-			ga('create', gaProperty, 'auto');
-			ga('send', 'pageview');
-		</script>
 
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script> <!-- https://code.jquery.com/jquery-3.1.1.min.js -->
 		<script type="text/javascript" src="js/hisrc-min.js"></script>

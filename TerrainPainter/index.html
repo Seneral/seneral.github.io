@@ -16,6 +16,21 @@
 
 
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+
+	<script type="text/javascript">
+		var gaProperty = 'UA-92606737-1';
+		var disableGA = 'ga-disable-' + gaProperty;
+		if (document.cookie.indexOf(disableGA + '=true') > -1)
+			window[disableGA] = true; // Cookie set to disble GA
+		(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
+			i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+			a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+			a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', gaProperty, 'auto');
+		ga('set', 'anonymizeIp', true);
+		ga('send', 'pageview');
+	</script>
 </head>
 <body>
 	<div class="bodyStyle">
@@ -26,7 +41,8 @@
 		<div class="headerLogo">
 			<a href="..\index.html">
 				<img src="../img/Icon/FavIcon_tiny.png">
-				<span>Seneral</span>
+				<span>Seneral <div class="smallName">Seneral</div></span>
+				
 			</a>
 		</div>
 
@@ -85,7 +101,18 @@
 		<!-- Page Content -->
 		<div class="content">
 
-			<!--%SIDE-->
+			
+<div class="sidePanel right linkBox sticky">
+	<big>Links</big>
+	<br> <br>
+	<ul class="panelLinks">
+		<!--<li><a href="#">Asset Store</a></li>-->
+		<li><a href="https://forum.unity3d.com/threads/wip-tc2-node-painter-paint-anything-a-tc2-extension-for-painting-the-world.454854/">Forum Thread</a></li>
+		<li><a href="documentation.html">Documentation</a></li>
+		<li><a href="https://github.com/Seneral/TC2-Node-Painter-Beta/issues">Beta Feedback & Bugtracker</a></li>
+	</ul>
+</div>
+
 
 			<div class="container">
 				<div class="mainContent">
@@ -148,7 +175,7 @@ Using this tool you can paint everything, from simple heights and splats over st
 <h2> Features </h2> 
 <ul>
 	<li> Works with any TC2 node (e.g. mask) in every output </li>
-	<li> Three modes for different use cases: Grayscale, Color and Multi-Grayscale </li>
+	<li> Three formats: Color, Value (Height) and Multi-Mask (Splat, Biomes, ...) </li>
 	<li> Up to 32Bit grayscale and 2k resolution </li>
 	<li> Multiple terrain tiles and any node transformation supported! </li>
 	<li> Paint both on the terrain in the scene view and in the GUI preview </li>
@@ -166,7 +193,6 @@ Using this tool you can paint everything, from simple heights and splats over st
 
 <b> Upcoming features: </b> <br>
 <ul>
-	<li> Multiple outputs for multiple layers (e.g. splat painting) </li>
 	<li> Improved generation performance through closer interaction between TC2 and Painter extension </li>
 </ul>
 <br>
@@ -215,20 +241,6 @@ Using this tool you can paint everything, from simple heights and splats over st
 	<br> <br>
 </footer>
 
-
-		<script type="text/javascript">
-			var gaProperty = 'UA-92606737-1';
-			var disableGA = 'ga-disable-' + gaProperty;
-			if (document.cookie.indexOf(disableGA + '=true') > -1)
-				window[disableGA] = true; // Cookie set to disble GA
-			(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
-				i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
-				a=s.createElement(o),m=s.getElementsByTagName(o)[0];
-				a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-			ga('create', gaProperty, 'auto');
-			ga('send', 'pageview');
-		</script>
 
 		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script> <!-- https://code.jquery.com/jquery-3.1.1.min.js -->
 		<script type="text/javascript" src="../js/hisrc-min.js"></script>
