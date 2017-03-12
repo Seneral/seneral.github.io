@@ -46,25 +46,29 @@ function setupHiSrc () {
 	// Setup different variations of HiSrc, each only responsible for replacing
 	// Do not perform a speed test on their own
 
-	// Applies to banners (width:100%), which are available in 800, 1600 and 2400 horizontal sizes:
-	var $banners = $(".banner.hisrc img.bannerImg");
-	$banners.hisrc({
-		speedTestUri: '', // Don't do another speed test
-		srcIsLowResolution: true,
-		// Set banner specific sizes
-		minHDSize: 1600,
-		minRetinaSize: 2400,
-	});
-	
-	// Applies to all other images only having medium and high quality versions
-	var $normalImgs = $("img.hisrc, hisrc img").not($banners);
-	$normalImgs.hisrc({
-		speedTestUri: '', // Don't do another speed test
-		srcIsLowResolution: true,
-		// Set minimum screen size for high quality version
-		minHDSize: 1200,
-		minRetinaSize: 2200,
-	});
+	var doHiSRC = function () {
+		// Applies to banners (width:100%), which are available in 800, 1600 and 2400 horizontal sizes:
+		var $banners = $(".banner.hisrc img.bannerImg");
+		$banners.hisrc({
+			speedTestUri: '', // Don't do another speed test
+			srcIsLowResolution: true,
+			// Set banner specific sizes
+			minHDSize: 1600,
+			minRetinaSize: 2400,
+		});
+		
+		// Applies to all other images only having medium and high quality versions
+		var $normalImgs = $("img.hisrc, hisrc img").not($banners);
+		$normalImgs.hisrc({
+			speedTestUri: '', // Don't do another speed test
+			srcIsLowResolution: true,
+			// Set minimum screen size for high quality version
+			minHDSize: 1200,
+			minRetinaSize: 2200,
+		});
+	};
+
+	doHiSRC ();
 
 	// Screen size can increase, usually due to moving window to a higher-res second screen or changing orientation
 	var initialWidth = screen.width;
@@ -72,7 +76,7 @@ function setupHiSrc () {
 		if (screen.width > initialWidth)
 		{ // Reload higher quality content suitable for the new resolution, but only if it is needed
 			initialWidth = screen.width;
-			setupHiSrc ();
+			doHiSRC ();
 		}
 	});
 }
@@ -94,15 +98,6 @@ function setGADisable (toggle) {
 	window[disableGA] = toggle;
 	$('.cookieNote').hide ();
 	//if (toggle == true) alert ("Analytics have been disabled!");
-}
-function gaStart () {
-	(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
-		i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
-		a=s.createElement(o),m=s.getElementsByTagName(o)[0];
-		a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', gaProperty, 'auto');
-	ga('send', 'pageview');
 }
 
 // ON START
