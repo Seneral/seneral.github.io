@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="expires" content="21600"> <!-- 6 hours -->
+	<meta name="author" content="Seneral">
+	<meta name="keywords" content="Seneral, Unity, Developer">
+	<link rel="icon" type="image/ico" href="../img/Icon/favicon.ico">
+
+	<script async type="text/javascript" src="../js/modernizr-min.js"></script>
+
+	
+<title>Documentation - Terrain Painter</title>
+<meta name="description" content="TC2 Painter - Documentation">
+<meta name="keywords" content="TC2, TC2 Painter, Terrain Painter, Documentation">
+
+
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+
+	<script type="text/javascript">
+		var gaProperty = 'UA-92606737-1';
+		var disableGA = 'ga-disable-' + gaProperty;
+		if (document.cookie.indexOf(disableGA + '=true') > -1)
+			window[disableGA] = true; // Cookie set to disble GA
+		(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
+			i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+			a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+			a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', gaProperty, 'auto');
+		ga('set', 'anonymizeIp', true);
+		ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<div class="bodyStyle">
+		
+<header class="header headerheight">
+	<div class="container">
+		<!-- Title on the left side of the header -->
+		<div class="headerLogo">
+			<a href="..\index.html">
+				<img src="../img/Icon/FavIcon_tiny.png">
+				<span>Seneral <div class="smallName">Seneral</div></span>
+				
+			</a>
+		</div>
+
+		<!-- Navigation controls on the right side of the header - main dropdown by default for mobile and navigation bar for desktop -->
+		<div class="navHeader">
+			<nav class="navList">
+				<input id="burgerToggle" class="navToggle" type="checkbox">
+				<label for="burgerToggle" content-toggled="&#735;" class="navButton">&#9776;</label>
+
+				<div class="navContent">
+					<a class="navItem" href="..\index.html">Home</a>
+					<div class="navGroup">
+						<a class="navItem" href="index.html">Node Painter</a>
+						<div class="navGroupContent">
+							<a class="navItem curNav" href="documentation.html">Documentation</a>
+							<a class="navItem" href="tutorials.html">Tutorials</a>
+						</div>
+					</div>
+					<!--
+					<div class="navGroup">
+						<a class="navItem" href="../NodeEditor/index.html">Node Editor</a>
+						<div class="navGroupContent">
+							<a class="navItem" href="../NodeEditor/about.html">About</a>
+							<a class="navItem" href="../NodeEditor/documentation.html">Documentation</a>
+						</div>
+					</div>
+					<a class="navItem" href="../ErosionSimulation/index.html">Erosion Simulation</a>
+					-->
+					<a class="navItem" href="..\aboutme.html">About Me</a>
+					<a class="navItem" href="..\contact.html">Contact</a>
+				</div>
+			
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- Offset content so header doesn't overlap anything -->
+<div class="headerheight"> </div>
+
+
+		
+<div class="banner bannerSmall hisrc">
+	<img class="bannerImg ratio16-7" src="../img/Banner_TP_LQ.jpg" data-1x="../img/Banner_TP_MQ.jpg" data-2x="../img/Banner_TP_HQ.jpg">
+	<div class="bannerOverlay">
+		<div class="bannerText">
+			<div class="bannerTextCentered">
+				<br> <br> <big>TC2 Node Painter</big> <br> <br> <big>Documentation</big> <br> <br>
+			</div>
+		</div>
+	</div>
+	<div class="bannerShadowBottom"></div>
+</div>
+
+
+		<!-- Page Content -->
+		<div class="content">
+
+			
+<div class="sidePanel left navBox sticky">
+	<big>Navigation</big>
+	<br> <br>
+	<ul class="panelLinks">
+		<li><a href="#GettingStarted">Getting Started</a></li>
+		<li><a href="#Interface">Interface</a></li>
+		<li><a href="#CanvasFormats">Canvas Formats</a></li>
+		<li><a href="#BlendModes">Blend Modes</a></li>
+		<li><a href="#Presets">Presets</a></li>
+		<li><a href="#Shortcuts">Shortcuts</a></li>
+	</ul>
+</div>
+<div class="sidePanel right linkBox sticky">
+	<big>Links</big>
+	<br> <br>
+	<ul class="panelLinks">
+		<!--<li><a href="#">Asset Store</a></li>-->
+		<li><a href="https://forum.unity3d.com/threads/wip-tc2-node-painter-paint-anything-a-tc2-extension-for-painting-the-world.454854/">Forum Thread</a></li>
+		<li><a href="documentation.html">Documentation</a></li>
+		<li><a href="https://github.com/Seneral/TC2-Node-Painter-Beta/issues">Beta Feedback & Bugtracker</a></li>
+	</ul>
+</div>
+
+
+			<div class="container">
+				<div class="mainContent">
+
+					
+<h1>Documentation</h1>
+
+<h2 class="section" id="GettingStarted">Getting Started</h2>
+<p>
+	<ol>
+		<li> Get <a href="http://www.terraincomposer.com" target="_blank">TerrainComposer 2</a> from the <a href="https://www.assetstore.unity3d.com/en/#!/content/65563" target="_blank">Asset Store</a>, download and import it. </li>
+		<li> Get TC2 Node Painter from the <a href="">Asset Store</a>, download and import it. </li>
+		<li> Create a new TC2 project through the TC2 window ('Window/Power of Nature Software/Terrain Composer 2') </li>
+		<li> Add a node to the graph for painting, eg. in the height output - it will automatically be turned to an apropriate Image node in the next step. </li>
+		<li> Add the NodePainter script to that Node. You will be presented with the TC2 Node Painter UI </li>
+		<li> Create a new canvas by specifying a desired resolution and start painting! </li>
+	</ol>
+</p>
+
+<h2 class="section" id="Interface">Interface Explanation</h2>
+<p>
+	<a href="../img/NodePainter/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="../img/NodePainter/Screen_GUI_LQ.jpg" data-1x="../img/NodePainter/Screen_GUI_MQ.jpg" data-2x="../img/NodePainter/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
+
+	<h3> Canvas IO </h3>
+	<p>
+		This section is for creating, loading and saving the canvas. <br>
+		When there is no canvas loaded, you can create a canvas using the GUI in the outlined box, specifying size and color/grayscale format. <br>
+		Canvas IO works for both raw and png image formats. To load a png file, drag it into the 'Import' object field, and save it using the button next to it.
+		Raw files can be handled in up to 16Bit using the 'Import Raw' and 'Export Raw' buttons below. <br>
+		Under this region are two Undo buttons.
+	</p>
+
+	<h3> Preview </h3>
+	<p>
+		Here you can get a preview of the canvas and also paint directly on it using the GUI.
+		You can specify borders around the preview in the settings to aid painting the edges. <br>
+		At the right to the header you can edit the canvas name and see the painter's ID by clicking on the 'E' button.
+		You can also switch between color and grayscale modes after creation by clicking on the rightmost button. <br>
+		When in color mode, you can select which channels to show in the preview from the toolbar below the canvas preview. <br>
+		Due to the size of the canvas preview you have yet another two undo buttons below this region.
+	</p>
+
+	<h3> Color </h3>
+	<p>
+		Only shown when in Color mode, this region allows you to edit the color and it's intensity and save it to a preset bar next to it's header.
+	</p>
+
+	<h3> Multi Channels </h3>
+	<p>
+		Only shown when in Multi mode, you can select and modify the individual channels here.
+	</p>
+
+	<h3> Brush </h3>
+	<p>
+		This region is for editing the current brush and once again saving it to the numerated brush preset bar next to the header. <br>
+		You can choose between various brush shapes here, the first one being an adjustable function, the others being 512px brush textures.
+		The mode dropdown let's you choose between different blending modes of the brush. For a detailed overview on these, see 'Blend Modes Explanation' below.
+		Furthermore you can adjust size, intensity and additional mode-specific options like Target and Bias here.
+		Finally, a clamp option allows you to clamp your input to 0-1.
+	</p>
+
+	<h3> Modifications </h3>
+	<p>
+		This regions applies post-effects onto the canvas, not affecting the currently saved canvas until applied. When any modification is active, a warning symbol appears next to the header. <br>
+		<!--Clamp 0-1 clamps the canvas to the values 0 to 1, after adjusting the brightness and contrast using the sliders below.-->
+		You can adjust the overall contrast and brightness, aswell as those of individual channels when in color mode.
+		As it is a post-effect until explicitly applied to the canvas, you can reset and apply them using the apropriate buttons. <br>
+		Additionally, not being a post-effect modification, you can set the canvas to an uniforma value/color in this region.
+	</p>
+
+	<h3> Bottom </h3>
+	<p>
+		In the 'Resize' region you can resize your canvas here, the content is apropriately up- or downscaled. <br>
+		In the 'Node Targets' list below you can specify to which nodes the canvas is automatically applied to. <br>
+		Pressing the 'Show Settings' button at the very bottom opens up the settings window for TC2 Node Painter. <br> 
+	</p>
+</p>
+
+<h2 class="section" id="CanvasFormats">Canvas Formats</h2>
+<p>
+	The term 'canvas format' has to be understood in an untraditional sense. Internally, the canvas is always RGBA. <br>
+	Instead, the canvas format specifies how you can use the canvas and for what purpose. <br>
+	These are the three formats you have to choose from when creating a canvas:
+
+	<h4> Grayscale </h4>
+	<p>
+		A grayscale canvas is useful for height painting and simple masks in any output. 
+	</p>
+
+	<h4> Color </h4>
+	<p>
+		A color canvas is not directly used in any output but is there for various reasons. It can be used for applications outside of TC2 or to get interesting results when mixing and blending the individual channels together (TC2 interprets them as max(r,g,b,a)). The color region is only shown here and you also get per-channel modifications.
+	</p>
+
+	<h4> Multi-Grayscale </h4>
+	<p>
+		This complex format allows you to paint grayscale in multiple channels, similar to splat painting - except that it is not only used for splats, but for e.g. multiple different biomes or forests. <br>
+		This canvas format is also potentially consisting of multiple textures, each of the channels corresponds to one channel on the textures - that means, the painter uses one texture each 4 channels. <br>
+		Using this format shows the Multi Channel region, where you can select and edit a channel.
+		You can also choose to <b>normalize the channel values</b> in the brush region, which is strongly recommended because overlapping channels will fight, and the channel which is the highest in TC2 wins, which usually gives unwanted results. But this also dramatically slows down painting when using 8 or more channels.
+	</p>
+</p>
+
+<h2 class="section" id="BlendModes">Blend Modes Explanation</h2>
+<p>
+	There are 4 major blend modes available:
+	<ul>
+		<li><b>Add / Sustract:</b><br> This is a basic addition (or subsraction when holding shift) of the intensity onto the canvas. </li>
+		<li><b>Lerp:</b><br> This mode lerps the canvas to the specified target, getting smoother the closer it is to the target (in contrast to Replace).
+						Intensity sets the speed of the lerp.
+						This can also be used as a smoother add brush and can be inverted by holding shift (sets 1-target). </li>
+		<li><b>Replace:</b><br> Linearly replaces the canvas value with the target value at the speed specified by the intensity. This mode can also be inverted by holding shift (sets 1-target). </li>
+		<li><b>Smoothen / Contrast:</b><br> Decrease or Increase details on the canvas texture with detail level specified through the bias property (shift to switch in between). </li>
+	</ul>
+</p>
+
+<h2 class="section" id="Presets">Color/Brush Presets</h2>
+<p>
+	The preset system is available to both color and brush regions. You can load a preset by clicking on it's button, even it it's collapsed state, and create one by clicking the plus button. You delete them by right-clicking and selecting 'Delete' from the shown contect menu. <br>
+	These presets are saved to your Editor
+</p>
+
+<h2 class="section" id="Shortcuts">Shortcuts</h2>
+<p>
+	Shortcuts are used for adjusting brush parameters while painting. They work both in the GUI and in the scene view.
+
+	<li><b>Invert:</b> Holding <kbd>Shift</kbd> while painting inverts the paint blend mode, depending on the current mode. All modes have an inverted version. </li>
+	<li><b>Adjust Brush Size:</b> Holding <kbd>Control</kbd> and using the <kbd>Mouse Wheel</kbd> allows you to quickly change the brush size. </li>
+	<li><b>Adjust Brush Intensity:</b> Holding <kbd>Shift</kbd> and using the <kbd>Mouse Wheel</kbd> allows you to quickly change the brush intensity. </li>
+</p>
+
+
+					
+				</div>
+			</div>
+		</div>
+
+		<span class="debug"></span>
+
+		<div class="cookieNote">
+			<span>This pages uses cookies for analytical purposes in order to give the author a basic idea of what's going on on his site. You can permanently disable this behaviour if you prefer.</span>
+			<div>
+				<!--<a href="https://www.cookiechoices.org/"><button class="base">Details</button></a>--> <!-- Need to find a link with basic cookie explanation -->
+				<button class="base" onclick="javascript:gaOptout()">Disable</button>
+				<button class="base" onclick="javascript:gaAgree()">OK</button>
+			</div>
+		</div>
+
+		
+<footer>
+	<br> <br>
+	Page developed by Seneral 
+	<br> <br>
+	Contact: <a href="mailto:support@seneral.dev">support@seneral.dev</a>
+	<br> <br>
+</footer>
+
+
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script> <!-- https://code.jquery.com/jquery-3.1.1.min.js -->
+		<script type="text/javascript" src="../js/hisrc-min.js"></script>
+		<script type="text/javascript" src="../js/page.js"></script>
+
+		
+
+	</div>
+</body>
+</html>

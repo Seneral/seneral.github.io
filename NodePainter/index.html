@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="expires" content="21600"> <!-- 6 hours -->
+	<meta name="author" content="Seneral">
+	<meta name="keywords" content="Seneral, Unity, Developer">
+	<link rel="icon" type="image/ico" href="../img/Icon/favicon.ico">
+
+	<script async type="text/javascript" src="../js/modernizr-min.js"></script>
+
+	
+<title>Terrain Painter - A TC2 extension</title>
+<meta name="description" content="TC2 Painter extension - Paint directly on nodes!">
+<meta name="keywords" content="TC2, TC2 Painter, Terrain Painter">
+
+
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+
+	<script type="text/javascript">
+		var gaProperty = 'UA-92606737-1';
+		var disableGA = 'ga-disable-' + gaProperty;
+		if (document.cookie.indexOf(disableGA + '=true') > -1)
+			window[disableGA] = true; // Cookie set to disble GA
+		(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;
+			i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+			a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+			a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		}) (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', gaProperty, 'auto');
+		ga('set', 'anonymizeIp', true);
+		ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<div class="bodyStyle">
+		
+<header class="header headerheight">
+	<div class="container">
+		<!-- Title on the left side of the header -->
+		<div class="headerLogo">
+			<a href="..\index.html">
+				<img src="../img/Icon/FavIcon_tiny.png">
+				<span>Seneral <div class="smallName">Seneral</div></span>
+				
+			</a>
+		</div>
+
+		<!-- Navigation controls on the right side of the header - main dropdown by default for mobile and navigation bar for desktop -->
+		<div class="navHeader">
+			<nav class="navList">
+				<input id="burgerToggle" class="navToggle" type="checkbox">
+				<label for="burgerToggle" content-toggled="&#735;" class="navButton">&#9776;</label>
+
+				<div class="navContent">
+					<a class="navItem" href="..\index.html">Home</a>
+					<div class="navGroup">
+						<a class="navItem curNav" href="index.html">Node Painter</a>
+						<div class="navGroupContent">
+							<a class="navItem" href="documentation.html">Documentation</a>
+							<a class="navItem" href="tutorials.html">Tutorials</a>
+						</div>
+					</div>
+					<!--
+					<div class="navGroup">
+						<a class="navItem" href="../NodeEditor/index.html">Node Editor</a>
+						<div class="navGroupContent">
+							<a class="navItem" href="../NodeEditor/about.html">About</a>
+							<a class="navItem" href="../NodeEditor/documentation.html">Documentation</a>
+						</div>
+					</div>
+					<a class="navItem" href="../ErosionSimulation/index.html">Erosion Simulation</a>
+					-->
+					<a class="navItem" href="..\aboutme.html">About Me</a>
+					<a class="navItem" href="..\contact.html">Contact</a>
+				</div>
+			
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- Offset content so header doesn't overlap anything -->
+<div class="headerheight"> </div>
+
+
+		
+<div class="banner bannerSmall hisrc">
+	<img class="bannerImg ratio16-7" src="../img/Banner_TP_LQ.jpg" data-1x="../img/Banner_TP_MQ.jpg" data-2x="../img/Banner_TP_HQ.jpg">
+	<div class="bannerOverlay">
+		<div class="bannerText">
+			<div class="bannerTextCentered">
+				<br> <big>TC2 Node Painter</big> <br> <br> Paint on TC2 nodes right inside the editor! <br> Advanced brush for whole forests and biomes! <br>
+				<!--<br> <big>TC2 Node Painter</big> <br> <br> TC2 Node painting extension <br>-->
+			</div>
+		</div>
+	</div>
+	<div class="bannerShadowBottom"></div>
+</div>
+
+
+		<!-- Page Content -->
+		<div class="content">
+
+			
+<div class="sidePanel right linkBox sticky">
+	<big>Links</big>
+	<br> <br>
+	<ul class="panelLinks">
+		<!--<li><a href="#">Asset Store</a></li>-->
+		<li><a href="https://forum.unity3d.com/threads/wip-tc2-node-painter-paint-anything-a-tc2-extension-for-painting-the-world.454854/">Forum Thread</a></li>
+		<li><a href="documentation.html">Documentation</a></li>
+		<li><a href="https://github.com/Seneral/TC2-Node-Painter-Beta/issues">Beta Feedback & Bugtracker</a></li>
+	</ul>
+</div>
+
+
+			<div class="container">
+				<div class="mainContent">
+
+					
+<h1>TC2 Node Painter</h1>
+
+<big>Have you ever wanted more control over your procedurally generated terrains in TC2? Then this extension is for you!</big> <br>
+<br>
+<div style="color:var(--selectCol)">
+	This is an extension for <a href="https://www.assetstore.unity3d.com/en/#!/content/65563" target="_blank">Terrain Composer 2</a>, a terrain generation tool developed by Nathaniel Doldersum, and only works with it!
+</div> <br>
+
+<h4> What is TC2 Node Painter? </h4>
+TC2 Node Painter allows you to paint TC2 nodes directly in the editor, greatly improving your terrain creation workflow, both procedual and painted. <br>
+It helps procedural terrain creators wanting more control over their terrain aswell as terrain painters laying out there terrain manually by offering more options on what to paint.
+Using this tool you can paint everything, from simple heights and splats over stone fields and forests to whole biomes with little setup required thanks to TC2's simple node editor interface. <br>
+<br>
+
+<h4> How TC2 Node Painter will improve your procedural terrain generation workflow: </h4>
+<ul>
+	<li> No need to switch between image editor and TC2 anymore </li>
+	<li> You don't have to rely on noise to get your positioning right </li>
+	<li> Extend your normal brush capabilities to conditional painting </li>
+	<li> Save/Load any image and edit it with an advanced toolset right inside Unity </li>
+</ul>
+
+<h4> Prefer manual painting over procedural generation? This is why TC2 Node Painter is still perfect for you: </h4>
+<ul>
+	<li> You can paint your terrains as you used to, but add additional conditions to your strokes </li>
+	<li> You can not only paint height, splats and objects, but anything from stone fields over forests to whole biomes </li>
+	<li> You can layer different painting sessions together and modify them individually in a non-destructive way! </li>
+	<li> Works with multiple terrains out-of-the-box </li>
+</ul>
+
+<h4> Why TC2? </h4>
+<ul>
+	<li> TC2 is as flexible as terrain generation could possibly get </li>
+	<li> By utilizing the power of your GPU it is really fast </li>
+	<li> The node-based structure allows for an easy setup </li>
+	<li> It is a 'Blending Powerhouse', allowing you to paint anything through it's mask </li>
+</ul>
+<br> <br>
+
+<big>All images made using TC2 default resources and presets:</big> <br>
+<br>
+
+<a class="noLinkStyle" href="../img/NodePainter/Screen_HeightPainting_HQ.jpg" target="_blank">
+	<img class="pageImg hisrc" src="../img/NodePainter/Screen_HeightPainting_LQ.jpg" data-1x="../img/NodePainter/Screen_HeightPainting_MQ.jpg" data-2x="../img/NodePainter/Screen_HeightPainting_HQ.jpg" alt="Simple terrain height painting setup with auto-splatmapping and additional detail">
+<br> Simple terrain height painting setup with auto-splatmapping and additional detail <br>
+</a> 
+<br>
+
+<a class="noLinkStyle" href="../img/NodePainter/Screen_BiomePainting_HQ.jpg" target="_blank">
+	<img class="pageImg hisrc" src="../img/NodePainter/Screen_BiomePainting_LQ.jpg" data-1x="../img/NodePainter/Screen_BiomePainting_MQ.jpg" data-2x="../img/NodePainter/Screen_BiomePainting_HQ.jpg" alt="Biome painting setup with Grasslands and Desert Mountains, assigning the canvas to both height and splat masks">
+<br> Biome painting setup with Grasslands and Desert Mountains, assigning the canvas to both height and splat masks <br>
+</a> 
+<br> <br>
+
+<h2> Features </h2> 
+<ul>
+	<li> Works with any TC2 node (e.g. mask) in every output </li>
+	<li> Three formats: Color, Value (Height) and Multi-Mask (Splat, Biomes, ...) </li>
+	<li> Up to 32Bit grayscale and 2k resolution </li>
+	<li> Multiple terrain tiles and any node transformation supported! </li>
+	<li> Paint both on the terrain in the scene view and in the GUI preview </li>
+	<li> 4 unique painting modes including smoothen/contrast </li>
+	<li> Shortcuts for adjusting the brush while painting </li>
+	<li> Brush and color preset system </li>
+	<li> Extendable brush database with high quality 512x512 brushes and functions </li>
+	<li> Seperate undo system for the canvas </li>
+	<li> Realtime modifications and tools </li>
+	<li> Raw/Image import and export </li>
+	<li> Works at runtime with TC2 </li>
+	<li> Lots of settings to customize </li>
+</ul>
+<br>
+
+<b> Upcoming features: </b> <br>
+<ul>
+	<li> Improved generation performance through closer interaction between TC2 and Painter extension </li>
+</ul>
+<br>
+
+<b>What else to know about TC2 Node Painter: </b> <br>
+<ul>
+	<li> It is a script component for your Nodes, but can be added to any GameObject in the scene, specifying one or multiple node targets seperately </li>
+	<li> It is fully GPU powered, using standard shaders, theoretically making it possible to be run on every device when decoupled from TC2 </li>
+	<li> It has an extendable brush database and many high quality 512 brushes included from <a href="http://www.asilefx.net/catalog/product_info.php?products_id=120" target="_blank">asileFX</a> </li>
+	<li> Includes a Gaussian-function brush with adjustable falloff </li>
+	<li> Includes full clean C# and shader source code! </li>
+</ul>
+<br>
+
+<br>
+<h2> Showcase </h2>
+<big>Want to see TC2 Node Painter in action? Watch this first demo video:</big> <br>
+<br>
+<iframe class="embedYT" src="https://www.youtube.com/embed/D9NpL2kLyjc" allowfullscreen></iframe>
+<br>
+<br>
+
+
+					
+				</div>
+			</div>
+		</div>
+
+		<span class="debug"></span>
+
+		<div class="cookieNote">
+			<span>This pages uses cookies for analytical purposes in order to give the author a basic idea of what's going on on his site. You can permanently disable this behaviour if you prefer.</span>
+			<div>
+				<!--<a href="https://www.cookiechoices.org/"><button class="base">Details</button></a>--> <!-- Need to find a link with basic cookie explanation -->
+				<button class="base" onclick="javascript:gaOptout()">Disable</button>
+				<button class="base" onclick="javascript:gaAgree()">OK</button>
+			</div>
+		</div>
+
+		
+<footer>
+	<br> <br>
+	Page developed by Seneral 
+	<br> <br>
+	Contact: <a href="mailto:support@seneral.dev">support@seneral.dev</a>
+	<br> <br>
+</footer>
+
+
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script> <!-- https://code.jquery.com/jquery-3.1.1.min.js -->
+		<script type="text/javascript" src="../js/hisrc-min.js"></script>
+		<script type="text/javascript" src="../js/page.js"></script>
+
+		
+
+	</div>
+</body>
+</html>
