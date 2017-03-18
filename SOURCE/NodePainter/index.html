@@ -1,7 +1,7 @@
 <!--START%HEAD-->
 <title>Terrain Painter - A TC2 extension</title>
 <meta name="description" content="TC2 Painter extension - Paint directly on nodes!">
-<meta name="keywords" content="TC2, TC2 Painter, Terrain Painter">
+<meta name="keywords" content="TC2, Terrain Composer, TC2 Node Painter, Node Painter, Terrain Painter">
 <!--END%HEAD-->
 
 <!--START%BANNER-->
@@ -35,32 +35,25 @@
 <!--START%CONTENT-->
 <h1>TC2 Node Painter</h1>
 
-<big>Have you ever wanted more control over your procedurally generated terrains in TC2? Then this extension is for you!</big> <br>
+<big> Have you ever wanted more control over your procedurally generated terrains in TC2? Then this extension is for you! </big> <br>
 <br>
 <div style="color:var(--selectCol)">
 	This is an extension for <a href="https://www.assetstore.unity3d.com/en/#!/content/65563" target="_blank">Terrain Composer 2</a>, a terrain generation tool developed by Nathaniel Doldersum, and only works with it!
 </div> <br>
 
 <h4> What is TC2 Node Painter? </h4>
-TC2 Node Painter allows you to paint TC2 nodes directly in the editor, greatly improving your terrain creation workflow, both procedual and painted. <br>
-It helps procedural terrain creators wanting more control over their terrain aswell as terrain painters laying out there terrain manually by offering more options on what to paint.
+TC2 Node Painter allows you to paint TC2 nodes directly in the editor, greatly improving your terrain creation workflow, both procedual and manual. <br>
 Using this tool you can paint everything, from simple heights and splats over stone fields and forests to whole biomes with little setup required thanks to TC2's simple node editor interface. <br>
 <br>
 
-<h4> How TC2 Node Painter will improve your procedural terrain generation workflow: </h4>
+<h4> How TC2 Node Painter can improve your terrain generation workflow: </h4>
 <ul>
-	<li> No need to switch between image editor and TC2 anymore </li>
-	<li> You don't have to rely on noise to get your positioning right </li>
-	<li> Extend your normal brush capabilities to conditional painting </li>
-	<li> Save/Load any image and edit it with an advanced toolset right inside Unity </li>
-</ul>
-
-<h4> Prefer manual painting over procedural generation? This is why TC2 Node Painter is still perfect for you: </h4>
-<ul>
-	<li> You can paint your terrains as you used to, but add additional conditions to your strokes </li>
-	<li> You can not only paint height, splats and objects, but anything from stone fields over forests to whole biomes </li>
-	<li> You can layer different painting sessions together and modify them individually in a non-destructive way! </li>
-	<li> Works with multiple terrains out-of-the-box </li>
+	<li> Paint anything - from stone fields, over forests, even whole biomes! </li>
+	<li> Advanced conditional painting capabilities </li>
+	<li> No need for an external image editor </li>
+	<li> More precise positioning control than just noise </li>
+	<li> Layer different painting sessions together non-destructively </li>
+	<li> Works with multiple terrains out-of-the-box! </li>
 </ul>
 
 <h4> Why TC2? </h4>
@@ -68,7 +61,7 @@ Using this tool you can paint everything, from simple heights and splats over st
 	<li> TC2 is as flexible as terrain generation could possibly get </li>
 	<li> By utilizing the power of your GPU it is really fast </li>
 	<li> The node-based structure allows for an easy setup </li>
-	<li> It is a 'Blending Powerhouse', allowing you to paint anything through it's mask </li>
+	<li> It is a 'Blending Powerhouse', allowing you to paint anything with it's masks </li>
 </ul>
 <br> <br>
 
@@ -82,22 +75,21 @@ Using this tool you can paint everything, from simple heights and splats over st
 <br>
 
 <a class="noLinkStyle" href="img/NodePainter/Screen_BiomePainting_HQ.jpg" target="_blank">
-	<img class="pageImg hisrc" src="img/NodePainter/Screen_BiomePainting_LQ.jpg" data-1x="img/NodePainter/Screen_BiomePainting_MQ.jpg" data-2x="img/NodePainter/Screen_BiomePainting_HQ.jpg" alt="Biome painting setup with Grasslands and Desert Mountains, assigning the canvas to both height and splat masks">
-<br> Biome painting setup with Grasslands and Desert Mountains, assigning the canvas to both height and splat masks <br>
+	<img class="pageImg hisrc" src="img/NodePainter/Screen_BiomePainting_LQ.jpg" data-1x="img/NodePainter/Screen_BiomePainting_MQ.jpg" data-2x="img/NodePainter/Screen_BiomePainting_HQ.jpg" alt="Small biome painting setup with Mountain, Desert and Grass Biomes, assigning the canvas to both height and splat masks">
+<br> Small biome painting setup with Mountain, Desert and Grass Biomes, assigning the canvas to both height and splat masks <br>
 </a> 
 <br> <br>
 
 <h2> Features </h2> 
 <ul>
-	<li> Works with any TC2 node (e.g. mask) in every output </li>
+	<li> Works on any TC2 node (e.g. mask) in every output </li>
 	<li> Three formats: Color, Value (Height) and Multi-Mask (Splat, Biomes, ...) </li>
-	<li> Up to 32Bit grayscale and 2k resolution </li>
 	<li> Multiple terrain tiles and any node transformation supported! </li>
-	<li> Paint both on the terrain in the scene view and in the GUI preview </li>
-	<li> 4 unique painting modes including smoothen/contrast </li>
-	<li> Shortcuts for adjusting the brush while painting </li>
+	<li> Both scene terrain and GUI painting</li>
+	<li> 4 selected unique painting modes including smoothen/contrast </li>
+	<li> Shortcuts for almost everything </li>
 	<li> Brush and color preset system </li>
-	<li> Extendable brush database with high quality 512x512 brushes and functions </li>
+	<li> Extendable brush database and adjustable brush functions </li>
 	<li> Seperate undo system for the canvas </li>
 	<li> Realtime modifications and tools </li>
 	<li> Raw/Image import and export </li>
@@ -106,17 +98,11 @@ Using this tool you can paint everything, from simple heights and splats over st
 </ul>
 <br>
 
-<b> Upcoming features: </b> <br>
+<b> What else to know about TC2 Node Painter: </b> <br>
 <ul>
-	<li> Improved generation performance through closer interaction between TC2 and Painter extension </li>
-</ul>
-<br>
-
-<b>What else to know about TC2 Node Painter: </b> <br>
-<ul>
-	<li> It is a script component for your Nodes, but can be added to any GameObject in the scene, specifying one or multiple node targets seperately </li>
-	<li> It is fully GPU powered, using standard shaders, theoretically making it possible to be run on every device when decoupled from TC2 </li>
-	<li> It has an extendable brush database and many high quality 512 brushes included from <a href="http://www.asilefx.net/catalog/product_info.php?products_id=120" target="_blank">asileFX</a> </li>
+	<li> You can either apply it directly on nodes or specify seperate multiple node targets </li>
+	<li> It is fully GPU powered using normal shaders and could be used at runtime </li>
+	<li> It includes high quality 512 brushes from <a href="http://www.asilefx.net/catalog/product_info.php?products_id=120" target="_blank">asileFX</a> </li>
 	<li> Includes a Gaussian-function brush with adjustable falloff </li>
 	<li> Includes full clean C# and shader source code! </li>
 </ul>
