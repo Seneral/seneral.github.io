@@ -471,7 +471,7 @@ img.pageImg {
 img.sideImg {
 	float: right;
 	max-width: 100%;
-	margin: 2em 0 0 1em;
+	margin: 1em 0 0 1em;
 }
 /*img[alt]:after {
 	margin: 10px;
@@ -555,6 +555,25 @@ button.titleButton:active {
 }
 .content a:active, footer a:active {
 	color: #3891FF;
+}
+
+/* Misc */
+.content p 
+{
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+.content h2 {
+	margin-top: 1.4em;
+	margin-bottom: 0.4em;
+}
+.content h3 {
+	margin-top: 1.2em;
+	margin-bottom: 0.4em;
+}
+.content h4 {
+	margin-top: 1.4em;
+	margin-bottom: 0.4em;
 }
 
 /*#endregion CONTENT */
