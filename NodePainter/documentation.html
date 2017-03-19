@@ -176,10 +176,9 @@
 
 	<h4> Canvas Preview </h4>
 	<p>
-		In the preview area you get a visualization of the canvas where you can also directly paint on.
-		You can specify clearing borders around the preview in the settings to aid painting the edges. <br>
-		Clicking on the 'E' button located at the right of the header allows you to edit the canvas name and see the current canvas format aswell as the painter's ID. <br>
-		Depending on the canvas format, you can select visualization options from a toolbar below the preview: Display channels in color format or single/combined view in multi-mask format.
+		In the preview area you get a visualization of the canvas where you can also directly paint on. You can set Canvas Borders around the preview in the Settings to aid in edge painting. <br>
+		Clicking on the 'E' button located at the right of the header allows you to edit the canvas name and see the current canvas format as well as the painter's ID. <br>
+		When the canvas is set to Color or Multi-Mask format additional visualization options appear below the preview. 
 	</p>
 
 	<h4> Color </h4>
@@ -194,10 +193,13 @@
 
 	<h4> Brush </h4>
 	<p>
-		In this region you can edit the current brush and save/load presets using the numerated brush preset bar next to the header. <br>
-		The first bar displays the available brush shapes - the first one is an adjustable function - followed by the blending modes (see 'Blend Modes Explanation' section below). <br>
+		In this region you can edit the current brush and save/load presets using the numbered brush preset bar next to the header. <br>
+		The first bar displays the available brush shape, the first of which is an adjustable function. 
+		Below the brush bar are the settings for the current brush. <br>
+		The Mode dropdown menu selects the <a href="#BlendModes">Blending Mode</a>.
 		Furthermore you can adjust rotation, size, intensity, and, for the function brush, falloff and hardness parameters. 
 		Depending on the mode you also have additional options like target and bias here. <br>
+		Most of these parameters can also be adjusted by a <a href="#Shortcuts">shortcut</a>. <br>
 		Finally, checking the clamp toggle clamps your canvas to 0-1 and in the Multi-Mask format, you can toggle canvas normalization on and off. 
 	</p>
 
@@ -205,7 +207,7 @@
 	<p>
 		This regions applies post-effects onto the canvas (currently only in Color and Value formats). <br>
 		You can adjust the overall contrast and brightness, as well as those of individual channels when in color format.
-		As it is a post-effect until explicitly applied to the canvas, you can reset and apply these modifications using the apropriate buttons. <br>
+		As it is a post-effect until explicitly applied to the canvas, you can reset and apply these modifications using the appropriate buttons. <br>
 		Additionally, you can set the canvas to an uniform value/color in this region.
 	</p>
 
@@ -219,15 +221,15 @@
 
 <h2 class="section" id="Settings">Settings Window</h2>
 <p>
-	You can access the settings window by clicking on the 'Show Settings' Button at the bottom of each painter or through 'Window/TC2 Node painter Settings'. <br>
+	You can access the settings window by clicking on the 'Show Settings' button at the bottom of any NodePainter inspector or through the menu 'Window/TC2 Node Painter Settings'. <br>
 
 	<a href="../img/NodePainter/Screen_Settings_SRC.png" target="_blank"><img class="sideImg" src="../img/NodePainter/Screen_Settings_SRC.png" alt="The Settings Window"></a>
 
 	<h4> Paint Behaviour </h4>
 	<p>
 		Here you can change the interval at which the painter paints and TC2 generates - usually, you want a longer interval on generation to allow several paint passes between each generation. 
-		If you get stuttering while painting terrains and you cannot lower terrain resolution temporarily, consider increasing the generation interval or even disabling Auto Generate. 
-		Continuous Painting also paints while you hold your mouse still.
+		If you get stuttering while painting terrains and you cannot lower terrain resolution temporarily, consider increasing the generation interval or even disabling Auto Generate. <br>
+		Enabling Continuous Painting makes the painter paint continuously even if you hold your mouse still.
 	</p>
 
 	<h4> Undo </h4>
@@ -294,7 +296,7 @@
 
 <h2 class="section" id="Presets">Color/Brush Presets</h2>
 <p>
-	The preset system is available to both color and brush regions. You can load a preset by clicking on its button, even when the region is collapsed, and create one by clicking the plus button. You delete them by right-clicking and selecting 'Delete' from the shown contect menu. <br>
+	The preset system is available to both color and brush regions. You can load a preset by clicking on its button, even when the region is collapsed, and create one by clicking the plus button. You delete them by right-clicking and selecting 'Delete' from the shown context menu. <br>
 	These presets are saved to your EditorPrefs so they will persist between sessions and painters.
 </p>
 
@@ -310,7 +312,7 @@
 	<li><b>Switch to last mode:</b> Pressing <kbd>Tab</kbd> Switches you to the last blend mode you used, allowing you to quickly switch between two blend modes. </li>
 </p>
 
-<h2 class="section" id="Performance">Important Notes on Performance</h2>
+<h2 class="section" id="Performance">Notes on Performance</h2>
 <p>
 	<h4> Performance </h4>
 	<p>
@@ -321,7 +323,6 @@
 	
 	<h4> Memory </h4>
 	<p>
-		An important aspect is also memory - this can quickly get a problem depending on your canvas and setup. <br>
 		If you use a high resolution or many canvas channels (in Multi-Mask format) memory consumption can quickly become a problem if you're not careful. For each action performed on the canvas, an undo record is created, copying all involved textures. These live in the memory until the maximum undo stack size is reached (30). <br>
 		It is recommended to lower this value if you're on a rig with under 8GB of RAM.
 	</p>
