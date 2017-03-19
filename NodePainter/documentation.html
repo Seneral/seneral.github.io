@@ -115,6 +115,7 @@
 		<li><a href="#Presets">Presets</a></li>
 		<li><a href="#Shortcuts">Shortcuts</a></li>
 		<li><a href="#Performance">Performance</a></li>
+		<li><a href="#Glossary">Glossary</a></li>
 	</ul>
 </div>
 <div class="sidePanel right linkBox sticky">
@@ -141,9 +142,9 @@
 <p>
 	<ol>
 		<li> Get <a href="http://www.terraincomposer.com" target="_blank">TerrainComposer 2</a> from the <a href="https://www.assetstore.unity3d.com/en/#!/content/65563" target="_blank">Asset Store</a>, download and import it. </li>
-		<li> Get TC2 Node Painter from the <a href="">Asset Store</a>, download and import it. </li>
+		<li> Get <a href="http://www.seneral.dev/NodePainter/index.html" target="_blank">TC2 Node Painter</a> from the <a href="">Asset Store</a>, download and import it. </li>
 		<li> Create a new TC2 project through the TC2 window ('Window/Power of Nature Software/Terrain Composer 2') </li>
-		<li> Add a node to the graph for painting, eg. in the height output - it will automatically be turned to an apropriate Image node in the next step. </li>
+		<li> Add a node to the graph for painting, e.g. in the height output - it will automatically be turned to an appropriate Image node in the next step. </li>
 		<li> Add the NodePainter script to that Node. You will be presented with the TC2 Node Painter UI </li>
 		<li> Create a new canvas by specifying a desired resolution and start painting! </li>
 	</ol>
@@ -220,7 +221,7 @@
 <p>
 	You can access the settings window by clicking on the 'Show Settings' Button at the bottom of each painter or through 'Window/TC2 Node painter Settings'. <br>
 
-	<a href="../img/NodePainter/Screen_Settings_SRC.png" target="_blank"><img class="sideImg" src="../img/NodePainter/Screen_Settings_HQ.png" alt="The Settings Window"></a>
+	<a href="../img/NodePainter/Screen_Settings_SRC.png" target="_blank"><img class="sideImg" src="../img/NodePainter/Screen_Settings_SRC.png" alt="The Settings Window"></a>
 
 	<h4> Paint Behaviour </h4>
 	<p>
@@ -254,7 +255,7 @@
 
 <h2 class="section" id="CanvasFormats">Canvas Formats</h2>
 <p>
-	The canvas format defines it purpose for painting. However, it's internal representation is always RGBA. <br>
+	The canvas format defines its purpose for painting. However, it's internal representation is always RGBA. <br>
 	These are the three formats you have to choose from when creating a canvas:
 
 	<h4> Grayscale </h4>
@@ -271,11 +272,10 @@
 
 	<h4> Multi-Mask </h4>
 	<p>
-		This complex format allows you to paint grayscale in multiple channels, similar to splat painting. An ideal use case would be for painting biomes or forests. <br>
-		Canvases of this format can potentially consist of multiple textures: Every 4 channels is represented internally by one texture, just like splat maps. <br>
-		Using this format shows the Multi Channel region in the inspector, where you can select and edit a channel.
-		You can also choose to <b>normalize the channel values</b> in the brush region, which is strongly recommended because overlapping channels will fight, 
-		and the channel which is the highest in TC2 wins, which usually gives unwanted results.
+		This complex format allows you to paint in up to 24 channels, similar to splat painting. An ideal use case would be for painting biomes or forests. <br>
+		Using this format shows the Multi Channel region in the inspector, where you can select, edit and add/remove channels. It is important that you assign different node targets for each channel in the Node Targets region below. For example, you could add the Height, Splat and Tree nodes here that correspond to the biome you are painting. <br>
+		You can also choose to <b>normalize the channel</b> values in the brush region, which is strongly recommended because overlapping channels will fight, and the channel which is the highest in TC2 wins, which usually gives unwanted results. Basically this will replace the color of all other channels while painting, eliminating the overlapping regions. <br>
+		Internally, canvases of this format potentially consist of multiple textures: Every 4 channels is represented internally by one texture, just like splat maps. This might cause technical problems when using many channels, like memory shortage. Read the <a href="#Performance">notes on memory</a> below for more information.
 	</p>
 </p>
 
@@ -325,6 +325,16 @@
 		If you use a high resolution or many canvas channels (in Multi-Mask format) memory consumption can quickly become a problem if you're not careful. For each action performed on the canvas, an undo record is created, copying all involved textures. These live in the memory until the maximum undo stack size is reached (30). <br>
 		It is recommended to lower this value if you're on a rig with under 8GB of RAM.
 	</p>
+</p>
+
+<h2 class="section" id="Glossary">Glossary</h2>
+<p>
+	<ul>
+		<li><b>NodePainter (script)</b><br> The script used to manage, paint and assign the canvas to the nodes. It is possible to assign the canvas to multiple nodes by specifying additional node targets. </li>
+		<li><b>Node Targets:</b><br> Nodes the canvas are assigned to. All node target transformations of a NodePainter script are kept in sync to prevent misalignment. Either transform the NodePainter object itself or, in order to scale the node targets individually, use their height/opacity. </li>
+		<li><b>Canvas:</b><br> The buffer of textures used for the painting data that is assigned to all node targets. </li>
+		<li><b>Biome:</b><br> A grouping of several outputs, like height, splat, trees, etc. to represent different flora and fauna on the terrain. </li>
+	</ul>
 </p>
 
 
