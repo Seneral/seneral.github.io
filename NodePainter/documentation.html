@@ -107,6 +107,7 @@
 	<br> <br>
 	<ul class="panelLinks">
 		<li><a href="#GettingStarted">Getting Started</a></li>
+		<li><a href="#Examples">Examples</a></li>
 		<li><a href="#Interface">Interface</a></li>
 		<li><a href="#Settings">Settings</a></li>
 		<li><a href="#CanvasFormats">Canvas Formats</a></li>
@@ -148,6 +149,18 @@
 	</ol>
 </p>
 
+<h2 class="section" id="Examples">Examples</h2>
+<p>
+	The examples are located in the 'Node Painter/Examples' folder. It can safely be deleted if you don't need the examples anymore.
+	You can check out one of the two example scenes from 'Node Painter/Examples/Scenes/':
+	<ul>
+		<li><b>HeightPaintDemo:</b><br> This shows a simple height painting setup with auto-splatmapping. The Node Painter component can be found in the left-most height node. </li>
+		<li><b>BiomePaintDemo:</b><br> This shows the usage of the Multi-Mask-format - working similarily to splat maps - to mask three biomes (Mountains, Desert, Grassland) together.
+			The Node Painter component to paint on can be found on the BiomePainting object in the hierarchy. 
+			Notice the use of multiple Node Targets (bottom) for each channel to assign the canvas to both the height and splat nodes.</li>
+	</ul>
+</p>
+
 <h2 class="section" id="Interface">Interface Explanation</h2>
 <p>
 	<a href="../img/NodePainter/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="../img/NodePainter/Screen_GUI_LQ.jpg" data-1x="../img/NodePainter/Screen_GUI_MQ.jpg" data-2x="../img/NodePainter/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
@@ -170,12 +183,12 @@
 
 	<h4> Color </h4>
 	<p>
-		Only shown in the color format, this region allows you to edit the color and it's intensity. Using the bar next to the header you can create and load color presets.
+		Only shown in the color format, this region allows you to edit the color and its intensity. Using the bar next to the header you can create and load color presets.
 	</p>
 
 	<h4> Multi Channels </h4>
 	<p>
-		Only shown in the Multi-Mask format, you can select and modify the individual channels here. Expanding the setup-region, you can specify a custom textures to display instead of the default channel color.
+		Only shown in the Multi-Mask format, you can select and modify the individual channels here. Expanding the setup-region, you can specify a custom texture to display instead of the default channel color.
 	</p>
 
 	<h4> Brush </h4>
@@ -190,7 +203,7 @@
 	<h4> Modifications </h4>
 	<p>
 		This regions applies post-effects onto the canvas (currently only in Color and Value formats). <br>
-		You can adjust the overall contrast and brightness, aswell as those of individual channels when in color format.
+		You can adjust the overall contrast and brightness, as well as those of individual channels when in color format.
 		As it is a post-effect until explicitly applied to the canvas, you can reset and apply these modifications using the apropriate buttons. <br>
 		Additionally, you can set the canvas to an uniform value/color in this region.
 	</p>
@@ -211,8 +224,8 @@
 
 	<h4> Paint Behaviour </h4>
 	<p>
-		Here you can change the interval at which is the painter paint and TC2 generates - usually, you want a greater interval on generation to allow several paint passes between each generation.
-		If you get extreme stutter while painting terrains and you cannot lower terrain settings temporarily, consider highering the generation interval or even disabling Auto Generate.
+		Here you can change the interval at which the painter paints and TC2 generates - usually, you want a longer interval on generation to allow several paint passes between each generation. 
+		If you get stuttering while painting terrains and you cannot lower terrain resolution temporarily, consider increasing the generation interval or even disabling Auto Generate. 
 		Continuous Painting also paints while you hold your mouse still.
 	</p>
 
@@ -224,23 +237,24 @@
 
 	<h4> GUI Spacing </h4>
 	<p>
-		This section allows you to do some simple GUI adjustments like adjusting display sizes incase you are on a smaller or bigger monitor than Full HD. <br>
-		You can also add a border around your canvas preview which helps you painting the borders in the GUI preview. Relative is relative to your brush size.
+		This section allows you to do some simple GUI adjustments like adjusting display sizes in case you are on a smaller or bigger monitor than Full HD. <br>
+		You can also add a border around your canvas preview which helps you paint the borders in the GUI preview.
 	</p>
 
 	<h4> Folder Locations </h4>
 	<p>
-		You can move individual folder locations here incase you want to completely move the Node Painter folder or outsource specific parts. 
-		They are saved per project in a text-file in ProjectSettings so you can choose paths on a per-project basis. <br>
-		Resource folder might be changed when you want to use the painter at runtime, then you can simply move it to a folder called 'Resources' and all works.
-		The next two folders can be completely moved to an external path, in which case the path gets absolute. The BrushStamps folder might direct to a shared brush directory - all images within this folder will be regarded as brushes.
-		Cache folder stores all your current working canvases - these are NOT stored in the scene! You might want to move this to a seperate folder for source control.
+		You can move individual folder locations here in case you want to completely move the Node Painter folder or outsource specific parts. 
+		They are saved per project in a text-file in the ProjectSettings directory so you can choose paths on a per-project basis. <br>
+		Resource folder might be changed when you want to use the painter at runtime, then you can simply move it to a folder called 'Resources' and it works. 
+		The BrushStamps and Cache folders can either be moved to a different path inside the project or even an absolute, external path. <br>
+		The BrushStamps folder might point to a shared brush directory - all images within this folder will be regarded as brushes. 
+		The Cache folder stores all your current working canvases - these are NOT stored in the scene! You might want to move this to a external folder if you are using source control.
 	</p>
 </p>
 
 <h2 class="section" id="CanvasFormats">Canvas Formats</h2>
 <p>
-	The canvas format specifies how you can use the canvas and for what purpose - it does not change internal texture format, which is always RGBA. <br>
+	The canvas format defines it purpose for painting. However, it's internal representation is always RGBA. <br>
 	These are the three formats you have to choose from when creating a canvas:
 
 	<h4> Grayscale </h4>
@@ -250,15 +264,18 @@
 
 	<h4> Color </h4>
 	<p>
-		A color canvas is not directly used in any output but is there for various reasons. It can be used for applications outside of TC2 or to get interesting results when mixing and blending the individual channels together (TC2 interprets them as max(r,g,b,a)). The color region is only shown here and you also get per-channel modifications.
+		A color canvas is not directly used in any output but is there for various reasons. It can be used for applications outside of TC2 
+		or to get interesting results when mixing and blending the individual channels together (TC2 interprets them as max(r,g,b,a)). 
+		The color region is only shown here and you also get per-channel modifications.
 	</p>
 
-	<h4> Multi-Grayscale </h4>
+	<h4> Multi-Mask </h4>
 	<p>
-		This complex format allows you to paint grayscale in multiple channels, similar to splat painting - except that it is not only used for splats, but for e.g. multiple different biomes or forests. <br>
-		This canvas format is also potentially consisting of multiple textures, each of the channels corresponds to one channel on the textures - that means, the painter uses one texture each 4 channels. <br>
-		Using this format shows the Multi Channel region, where you can select and edit a channel.
-		You can also choose to <b>normalize the channel values</b> in the brush region, which is strongly recommended because overlapping channels will fight, and the channel which is the highest in TC2 wins, which usually gives unwanted results. But this also dramatically slows down painting when using 8 or more channels.
+		This complex format allows you to paint grayscale in multiple channels, similar to splat painting. An ideal use case would be for painting biomes or forests. <br>
+		Canvases of this format can potentially consist of multiple textures: Every 4 channels is represented internally by one texture, just like splat maps. <br>
+		Using this format shows the Multi Channel region in the inspector, where you can select and edit a channel.
+		You can also choose to <b>normalize the channel values</b> in the brush region, which is strongly recommended because overlapping channels will fight, 
+		and the channel which is the highest in TC2 wins, which usually gives unwanted results.
 	</p>
 </p>
 
@@ -277,7 +294,7 @@
 
 <h2 class="section" id="Presets">Color/Brush Presets</h2>
 <p>
-	The preset system is available to both color and brush regions. You can load a preset by clicking on it's button, even when the region is collapsed, and create one by clicking the plus button. You delete them by right-clicking and selecting 'Delete' from the shown contect menu. <br>
+	The preset system is available to both color and brush regions. You can load a preset by clicking on its button, even when the region is collapsed, and create one by clicking the plus button. You delete them by right-clicking and selecting 'Delete' from the shown contect menu. <br>
 	These presets are saved to your EditorPrefs so they will persist between sessions and painters.
 </p>
 
@@ -290,24 +307,23 @@
 	<li><b>Adjust Brush Intensity:</b> Holding <kbd>Shift</kbd> and using the <kbd>Mouse Wheel</kbd> changes the brush intensity. </li>
 	<li><b>Adjust Brush Rotation:</b> Holding <kbd>Space</kbd> and using the <kbd>Mouse Wheel</kbd> changes the brush rotation. </li>
 	<li><b>Adjust Special Brush Value:</b> Holding <kbd>Control+Shift</kbd> and using the <kbd>Mouse Wheel</kbd> in supported blend modes changes the brush target or bias. </li>
-	<li><b>Switch to last mode:</b> Pressing <kbd>Tab</kbd> Switches you to the last blend mode you used, allowing to quickly switch between two blend modes. </li>
+	<li><b>Switch to last mode:</b> Pressing <kbd>Tab</kbd> Switches you to the last blend mode you used, allowing you to quickly switch between two blend modes. </li>
 </p>
 
 <h2 class="section" id="Performance">Important Notes on Performance</h2>
 <p>
 	<h4> Performance </h4>
 	<p>
-		The performance of the painter is obviously alot slower than the default terrain brush due to the fact it has to go through several steps to finally reach the terrain.
-		Node Painter is fully GPU-powered, just as TC2 is, but even the simplest setup requires several passes on the GPU which adds up quite fast. <br>
-		Then comes the most performance-hungry operation: Assigning the result on the terrain. This step has been optimised to only assign the region under the brush but still takes alot of time. <br>
+		The performance of the painter is obviously a lot slower than the default terrain brush due to the fact it has to go through several steps to finally reach the terrain. Node Painter is fully GPU-powered, just as TC2 is, but even the simplest setup requires several passes on the GPU which adds up quite fast. <br>
+		Then comes the most performance-hungry operation: Assigning the result on the terrain. This step has been optimised to only assign the region under the brush but still takes alot of time. <br>
 		Compared to the default terrain brush it appears to take longer because Node Painter allows for much higher brush sizes - resulting in bigger areas to cover - which may not be so apparent.
 	</p>
 	
 	<h4> Memory </h4>
 	<p>
-		An important aspect is also memory - this can quickly get a problem depending on your canvas and setup. <br>
-		If you use a high resolution or many canvas channels (in Multi-Mask format) memory consumption can get a problem if you're not careful - for each action, an undo record is created, copying all involved textures. These live in the memory until the 	maximum undo stack size is reached (30). <br>
-		It is recommended to lower this value if you're on a rig with under 8GB of RAM and generally be careful.
+		An important aspect is also memory - this can quickly get a problem depending on your canvas and setup. <br>
+		If you use a high resolution or many canvas channels (in Multi-Mask format) memory consumption can quickly become a problem if you're not careful. For each action performed on the canvas, an undo record is created, copying all involved textures. These live in the memory until the maximum undo stack size is reached (30). <br>
+		It is recommended to lower this value if you're on a rig with under 8GB of RAM.
 	</p>
 </p>
 
