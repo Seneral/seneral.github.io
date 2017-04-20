@@ -58,7 +58,7 @@
 					<div class="navGroup">
 						<a class="navItem" href="index.html">Node Painter</a>
 						<div class="navGroupContent">
-							<a class="navItem curNav" href="documentation.html">Documentation</a>
+							<a class="navItem" href="documentation.html">Documentation</a>
 							<a class="navItem" href="tutorials.html">Tutorials</a>
 						</div>
 					</div>
@@ -136,18 +136,17 @@
 					
 <h1>Documentation</h1>
 
-<a href="../downloads/NodePainter/Documentation_1.1.pdf" target="_blank"><button class="base pageButton">Download Offline Documentation</button></a>
+<a href="../downloads/NodePainter/Documentation_1.0.pdf" target="_blank"><button class="base pageButton">Download Offline Documentation</button></a>
 
 <a href="../downloads/NodePainter/Full_Changelog.txt" target="_blank"><button class="base pageButton">See Full Changelog</button></a>
 
 <p>
 	<h3>Version:</h3>
 	<a href="documentation.html"> <b>Newest Version</b> </a> <br>
-	<b>Current Version:</b> 1.1 <br>
-	<b>Older Versions:</b> <a href="documentation_1.0.html">1.0</a> <br>
-	<b>Last Updated:</b> 20.03.17 <br>
+	<b>Current Version:</b> 1.0 <br>
+	<b>Older Versions:</b> / <br>
+	<b>Last Updated:</b> 19.04.17 <br>
 </p>
-
 
 <h2 class="section" id="GettingStarted">Getting Started</h2>
 <p>
@@ -175,7 +174,7 @@
 
 <h2 class="section" id="Interface">Interface Explanation</h2>
 <p>
-	<a href="../img/NodePainter/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="../img/NodePainter/Documentation/1.1/Screen_GUI_LQ.jpg" data-1x="../img/NodePainter/Documentation/1.1/Screen_GUI_MQ.jpg" data-2x="../img/NodePainter/Documentation/1.1/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
+	<a href="../img/NodePainter/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="../img/NodePainter/Documentation/1.0/Screen_GUI_LQ.jpg" data-1x="../img/NodePainter/Documentation/1.0/Screen_GUI_MQ.jpg" data-2x="../img/NodePainter/Documentation/1.0/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
 
 	<h4> Canvas IO </h4>
 	<p>
@@ -183,16 +182,13 @@
 		When there is no canvas loaded, you can create a canvas using the area in the outlined box, specifying size and canvas format. <br>
 		Canvas IO works in both raw and png image formats - simply use the import/export buttons or drag-fields. 
 		When importing raw, you will have to check if the import settings are correct - they are not saved with the raw file, but estimated from the file size. <br>
-		Finally, you can save/load the last session from the cache here, providing quick and safe backup points. <br>
 	</p>
 
 	<h4> Canvas Preview </h4>
 	<p>
 		In the preview area you get a visualization of the canvas where you can also directly paint on. You can set Canvas Borders around the preview in the Settings to aid in edge painting. <br>
 		Clicking on the 'E' button located at the right of the header allows you to edit the canvas name and see the current canvas format as well as the painter's ID. <br>
-		The eye-icon next to it toggles the canvas projection onto the canvas, which can give you a better understanding on how the canvas affects the terrain. <br>
-		When the canvas is set to Color or Multi-Mask format additional visualization options appear below the preview. <br>
-		Under two additional undo buttons, the Stop/Start Painting button toggles painting on and off, allowing you to use tools such as the move handle, which are disabled while painting.
+		When the canvas is set to Color or Multi-Mask format additional visualization options appear below the preview. 
 	</p>
 
 	<h4> Color </h4>
@@ -202,7 +198,7 @@
 
 	<h4> Multi Channels </h4>
 	<p>
-		Only shown in the Multi-Mask format, you can select and modify the individual channels here. Using the context here allows you to specify a custom texture to display instead of the default channel color.
+		Only shown in the Multi-Mask format, you can select and modify the individual channels here. Expanding the setup-region, you can specify a custom texture to display instead of the default channel color.
 	</p>
 
 	<h4> Brush </h4>
@@ -237,7 +233,7 @@
 <p>
 	You can access the settings window by clicking on the 'Show Settings' button at the bottom of any NodePainter inspector or through the menu 'Window/TC2 Node Painter Settings'. <br>
 
-	<a href="../img/NodePainter/Screen_Settings_SRC.png" target="_blank"><img class="sideImg" src="../img/NodePainter/Documentation/1.1/Screen_Settings_SRC.png" alt="The Settings Window"></a>
+	<a href="../img/NodePainter/Screen_Settings_SRC.png" target="_blank"><img class="sideImg" src="../img/NodePainter/Documentation/1.0/Screen_Settings_SRC.png" alt="The Settings Window"></a>
 
 	<h4> Paint Behaviour </h4>
 	<p>
@@ -252,10 +248,10 @@
 		All undo entries past this number will automatically be deleted and cannot be recovered.
 	</p>
 
-	<h4> GUI </h4>
+	<h4> GUI Spacing </h4>
 	<p>
 		This section allows you to do some simple GUI adjustments like adjusting display sizes in case you are on a smaller or bigger monitor than Full HD. <br>
-		You can also add a border around your canvas preview which helps you paint the borders in the GUI preview, aswell as change the opacity of the canvas visualization projected on the terrain.
+		You can also add a border around your canvas preview which helps you paint the borders in the GUI preview.
 	</p>
 
 	<h4> Folder Locations </h4>
@@ -274,9 +270,9 @@
 	The canvas format defines its purpose for painting. However, it's internal representation is always RGBA. <br>
 	These are the three formats you have to choose from when creating a canvas:
 
-	<h4> Value </h4>
+	<h4> Grayscale </h4>
 	<p>
-		A grayscale canvas that is useful for height painting and simple masks in any output. 
+		A grayscale canvas is useful for height painting and simple masks in any output. 
 	</p>
 
 	<h4> Color </h4>
@@ -323,7 +319,7 @@
 	<li><b>Adjust Brush Intensity:</b> Holding <kbd>Shift</kbd> and using the <kbd>Mouse Wheel</kbd> changes the brush intensity. </li>
 	<li><b>Adjust Brush Rotation:</b> Holding <kbd>Space</kbd> and using the <kbd>Mouse Wheel</kbd> changes the brush rotation. </li>
 	<li><b>Adjust Special Brush Value:</b> Holding <kbd>Control+Shift</kbd> and using the <kbd>Mouse Wheel</kbd> in supported blend modes changes the brush target or bias. </li>
-	<li><b>Switch to last mode:</b> Pressing <kbd>Tab</kbd> Switches to the last blend mode used, allowing you to quickly switch between two blend modes. </li>
+	<li><b>Switch to last mode:</b> Pressing <kbd>Tab</kbd> Switches you to the last blend mode you used, allowing you to quickly switch between two blend modes. </li>
 </p>
 
 <h2 class="section" id="Performance">Notes on Performance</h2>
@@ -348,7 +344,7 @@
 		<li><b>NodePainter (script)</b><br> The script used to manage, paint and assign the canvas to the nodes. It is possible to assign the canvas to multiple nodes by specifying additional node targets. </li>
 		<li><b>Node Targets:</b><br> Nodes the canvas are assigned to. All node target transformations of a NodePainter script are kept in sync to prevent misalignment. Either transform the NodePainter object itself or, in order to scale the node targets individually, use their height/opacity. </li>
 		<li><b>Canvas:</b><br> The buffer of textures used for the painting data that is assigned to all node targets. </li>
-		<li><b>Biome:</b><br> A grouping of several outputs, like height, splat, trees, etc. to represent different flora and fauna on the terrain, defined through multiple node targets per channel in a Multi-Mask canvas, each representing one respective output. </li>
+		<li><b>Biome:</b><br> A grouping of several outputs, like height, splat, trees, etc. to represent different flora and fauna on the terrain. </li>
 	</ul>
 </p>
 
