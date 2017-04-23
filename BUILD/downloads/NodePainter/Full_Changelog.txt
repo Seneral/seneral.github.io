@@ -1,0 +1,26 @@
+Changelog TC2 Node Painter:
+
+Version 1.1.1
+
+- Fixed paint offset on node targets with superordinated transformations
+- Fixed paint offset when terrains are scaled in the TerrainArea/Sizes tab
+
+Version 1.1
+
+- Improved channel modification GUI: Added context items for all options
+- Improved brush color visibility on low intensities by adding a falloff curve
+- Improved brush outline rendering
+- Improved brush size handling: New maximum value is 1 with same effective size
+- Improved standard tool compability: Painting is now turned off when using tools such as the move handle
+
+- Added option to visualize (project) canvas on the terrain (see eye icon in canvas header)
+- Added TerrainArea/Area2D overwrite option
+- Added color bar below multi-channel icons with custom display textures so they can be associated with the color visualization
+- Added buttons to manually load/save the current session to quickly create backup points
+- Added generation triggering when object hosting the paint component is moved (incase it's not a node)
+
+- Renamed 'Resources' folder to 'EditorResources' so it is not included into the game (might need to reset/change path in settings manually)
+- Renamed 'Resources' folder to 'EditorResources' so it is not included into the game (might need to reset/change path in settings manually)
+
+- Fixed generate- and paint area when painting on transformed nodes
+- Fixed BrushStamps folder not being used, but instead was always based of resource folder
