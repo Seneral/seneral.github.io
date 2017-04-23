@@ -1,5 +1,10 @@
 Changelog TC2 Node Painter:
 
+Version 1.1.1
+
+- Fixed paint offset on node targets with superordinated transformations
+- Fixed paint offset when terrains are scaled in the TerrainArea/Sizes tab
+
 Version 1.1
 
 - Improved channel modification GUI: Added context items for all options
