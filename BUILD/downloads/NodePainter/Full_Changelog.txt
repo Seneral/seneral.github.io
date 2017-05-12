@@ -1,5 +1,16 @@
 Changelog TC2 Node Painter:
 
+Version 1.1.2
+
+- Rewrote space transformations to be more transparent and stable
+- Fixed offset issue when individual terrains are scaled
+- Fixed blank example painters due to missing cache information on new machines
+- Fixed upgrade warnings in newer unity versions 5.4+
+- Fixed node targets not syncing with painter's superordinated transformations
+
+- Improved: Cache information is now stored locally in scripts instead of in the registry
+- Improved: Only generate the node rect after ending a paint stroke, not the whole terrain area
+
 Version 1.1.1
 
 - Fixed paint offset on node targets with superordinated transformations
@@ -19,7 +30,6 @@ Version 1.1
 - Added buttons to manually load/save the current session to quickly create backup points
 - Added generation triggering when object hosting the paint component is moved (incase it's not a node)
 
-- Renamed 'Resources' folder to 'EditorResources' so it is not included into the game (might need to reset/change path in settings manually)
 - Renamed 'Resources' folder to 'EditorResources' so it is not included into the game (might need to reset/change path in settings manually)
 
 - Fixed generate- and paint area when painting on transformed nodes
