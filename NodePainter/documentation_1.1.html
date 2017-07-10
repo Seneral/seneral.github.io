@@ -58,7 +58,7 @@
 					<div class="navGroup">
 						<a class="navItem" href="index.html">Node Painter</a>
 						<div class="navGroupContent">
-							<a class="navItem curNav" href="documentation.html">Documentation</a>
+							<a class="navItem" href="documentation.html">Documentation</a>
 							<a class="navItem" href="tutorials.html">Tutorials</a>
 						</div>
 					</div>
@@ -111,7 +111,6 @@
 		<li><a href="#Interface">Interface</a></li>
 		<li><a href="#Settings">Settings</a></li>
 		<li><a href="#CanvasFormats">Canvas Formats</a></li>
-		<li><a href="#IOFormats">IO Formats</a></li>
 		<li><a href="#BlendModes">Blend Modes</a></li>
 		<li><a href="#Presets">Presets</a></li>
 		<li><a href="#Shortcuts">Shortcuts</a></li>
@@ -137,16 +136,16 @@
 					
 <h1>Documentation</h1>
 
-<a href="../downloads/NodePainter/Documentation_1.1.4.pdf" target="_blank"><button class="base pageButton">Download Offline Documentation</button></a>
+<a href="../downloads/NodePainter/Documentation_1.1.pdf" target="_blank"><button class="base pageButton">Download Offline Documentation</button></a>
 
 <a href="../downloads/NodePainter/Full_Changelog.txt" target="_blank"><button class="base pageButton">See Full Changelog</button></a>
 
 <p>
 	<h3>Version:</h3>
 	<a href="documentation.html"> <b>Newest Version</b> </a> <br>
-	<b>Current Version:</b> 1.1.4 <br>
-	<b>Older Versions:</b> <a href="documentation_1.1.html">1.1</a> <a href="documentation_1.0.html">1.0</a> <br>
-	<b>Last Updated:</b> 10.07.17 <br>
+	<b>Current Version:</b> 1.1.x <br>
+	<b>Older Versions:</b> <a href="documentation_1.0.html">1.0</a> <br>
+	<b>Last Updated:</b> 19.04.17 <br>
 </p>
 
 
@@ -176,22 +175,24 @@
 
 <h2 class="section" id="Interface">Interface Explanation</h2>
 <p>
-	<a href="../img/NodePainter/Documentation/1.1.4/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="../img/NodePainter/Documentation/1.1.4/Screen_GUI_LQ.jpg" data-1x="../img/NodePainter/Documentation/1.1.4/Screen_GUI_MQ.jpg" data-2x="../img/NodePainter/Documentation/1.1.4/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
+	<a href="../img/NodePainter/Documentation/1.1/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="../img/NodePainter/Documentation/1.1/Screen_GUI_LQ.jpg" data-1x="../img/NodePainter/Documentation/1.1/Screen_GUI_MQ.jpg" data-2x="../img/NodePainter/Documentation/1.1/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
 
 	<h4> Canvas IO </h4>
 	<p>
-		This section is for creating, loading and saving the canvas. When there is no canvas loaded, you can create a new canvas using the designated area, specifying size and canvas format. <br>
-		Canvas Input/Output formats include lossy PNG, lossless RAW and a custom native byte format - each with their own pros and cons, as outlined in the <a href="#IOFormats">IO Format Section</a>. <br>
-		Finally, you can save/load the cache file here, providing quick and safe backup points. <br>
+		This section is for creating, loading and saving the canvas. <br>
+		When there is no canvas loaded, you can create a canvas using the area in the outlined box, specifying size and canvas format. <br>
+		Canvas IO works in both raw and png image formats - simply use the import/export buttons or drag-fields. 
+		When importing raw, you will have to check if the import settings are correct - they are not saved with the raw file, but estimated from the file size. <br>
+		Finally, you can save/load the last session from the cache here, providing quick and safe backup points. <br>
 	</p>
 
 	<h4> Canvas Preview </h4>
 	<p>
 		In the preview area you get a visualization of the canvas where you can also directly paint on. You can set Canvas Borders around the preview in the Settings to aid in edge painting. <br>
-		Clicking on the 'E' button located at the right of the header allows you to edit the canvas name and set a custom cache file to synchronize painters between scenes. <br>
+		Clicking on the 'E' button located at the right of the header allows you to edit the canvas name and see the current canvas format as well as the painter's ID. <br>
 		The eye-icon next to it toggles the canvas projection onto the canvas, which can give you a better understanding on how the canvas affects the terrain. <br>
 		When the canvas is set to Color or Multi-Mask format additional visualization options appear below the preview. <br>
-		Below are the undo/redo buttons aswell as the Stop/Start Painting button used to toggle painting on and off, allowing you to use tools such as the move handle.
+		Under two additional undo buttons, the Stop/Start Painting button toggles painting on and off, allowing you to use tools such as the move handle, which are disabled while painting.
 	</p>
 
 	<h4> Color </h4>
@@ -236,7 +237,7 @@
 <p>
 	You can access the settings window by clicking on the 'Show Settings' button at the bottom of any NodePainter inspector or through the menu 'Window/TC2 Node Painter Settings'. <br>
 
-	<a href="../img/NodePainter/Documentation/1.1.4/Screen_Settings_SRC.png" target="_blank"><img class="sideImg" src="../img/NodePainter/Documentation/1.1.4/Screen_Settings_SRC.png" alt="The Settings Window"></a>
+	<a href="../img/NodePainter/Documentation/1.1/Screen_Settings_SRC.png" target="_blank"><img class="sideImg" src="../img/NodePainter/Documentation/1.1/Screen_Settings_SRC.png" alt="The Settings Window"></a>
 
 	<h4> Paint Behaviour </h4>
 	<p>
@@ -288,42 +289,9 @@
 	<h4> Multi-Mask </h4>
 	<p>
 		This complex format allows you to paint in up to 24 channels, similar to splat painting. An ideal use case would be for painting biomes or forests. <br>
-		Using this format shows the Multi Channel region in the inspector, where you can select, edit and add/remove channels. 
-		It is important that you assign different node targets for each channel in the Node Targets region below. 
-		For example, you could add the Height, Splat and Tree nodes here that correspond to the biome you are painting. <br>
-		You can also choose to <b>normalize the channel</b> values in the brush region, which is strongly recommended because overlapping channels will fight, 
-		and the channel which is the highest in TC2 wins, which usually gives unwanted results. 
-		Basically this will replace the color of all other channels while painting, eliminating the overlapping regions. <br>
-		Internally, canvases of this format potentially consist of multiple textures: Every 4 channels is represented internally by one texture, just like splat maps. 
-		This might cause technical problems when using many channels, like memory shortage. Read the <a href="#Performance">notes on memory</a> below for more information.
-	</p>
-</p>
-
-<h2 class="section" id="IOFormats">IO Formats</h2>
-<p>
-	There are several different Input/Output formats available to save the canvas, each for their own specific use case.
-	Basically, it's best to use the native format most of the time. If you need to open the canvas in external programs, 
-	try to use RAW if they do support RAW import and only if there's no other way you should resort to the 8-Bit PNG format.
-
-	<h4> Custom Native Byte Format </h4>
-	<p>
-		A lossless 16-Bit combined BYTE format that perfectly stores the canvas in one file with extension .bytes. 
-		Internally it stores all canvas meta information and embeds all canvas textures as uncompressed, lossless 16-Bit RAW data. 
-		It is used by the cache system because due to the .bytes extension it is regarded as a TextAsset and thus can be referenced.
-	</p>
-
-	<h4> Texture/Image </h4>
-	<p>
-		A lossy 8-Bit PNG Texture format for exporting to various image editors that do not support the RAW format. 
-		It stores most canvas meta information except the multi-format canvas channel count (which is rounded up to the next multiple of four after loading). 
-		For canvases of the multi-format, save files are split in multiple files named 'name(n)' for each 4 channels for the lack of embedding multiple textures into one save file.
-	</p>
-
-	<h4> Raw File </h4>
-	<p>
-		A lossless 16-Bit RAW File export format for directly exporting to terrains and the few image editors that do support the RAW format (like Photoshop). 
-		It does not store ANY canvas meta information, it is approximated from file size upon import and might need user correction.
-		For canvases of the multi-format, save files are split in multiple files named 'name(n)' for each 4 channels for the lack of embedding multiple textures into one save file.
+		Using this format shows the Multi Channel region in the inspector, where you can select, edit and add/remove channels. It is important that you assign different node targets for each channel in the Node Targets region below. For example, you could add the Height, Splat and Tree nodes here that correspond to the biome you are painting. <br>
+		You can also choose to <b>normalize the channel</b> values in the brush region, which is strongly recommended because overlapping channels will fight, and the channel which is the highest in TC2 wins, which usually gives unwanted results. Basically this will replace the color of all other channels while painting, eliminating the overlapping regions. <br>
+		Internally, canvases of this format potentially consist of multiple textures: Every 4 channels is represented internally by one texture, just like splat maps. This might cause technical problems when using many channels, like memory shortage. Read the <a href="#Performance">notes on memory</a> below for more information.
 	</p>
 </p>
 
@@ -355,7 +323,6 @@
 	<li><b>Adjust Brush Intensity:</b> Holding <kbd>Shift</kbd> and using the <kbd>Mouse Wheel</kbd> changes the brush intensity. </li>
 	<li><b>Adjust Brush Rotation:</b> Holding <kbd>Space</kbd> and using the <kbd>Mouse Wheel</kbd> changes the brush rotation. </li>
 	<li><b>Adjust Special Brush Value:</b> Holding <kbd>Control+Shift</kbd> and using the <kbd>Mouse Wheel</kbd> in supported blend modes changes the brush target or bias. </li>
-	<li><b>Sample Brush Target:</b> Pressing <kbd>Control</kbd> and dragging the <kbd>Left Mouse Button</kbd> samples the target from the value under the mouse. </li>
 	<li><b>Switch to last mode:</b> Pressing <kbd>Tab</kbd> Switches to the last blend mode used, allowing you to quickly switch between two blend modes. </li>
 </p>
 
