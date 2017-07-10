@@ -1,6 +1,17 @@
 Changelog TC2 Node Painter:
 
-Version 1.1.3
+Version 1.1.4 (09.07.2017)
+
+- Added New native IO format '.bytes' storing the canvas including all meta information into one single combined file
+	- Cache files will automatically update upon loading scene for the first time to use new cache format
+- Added ability to synchronise painters between scenes by using the same cache file 
+	- New format can actually be referenced due to being a TextAsset
+
+- Improved Canvas IO-section to include latest changes and describe IO options better
+- Improved general GUI layout in regards to the Undo buttons
+- Improved Undo messages to be shorter
+
+Version 1.1.3 (22.05.2017)
 
 - Fixed wrong default resource path setting on new systems
 - Fixed errors when resource path was off
