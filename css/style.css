@@ -181,7 +181,7 @@ body {
 
 /* -- Header Navigation Bar (overwrite) on devices without touch support and with a window width which fits the header -- */
 /* Disabling dropdown button, displaying navList horizontally as a bar with subContent as dropdowns on hover */
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 50em) {
 	/* Disable main dropdown*/
 	html.supports-no-touchevents .navButton {
 		display: none
@@ -268,8 +268,30 @@ img.ratio16-7 {
 img.ratio16-6 {
 	height: 37.50vw;
 }
-.bannerSmall {
-	height: 37.5vw;
+img.ratio16-5 {
+	height: 31.25vw;
+}
+img.ratio16-4 {
+	height: 25.00vw;
+}
+.banner16-9 {
+	height: 56.25vw;
+	overflow: hidden;
+}
+.banner16-7 {
+	height: 43.75vw;
+	overflow: hidden;
+}
+.banner16-6 {
+	height: 37.50vw;
+	overflow: hidden;
+}
+.banner16-5 {
+	height: 31.25vw;
+	overflow: hidden;
+}
+.banner16-4 {
+	height: 25.00vw;
 	overflow: hidden;
 }
 /* Overlay Text */
