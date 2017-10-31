@@ -493,7 +493,7 @@ img.pageImg {
 img.sideImg {
 	float: right;
 	max-width: 100%;
-	margin: 1em 0 0 1em;
+	margin: 1em 0 1em 0.5em;
 }
 /*img[alt]:after {
 	margin: 10px;
@@ -596,6 +596,10 @@ button.titleButton:active {
 .content h4 {
 	margin-top: 1.4em;
 	margin-bottom: 0.4em;
+}
+
+.indented {
+	padding-left: 1em;
 }
 
 /*#endregion CONTENT */
