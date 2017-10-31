@@ -1,5 +1,14 @@
 Changelog TC2 Node Painter:
 
+Version 1.1.4p2 (17.07.2017)
+
+- Fixed occasionally incorrect cache meta data and thus lost cache references
+- Fixed all other small bugs in the cache system, now completely stable
+
+Version 1.1.4p1 (11.07.2017)
+
+- Fixed lost cache references during automatic cache upgrade/conversion process in scenes with multiple Node Painters
+
 Version 1.1.4 (09.07.2017)
 
 - Added New native IO format '.bytes' storing the canvas including all meta information into one single combined file
