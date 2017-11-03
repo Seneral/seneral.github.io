@@ -1,5 +1,5 @@
-# DeveloperProfileWebsite
-This is my developer profile website. 
+# Seneral Developer Website
+This is my developer website.
 It's built to be lightweight, with as few scripts as possible. 
 It is responsive, mobile-first and can work without javascript.
 
