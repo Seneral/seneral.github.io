@@ -1,5 +1,22 @@
 Changelog TC2 Node Painter:
 
+Version 1.1.5 (01.11.2017)
+
+- Big Code Cleanup (Naming, Structure, Comments)
+- GUI Improvements:
+	- Added editing of canvas channels through context click
+	- Improved style of channel selector
+	- Added Lock for node targets and other hints
+- Decreased maximum channel count from 32/24 to 16
+- Improved channel color choices to be more distinguishable and recognizable
+- Changed minimum brush size and intensity to 0.001
+- Defaulted normalizeMultiChannels to true
+
+Version 1.1.4p3 (19.07.2017)
+
+- Fixed compile error in Unity 5.5 due to incorrect preprocessor check
+- Converted all brush stamps to .png to avoid import errors with .psd in 2017.1
+
 Version 1.1.4p2 (17.07.2017)
 
 - Fixed occasionally incorrect cache meta data and thus lost cache references
