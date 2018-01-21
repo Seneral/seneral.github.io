@@ -1,12 +1,14 @@
 Changelog TC2 Node Painter:
 
-Version 1.1.6 (21.01.2018)
+Version 1.2 (21.01.2018)
 
 - Raised minimum Unity Version to 5.6.0!
 	(Added Callbacks in that version allow to remove an old 
 	workaround that triggers a Unity Bug and results in crashes)
 - Improved playmode behaviour:
-	- By default takes no resources, enable in playmode to edit
+	- By default disabled (takes no resources at all)
+	- Enable component in playmode to paint
+- Added check and fix for unassigned node targets
 - Fixed RenderTexture.active build error in 2017 with open scenes
 - Fixed heavy CPU usage of new painters until first save
 - Fixed CPU & memory usage in playmode
