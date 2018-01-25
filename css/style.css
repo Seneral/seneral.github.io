@@ -62,8 +62,6 @@ body {
 }
 .headerheight {
 	height: 3em;
-	max-height: 10vw;
-	min-height: 2.5em;
 }
 @media screen and (min-width: 65em) { 
 	.header { padding-left: 5%; padding-right: 5%; }
