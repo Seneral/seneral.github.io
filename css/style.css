@@ -137,11 +137,13 @@ body {
 	padding: 0.6em 0.8em;
 }
 .navItem:hover {
-	text-decoration: underline;
 	background-color: #B4B4B4;
 	background-color: var(--secondaryCol);
 	color: #383838;
 	color: var(--primaryCol);
+}
+a[href].navItem:hover {
+	text-decoration: underline;
 }
 .navItem.curNav:hover {
 	text-decoration: none;
