@@ -573,6 +573,11 @@ button.titleButton:active {
 	text-decoration: none;
 	color: inherit !important;
 }
+.subRef:after {
+	content: " \2197";
+	display: inline;
+	font-size: 75%;
+}
 .content a:link, footer a:link {
 	color: #3181E7;
 }
