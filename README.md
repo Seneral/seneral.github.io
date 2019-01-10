@@ -9,6 +9,6 @@ The BUILD folders contains only additional resources (anything other than the ht
 
 In config.txt you can adjust some options aswell as specify new replacement rules (between the curly braces).
 
-Only used tools and libraries are <a href="http://unslider.com/">Unslider</a> for the slider, <a href="https://modernizr.com/">Modernizr</a> for some conditional CSS and features and of course <a href="https://jquery.com/">jQuery</a>.
+Only used tools and libraries are <a href="http://unslider.com/">Unslider</a> for the slider, <a href="https://modernizr.com/">Modernizr</a> for some conditional CSS and features and <a href="https://jquery.com/">jQuery</a>.
 
 This page is for reference only. You may not redistribute or use this in any way without my explicit permission. Only exception is the HTML_PageBuilder executable tool, which you may use in any way for your own projects.
