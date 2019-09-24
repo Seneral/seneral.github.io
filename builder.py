@@ -139,7 +139,7 @@ def buildFile(sourcePath):
 					return match.group(0)
 			elif url.startswith("http") or url.startswith("mailto:") or url.startswith("/") or url.startswith("\\") or url.startswith("#"):
 				return match.group(0)
-			relurl = os.path.relpath(url, os.path.dirname(sourcePath))
+			relurl = os.path.relpath(url, os.path.dirname(sourcePath)) if url else ""
 			return match.group(0).replace(url, relurl)
 		html = re.sub(reURL, makeURLRelative, html)
 	# Write target

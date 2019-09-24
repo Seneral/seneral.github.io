@@ -80,32 +80,13 @@ function setupHiSrc () {
 		}
 	});
 }
-// GOOGLE ANALYTICS CONTROL
-var gaProperty = 'UA-92606737-1';
-var disableGA = 'ga-disable-' + gaProperty;
-function gaCheck () {
-	if (document.cookie.indexOf(disableGA + '=true') > -1)
-		window[disableGA] = true; // Cookie set to disble GA
-	else if (document.cookie.indexOf(disableGA + '=false') > -1)
-		window[disableGA] = false; // Cookie set to allow GA
-	else
-		$('.cookieNote').show (); // Cookie not yet set - show cookie note
-}
-function gaOptout () { setGADisable (true); }
-function gaAgree () { setGADisable (false); }
-function setGADisable (toggle) {
-	document.cookie = disableGA + '=' + toggle + '; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-	window[disableGA] = toggle;
-	$('.cookieNote').hide ();
-	//if (toggle == true) alert ("Analytics have been disabled!");
-}
 
 // ON START
 
 // Perform the first and only speed test of hiSrc
 $.hisrc.speedTest ({
 	minKbpsForHighBandwidth: 200,
-	speedTestUri: "http://www.seneral.dev/img/50K.jpg",
+	speedTestUri: "https://www.seneral.dev/img/50K.jpg",
 	speedTestKB: 50,
 	speedTestExpireMinutes: 20,
 	secondChance: true, // Enable second chance for desktop
@@ -116,10 +97,6 @@ $.hisrc.speedTest ({
 });*/
 
 // Start JS Routines
-$(document).ready (function () {
-	$("*").removeClass ("hideOnStart");
-	setupHiSrc ();
-	initiateStickyPanels ();
-	gaCheck ();
-	// gaStart has already been called right when html was loaded
-});
+$(".hideOnStart").removeClass ("hideOnStart");
+setupHiSrc ();
+initiateStickyPanels ();
