@@ -1,5 +1,35 @@
 Changelog TC2 Node Painter:
 
+Version 1.2 (21.01.2018)
+
+- Raised minimum Unity Version to 5.6.0!
+	(Added Callbacks in that version allow to remove an old 
+	workaround that triggers a Unity Bug and results in crashes)
+- Improved playmode behaviour:
+	- By default disabled (takes no resources at all)
+	- Enable component in playmode to paint
+- Added check and fix for unassigned node targets
+- Fixed RenderTexture.active build error in 2017 with open scenes
+- Fixed heavy CPU usage of new painters until first save
+- Fixed CPU & memory usage in playmode
+
+Version 1.1.5 (01.11.2017)
+
+- Big Code Cleanup (Naming, Structure, Comments)
+- GUI Improvements:
+	- Added editing of canvas channels through context click
+	- Improved style of channel selector
+	- Added Lock for node targets and other hints
+- Decreased maximum channel count from 32/24 to 16
+- Improved channel color choices to be more distinguishable and recognizable
+- Changed minimum brush size and intensity to 0.001
+- Defaulted normalizeMultiChannels to true
+
+Version 1.1.4p3 (19.07.2017)
+
+- Fixed compile error in Unity 5.5 due to incorrect preprocessor check
+- Converted all brush stamps to .png to avoid import errors with .psd in 2017.1
+
 Version 1.1.4p2 (17.07.2017)
 
 - Fixed occasionally incorrect cache meta data and thus lost cache references
@@ -13,7 +43,7 @@ Version 1.1.4 (09.07.2017)
 
 - Added New native IO format '.bytes' storing the canvas including all meta information into one single combined file
 	- Cache files will automatically update upon loading scene for the first time to use new cache format
-- Added ability to synchronise painters between scenes by using the same cache file 
+- Added ability to synchronize painters between scenes by using the same cache file 
 	- New format can actually be referenced due to being a TextAsset
 
 - Improved Canvas IO-section to include latest changes and describe IO options better
