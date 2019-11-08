@@ -92,7 +92,7 @@ def build():
 	global frame
 	# Load frame HTML
 	frameFile = open(config.frameFile, "r")
-	frame = unicode(frameFile.read(), 'utf-8')
+	frame = str(frameFile.read())
 	frameFile.close()
 	# Check main folders
 	if not os.path.exists(config.sourceFolder):
@@ -112,7 +112,7 @@ def buildFile(sourcePath):
 	print ("Processing page '" + sourcePath + "'")
 	# Read source
 	sourceFile = open(os.path.join(config.sourceFolder, sourcePath), "r")
-	source = unicode(sourceFile.read(), 'utf-8')
+	source = str(sourceFile.read())
 	sourceFile.close()
 	# Apply rules on frame
 	html = frame; # Frame is cached globally
@@ -123,7 +123,7 @@ def buildFile(sourcePath):
 				fileContent = source
 			else: 
 				file = open(rule.source, "r")
-				fileContent = unicode(file.read(), 'utf-8')
+				fileContent = str(file.read())
 				file.close()
 			valueMatch = re.search(rule.select, fileContent)
 			value = valueMatch.group(1) if valueMatch else ''
@@ -147,7 +147,7 @@ def buildFile(sourcePath):
 	if not os.path.exists(os.path.dirname(targetPath)):
 		os.makedirs(os.path.dirname(targetPath))
 	targetFile = open(targetPath, "w+")
-	targetFile.write(html.encode('utf-8'))
+	targetFile.write(html)
 	targetFile.close()
 
 main(sys.argv)
