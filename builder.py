@@ -109,6 +109,7 @@ def build():
 		buildFile(sourcePath)
 	
 def buildFile(sourcePath):
+	sourcePath = sourcePath.replace(os.path.sep, '/')
 	print ("Processing page '" + sourcePath + "'")
 	# Read source
 	sourceFile = open(os.path.join(config.sourceFolder, sourcePath), "r")
