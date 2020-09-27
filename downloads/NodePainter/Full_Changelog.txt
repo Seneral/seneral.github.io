@@ -1,5 +1,26 @@
 Changelog TC2 Node Painter:
 
+Version 1.2.2 (27.09.2020)
+
+- Fixed TC2 compability error due to rename (revert for older versions of TC2)
+- Added support for custom UI scaling in 2019.3 and upward
+- Changed gaussian brush to completely fall down to 0 at edges to prevent seams after prolonged painting
+
+Version 1.2.1 (28.04.2018)
+
+- Greatly cleaned and improved internals (esp shaders and visualization)
+- Improved canvas creation UI, adding a resolution slider
+
+- Added canvas outline in scene view when visualizing canvas
+- Added full support for non-square canvases
+  - Improved stability of several systems against different aspects of areas, scale and resolution
+  - Accounted for stretching of brushes when canvas is non-uniformly scaled
+
+- Fixed error when a node target was created but not assigned to
+- Fixed wrong clipping of GUI brush due to shader upgrade
+
+- Assured compability with 2018 (once TC2 works there, too)
+
 Version 1.2 (21.01.2018)
 
 - Raised minimum Unity Version to 5.6.0!
