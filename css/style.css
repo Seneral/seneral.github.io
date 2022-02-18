@@ -39,7 +39,7 @@ body {
 /* Page Width Layout */
 .container {
 	width: 100%;
-	height: 100%;
+	height: inherit;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -305,7 +305,7 @@ img.ratio16-4 {
 	width: 100%;
 	height: 100%;
 	z-index: 3;
-	background: rgba(0, 0, 0, 0.1);
+	/*background: rgba(0, 0, 0, 0.1);*/
 }
 .bannerText {
 	display: table;

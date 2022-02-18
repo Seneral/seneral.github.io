@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="expires" content="21600"> <!-- 6 hours -->
+	<meta name="author" content="Seneral">
+	<meta name="keywords" content="Seneral, Unity, Developer">
+
+	
+<title>TC2 Node Painter</title>
+<meta name="description" content="The TC2 extension for painting the world!">
+<meta name="keywords" content="TC2, Terrain Composer, TC2 Node Painter, TC2 Painter, Node Painter, Terrain Painter">
+
+	
+	<link rel="icon" type="image/ico" href="img/Icon/favicon.ico">
+
+	<script async type="text/javascript" src="js/modernizr.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+</head>
+<body>
+	<div class="bodyStyle">
+		<header class="header headerheight">
+	<div class="container">
+		<!-- Title on the left side of the header -->
+		<div class="headerLogo">
+			<a href="index.html">
+				<img src="img/Icon/FavIcon_tiny.png">
+				<span>Seneral</span>
+			</a>
+		</div>
+
+		<!-- Navigation controls on the right side of the header - main dropdown by default for mobile and navigation bar for desktop -->
+		<div class="navHeader">
+			<nav class="navList">
+				<input id="burgerToggle" class="navToggle" type="checkbox">
+				<label for="burgerToggle" content-toggled="&#735;" class="navButton">&#9776;</label>
+
+				<div class="navContent">
+					<a class="navItem curNav" href="astertrack.html">AsterTrack</a>
+					<div class="navGroup">
+						<a class="navItem" href="unity.html">Unity</a>
+						<div class="navGroupContent">
+							<a class="navItem" href="NodePainter/index.html">Node Painter</a>
+							<a class="navItem" href="Simulation/index.html">Simulation</a>
+							<a class="navItem subRef" href="https://nodeeditor.seneral.dev/index.html">Node Editor</a>
+						</div>
+					</div>
+					
+
+
+					<a class="navItem" href="about.html">About</a>
+				</div>
+			
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- Offset content so header doesn't overlap anything -->
+<div class="headerheight"> </div>
+
+		
+<div class="banner banner16-6 hisrc">
+	<img class="bannerImg ratio16-7" src="img/Banner_AT_HQ.png" data-1x="img/Banner_AT_HQ.png" data-2x="img/Banner_AT_HQ.png">>
+	<div class="bannerOverlay">
+		<div class="bannerText">
+			<div class="bannerTextCentered">
+				<br> <big>AsterTrack</big> 
+				<br> <small> WIP Optical Tracking for VR and Mocap <br> Open Source and Open Hardware implementation! </small> <br>
+			</div>
+		</div>
+	</div>
+	<div class="bannerShadowBottom"></div>
+</div>
+
+
+		<!-- Page Content -->
+		<div class="content">
+
+			
+<div class="sidePanel right linkBox sticky">
+	<big>Links</big>
+	<br> <br>
+	<ul class="panelLinks">
+		<li><a href="https://github.com/Seneral/MakersVR">WIP Github</a></li>
+	</ul>
+</div>
+
+
+			<div class="container">
+				<div class="mainContent">
+
+					
+<h1>AsterTrack</h1>
+
+<big> An open source, open hardware implementation of mocap-grade optical tracking using accessible hardware! </big> <br>
+<br>
+
+<h4> What is AsterTrack? </h4>
+AsterTrack is a combination of custom hardware and complex software to track a set of markers in 3D space.
+This is known as optical (or opto-electronical) tracking and is used commonly for professional Motion Capture and high-end VR setups.
+These are commonly very expensive, but this projects aims to implement the same concept using much cheaper, but still capable hardware.
+It is composed of three components:
+<ul>
+	<li> The Tracking Cameras - the bread and butter that make the tracking system viable at all </li>
+	<li> The Tracking Controller - a simple microcontroller that aggregates data to pass to the host PC </li>
+	<li> A Host with Configurator Software - this is the frontend for the users that performs the tracking </li>
+</ul>
+Using it, you can track markers - both active markers (LEDs) as well as passive (retroreflective) markers - in 3D space, as well as track 6-DOF targets composed of multiple such markers.
+Each Tracking Camera only sees these markers in 2D as bright dots, and by extracting these it is possible to associate them and infer their 3D position given multiple calibrated cameras.
+This is the reason for the name of AsterTrack - you can think of it as Asterisms (small groups of stars in the sky, from the greek word for star, asteris) - humanity has assigned meaning to these 2D structures for a very long time, but only now, through the multiple viewpoints (paralax), can we infer the 3D position of these stars.
+
+
+<h4> How is this possible? </h4>
+In order to keep the costs down, some of the cheapest readily available components are used. Key to the success is the processing hardware of the Tracking Cameras, without which all images would have to be processed on the host, which is infeasible at any meaningful quality and not scalable. The processing happens on a cheap Raspberry Pi Zero, which is commonly considered the cheapest Single Board Computer (SBC) on the market. Using low-level assembly code of the QPU, a high throughput and low processing latency has been achieved. The cameras are global-shutter and externally synchronised, currently using the OV9281 sensor, for a base tracking rate of 120Hz, up to 200Hz. <br>
+The Tracking Controller is very simple, but crucial to the low-latency communication between the Trackign Cameras and the host, and the synchronisation of the Tracking Cameras. <br>
+The rest of the magic happens on the host, with calibration being a huge challenge in past systems. Calibration currently requires only one marker to be waved around, and at least three Tracking Cameras. After that, any constellation of markers can be calibrated as a target for 6-DOF tracking.
+<br>
+<br>
+<br>
+
+<big>All images are of early prototypes:</big> <br>
+<br>
+
+<a class="noLinkStyle" href="img/AsterTrack/HW_Prototype_TrackingCamera.png" target="_blank">
+	<img class="pageImg" src="img/AsterTrack/HW_Prototype_TrackingCamera.png" alt="Prototype Tracking Cameras, in an early 3D Printed Case, and without case supported by polymorph plastics">
+<br> Prototype Tracking Cameras, in an early 3D Printed Case, and without case supported by polymorph plastics <br>
+</a> 
+<br>
+
+<a class="noLinkStyle" href="img/AsterTrack/HW_ActiveMarkerTarget.png" target="_blank">
+	<img class="pageImg" src="img/AsterTrack/HW_ActiveMarkerTarget.png" alt="Early Target and Calibration Wand made from active markers (Infrared LEDs)">
+<br> Early Target and Calibration Wand made from active markers (Infrared LEDs)<br>
+</a>
+<br>
+
+<a class="noLinkStyle" href="img/AsterTrack/HW_Early_Prototype_Annotated.png" target="_blank">
+	<img class="pageImg" src="img/AsterTrack/HW_Early_Prototype_Annotated.png" alt="Small biome painting setup with Mountain, Desert and Grass Biomes, assigning the canvas to both height and splat masks">
+<br> Very early prototype hardware, showing the Tracking Camera and Tracking Controller in an early state <br>
+</a> 
+<br> <br>
+
+
+					
+				</div>
+			</div>
+		</div>
+
+		<span class="debug"></span>
+
+		<footer>
+			<br> <br>
+			Page developed by Seneral
+			<br> <br>
+			Copyright &#169; 2022 Seneral
+			<br> <br>
+		</footer>
+
+		<script type="text/javascript" src="js/page-scripts.min.js"></script>
+
+		
+
+	</div>
+</body>
+</html>
