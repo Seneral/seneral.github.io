@@ -497,6 +497,15 @@ img.pageImg {
 	width: 48em;
 	max-width: 100%;
 }
+.centerBlock {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.centerBlock img {
+	max-height: 20em;
+}
 img.sideImg {
 	float: right;
 	max-width: 100%;
