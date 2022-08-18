@@ -103,7 +103,7 @@ This is known as optical (or opto-electronical) tracking and is used commonly fo
 These are commonly very expensive, but this projects aims to implement the same concept using much cheaper, but still capable hardware.
 It is composed of three components:
 <ul>
-	<li> The Tracking Cameras - with onboard marker processing that make the tracking system viable in the first place </li>
+	<li> The Tracking Cameras - Raspberry Pi based cameras with onboard marker processing </li>
 	<li> The Tracking Controller - a microcontroller for camera synchronisation and communication with the host PC </li>
 	<li> A Host with Configurator Software - this is the frontend for the user that performs the tracking and interfacing </li>
 </ul>
@@ -111,13 +111,12 @@ Using it, you can track markers - both active markers (LEDs) as well as passive 
 Each Tracking Camera only sees these markers in 2D as bright dots, and by associating them between cameras and frames it is possible to infer their 3D position given multiple calibrated cameras.
 This is the reason for the name of AsterTrack - you can think of it as Asterisms (small groups of stars in the sky, from the greek word for star, asteris) - humanity has assigned meaning to these 2D structures for a very long time, but only now, through the multiple viewpoints (parallax), can we infer the 3D position of these stars.
 
-
 <h4> How is this possible? </h4>
 In order to keep the costs down, some of the cheapest components of their class are used.
 Key to the success is the processing hardware of the Tracking Cameras, without which all images would have to be processed on the host, which is infeasible at any meaningful quality and not scalable.
-The processing happens on a Raspberry Pi Zero, which is commonly considered the cheapest Single Board Computer (SBC) on the market.
+The processing happens on a Raspberry Pi Zero, which is commonly considered the cheapest Single Board Computer (SBC) on the market (before the Chip Shortage came, that is).
 Using low-level assembly code on the QPU, a high throughput and low processing latency has been achieved.
-The cameras are global-shutter and externally synchronised, currently using the OV9281 sensor, for a base tracking rate of 120Hz, up to 200Hz. <br>
+The cameras are global-shutter and externally synchronised, currently using the OV9281 sensor, for a base tracking rate of 144Hz, up to 250Hz at half resolution. <br>
 The Tracking Controller is very simple, but crucial to the low-latency communication between the Tracking Cameras and the host, and the synchronisation of the Tracking Cameras. <br>
 The rest of the magic happens on the host, with calibration being a huge challenge in past systems.
 Calibration currently requires only one marker to be waved around, and at least three Tracking Cameras.
@@ -131,26 +130,45 @@ This can be used to track nearly anything with little to no intrusion.
 <big>All images are of prototypes in varying stages of development:</big> <br>
 <br>
 
-<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_Camera_3_Angle.jpg" target="_blank">
-	<img src="img/AsterTrack/HW_Prototype_Camera_3_Angle.jpg" alt="Recent Prototype Tracking Camera, with support for passive markers and final PCBs">
+<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_Camera_5_Black_HQ.jpg" target="_blank">
+	<img class="hisrc" src="img/AsterTrack/HW_Prototype_Camera_5_Black_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_Camera_5_Black_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_Camera_5_Black_HQ.jpg" alt="Current Prototype Tracking Camera in Black Case">
+<br> Current Prototype Tracking Camera designed by JX35 <br>
+</a> 
+<br>
+
+<div class="centerBlock">
+	<div class="blockImg-2">
+		<a class="noLinkStyle" href="img/AsterTrack/HW_Prototype_Camera_5_Internals_HQ.jpg" target="_blank">
+			<img class="hisrc" src="img/AsterTrack/HW_Prototype_Camera_5_Internals_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_Camera_5_Internals_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_Camera_5_Internals_HQ.jpg" alt="Internals of the current Prototype">
+		</a>
+		<a class="noLinkStyle" href="img/AsterTrack/HW_Prototype_Camera_5_LEDBoard_HQ.jpg" target="_blank">
+			<img class="hisrc" src="img/AsterTrack/HW_Prototype_Camera_5_LEDBoard_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_Camera_5_LEDBoard_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_Camera_5_LEDBoard_HQ.jpg" alt="LED Board of the current Prototype">
+		</a>
+	</div>
+	<br> Current Prototype Tracking Camera designed by JX35, with proper protections, newer, smaller camera module, and more LEDs <br>
+</div> 
+<br>
+
+<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_Camera_3_Angle_HQ.jpg" target="_blank">
+	<img class="hisrc" src="img/AsterTrack/HW_Prototype_Camera_3_Angle_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_Camera_3_Angle_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_Camera_3_Angle_HQ.jpg" alt="Recent Prototype Tracking Camera, with support for passive markers and final PCBs">
 <br> Recent Prototype Tracking Camera designed by JX35, with custom PCBs and support for passive markers <br>
 </a> 
 <br>
 
-<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_TrackingCamera.png" target="_blank">
-	<img src="img/AsterTrack/HW_Prototype_TrackingCamera.png" alt="Prototype Tracking Cameras, in an early 3D Printed Case, and without case supported by polymorph plastics">
+<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_TrackingCamera_HQ.png" target="_blank">
+	<img class="hisrc" src="img/AsterTrack/HW_Prototype_TrackingCamera_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_TrackingCamera_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_TrackingCamera_HQ.png" alt="Prototype Tracking Cameras, in an early 3D Printed Case, and without case supported by polymorph plastics">
 <br> Early Prototype Tracking Cameras with simple electronics, with and without case <br>
 </a> 
 <br>
 
-<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_ActiveMarkerTarget.png" target="_blank">
-	<img src="img/AsterTrack/HW_ActiveMarkerTarget.png" alt="Early Target and Calibration Wand made from active markers (Infrared LEDs)">
+<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_ActiveMarkerTarget_HQ.jpg" target="_blank">
+	<img class="hisrc" src="img/AsterTrack/HW_ActiveMarkerTarget_LQ.jpg" data-1x="img/AsterTrack/HW_ActiveMarkerTarget_MQ.jpg" data-2x="img/AsterTrack/HW_ActiveMarkerTarget_HQ.jpg" alt="Early Target and Calibration Wand made from active markers (Infrared LEDs)">
 <br> Early Target and Calibration Wand made from active markers (Infrared LEDs)<br>
 </a>
 <br>
 
-<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Early_Prototype_Annotated.png" target="_blank">
-	<img src="img/AsterTrack/HW_Early_Prototype_Annotated.png" alt="Very early prototype hardware, showing the Tracking Camera and Tracking Controller in an early state">
+<a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Early_Prototype_Annotated_HQ.jpg" target="_blank">
+	<img class="hisrc" src="img/AsterTrack/HW_Early_Prototype_Annotated_LQ.jpg" data-1x="img/AsterTrack/HW_Early_Prototype_Annotated_MQ.jpg" data-2x="img/AsterTrack/HW_Early_Prototype_Annotated_HQ.jpg" alt="Very early prototype hardware, showing the Tracking Camera and Tracking Controller in an early state">
 <br> Very early prototype hardware, showing the Tracking Camera and Tracking Controller in an early state <br>
 </a> 
 <br> <br>
