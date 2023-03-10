@@ -61,12 +61,12 @@
 <div class="headerheight"> </div>
 
 		
-<div class="banner hisrc bannerDynamic">
+<div class="banner bannerDynamic hisrc">
 	<img class="bannerImg" src="img/Banner_AT_LQ.jpg" data-1x="img/Banner_AT_MQ.jpg" data-2x="img/Banner_AT_HQ.jpg">
 	<div class="bannerOverlay">
 		<div class="bannerText dark">
 			<div class="bannerTextCentered">
-				<br> <big>AsterTrack</big> 
+				<br> <br> <br> <big>AsterTrack</big> 
 				<br> <small> Optical Tracking for VR and Mocap <br> Open Source and Open Hardware implementation </small> <br>
 			</div>
 		</div>
@@ -87,31 +87,36 @@
 					
 <h4> What is AsterTrack? </h4>
 AsterTrack is a custom multi-camera system designed to track a set of markers in 3D space.
-This so-called optical tracking is commonly used for professional Motion Capture and VR setups, but usually cost multiple thousands of euros.
+This so-called optical tracking is commonly used for professional Motion Capture and VR setups, but usually costs multiple thousands of euros.
 AsterTrack aims to implement the same concept using much cheaper hardware, and pioneer a user-friendly multi-camera experience. <br>
-The advantage over other consumer Tracking Systems for VR is that it is external and accurate like Lighthouse, but also allows for cheap passive trackers without the need for batteries that users can even do themselves.
+The advantage over other consumer Tracking Systems for VR is that it is external and accurate like Lighthouse, but also allows for cheap passive trackers that users could create themselves, even from everyday objects.
 
 <h4> How does it work? </h4>
 There are three major components to the AsterTrack system: <br>
-<b>AsterTrack Cameras</b> - Raspberry Pi based cameras with onboard marker processing <br>
+<b>AsterTrack Cameras</b> - Raspberry Pi based tracking cameras with onboard marker processing <br>
 <b>AsterTrack Controller</b> - The hub for cameras to connect to the PC and to synchronise <br>
 <b>AsterTrack Configurator</b> - PC Software that performs the tracking and interfacing <br>
-This system allows you to track markers - both active markers (LEDs) as well as passive (retroreflective) markers - in 3D space, as well as track 6-DOF targets composed of multiple such markers.
-Each Tracking Camera only sees these markers in 2D as bright dots, and by associating them between cameras and frames it is possible to infer their 3D position given multiple calibrated cameras. <br>
-Targets are seen by the cameras as a cluster of bright dots in the camera, just as asterisms are seen by a telescope, thus the name AsterTrack. Asterisms are small groups of stars in the sky, from the greek word for star, asteris. Humanity has assigned meaning to these 2D structures for a very long time, but only now, through multiple viewpoints (parallax), can we infer the 3D position of these stars.
+This system can track markers - both active markers (LEDs) as well as passive (retroreflective) markers - in 3D space, as well as track 6-DOF targets composed of multiple such markers.
+Each AsterTrack Camera only sees these markers in 2D as bright dots, and by associating them between cameras and frames it is possible to infer their 3D position given multiple calibrated cameras. <br>
+Targets are seen by the cameras as a cluster of bright dots, just as asterisms are seen by a telescope, thus the name AsterTrack. Asterisms are small groups of stars in the sky, derived from the greek word for star, asteris. Humanity has assigned meaning to these 2D structures for a very long time, but their 3D position can be inferred only now through multiple viewpoints (parallax).
 
 <h4> How is this possible? </h4>
-In order to keep the costs down, some of the cheapest components of their class are used.
-Key to the success is the processing hardware of the Tracking Cameras, without which all images would have to be processed on the host PC, which is infeasible at any meaningful quality and not scalable.
-Instead, the processing happens on a Raspberry Pi Zero, which is commonly considered the cheapest Single Board Computer (SBC) on the market prior to the Chip Shortage.
-Using low-level assembly code on the QPU, a high throughput and low processing latency has been achieved.
-The cameras are global-shutter and externally synchronised, using the OV9281 sensor, for a base tracking rate of 120Hz. <br>
-The Tracking Controller is functionaly simple, but crucial to the low-latency communication between the Tracking Cameras and the host, and the synchronisation of the Tracking Cameras. The Controller communicates with the Cameras over RS-422 (or differential UART) and with the PC over USB 2.0 HS to keep component cost down. <br>
+The main goal is to keep the quality high while bringing the cost as low as possible.
+The key to this is the processing hardware of the AsterTrack Cameras, without which all images would have to be processed on the host PC, which is infeasible at any meaningful quality and not scalable. <br>
+Instead, the processing happens on a Raspberry Pi Zero, which was commonly considered the cheapest Single Board Computer (SBC) on the market prior to the chip shortage.
+Using low-level assembly code on the QPU, a high throughput and low processing latency has been achieved. <br>
+The OV9281-based cameras are global-shutter and externally synchronised, providing accurate tracking with ~1MP frames at 120Hz. <br>
+The AsterTrack Controller is functionally simple, but crucial to the low-latency communication between the Cameras and the host, and the synchronisation of the Cameras. The Controller communicates with the Cameras over RS-422 (differential UART) and with the PC over USB 2.0 HS in order to keep component cost down. <br>
 The rest of the magic happens in the host software, including an easy-to-use calibration system and innovative tracking algorithms.
-Calibration currently requires only one marker to be waved around, and at least three Tracking Cameras (or two with the same lens).
+Calibration currently requires only one marker to be waved around, and at least three AsterTrack Cameras (or two with the same lens).
 After that, a constellation of markers can be calibrated as a target for 6-DOF tracking. <br>
-Targets can be created by yourself, using retroreflective tape or infrared LEDs, as long as the constellation of markers is sufficiently unique.
+Targets can be created by the user, using retroreflective tape on any object or using infrared LEDs, as long as the constellation of markers is sufficiently unique.
 This can be used to track nearly anything with little to no intrusion.
+
+<h4> Roadmap </h4>
+Hardware is mostly designed and verified. <br>
+Software is nearly done, but a better target calibration is still being worked on. <br>
+The plan is to launch a crowdfunding campaign in 2023 and release sources and designs at that point.
 <br>
 <br>
 <br>
