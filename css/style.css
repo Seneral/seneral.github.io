@@ -248,16 +248,8 @@ a[href].navItem:hover {
 /* Main Banner  */
 .banner {
 	position: relative;
+	max-width: 100%;
 }
-/* FixedBanner
-.banner {
-	z-index: 1;
-	top: 0;
-	position: fixed;
-}
-.unslider {
-	height:0;
-} */
 img.bannerImg {
 	position: relative;
 	width: 100%;
@@ -278,6 +270,10 @@ img.ratio16-5 {
 img.ratio16-4 {
 	height: 25.00vw;
 }
+img.ratioDynamic {
+	min-height: 30vh;
+	overflow: hidden;
+}
 .banner16-9 {
 	height: 56.25vw;
 	overflow: hidden;
@@ -296,6 +292,10 @@ img.ratio16-4 {
 }
 .banner16-4 {
 	height: 25.00vw;
+	overflow: hidden;
+}
+.bannerDynamic {
+	min-width: 10em;
 	overflow: hidden;
 }
 /* Overlay Text */
@@ -320,6 +320,11 @@ img.ratio16-4 {
 	color: var(--frontCol);
 	text-shadow: 0px 0px 0.25em black, 0px 0px 0.25em black, 0px 0px 0.25em black, 0px 0px 0.25em black;
 }
+.bannerText.dark {
+	color: #222222;
+	color: var(--backCol);
+	text-shadow: 0px 0px 0.25em white, 0px 0px 0.25em white;
+}
 .bannerTextCentered {
 	display: table-cell;
 	vertical-align: middle;
@@ -340,112 +345,6 @@ html.supports-cssgradients .bannerShadowBottom
 	background: -moz-linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.35)); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.35)); /* Standard syntax */
 }
-/* FixedBanner
-.bannerheight {
-	height: 43.75vw;
-} */
-.hideOnStart {
-	display: none;
-}
-.hide {
-	display: none;
-}
-
-/* Slide Buttons */
-.slidebtn {
-	position: absolute;
-	width: 10%;
-	height: 100%;
-	z-index: 4;
-
-	background: black;
-	opacity: 0.2;
-	border: 0;
-
-	color: white;
-	font-size: 60px;
-
-	cursor: pointer;
-}
-.left {
-	float: left;
-	left: 0;
-}
-.right {
-	float: right;
-	right: 0;
-}
-
-/* UNSLIDER */
-.unslider {
-	overflow:auto;
-	margin:0;
-	padding:0;
-}
-.unslider-wrap {
-	position:relative;
-}
-.unslider-wrap.unslider-carousel>li {
-	float:left;
-}
-.unslider-vertical>ul {
-	height:100%
-}
-.unslider-vertical li {
-	float:none;
-	width:100%;
-}
-.unslider-fade {
-	position:relative;
-}
-.unslider-fade .unslider-wrap li {
-	position:absolute;
-	left:0;
-	top:0;
-	right:0;
-	z-index:8;
-}
-.unslider-fade .unslider-wrap li.unslider-active {
-	z-index:10;
-}
-.unslider li,.unslider ol,.unslider ul {
-	list-style:none;
-	margin:0;
-	padding:0;
-	border:none;
-}
-.unslider-arrow {
-	position:absolute;
-	left:20px;
-	z-index:2;
-	cursor:pointer;
-}
-.unslider-arrow.next {
-	left:auto;
-	right:20px;
-}
-/* Slide Dots */
-.unslider-nav ol {
-	list-style: none;
-	text-align: center;
-}
-.unslider-nav li {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	margin: 0 8px;
-	background: transparent;
-	border-radius: 6px;
-	overflow: hidden;
-	text-indent: -999em;
-	border: 2px solid var(--secondaryCol);
-	cursor: pointer;
-}
-.unslider-nav li.unslider-active {
-	background: var(--secondaryCol);
-	cursor: default;
-}
-
 
 /*#endregion BANNER */
 
@@ -463,7 +362,7 @@ html.supports-cssgradients .bannerShadowBottom
 	/*padding: 10px 40px 80px 20px;*/
 	padding: 1em 1em 4em 1em;
 	padding: 1vh 4vw 6vh 2vw;
-	margin: 0;
+	margin: 0 0 1em 0;
 
 	background: #FFFFFF;
 	color: #383838;
@@ -575,6 +474,7 @@ button.titleButton {
 	border-color: var(--frontCol);
 	color: #EEEEEE;
 	color: var(--frontCol);
+	text-shadow: 0px 0px 0.25em black, 0px 0px 0.25em black, 0px 0px 0.25em black, 0px 0px 0.25em black;
 }
 button.titleButton:hover {
 	background: rgba(55, 55, 55, 0.6);
@@ -643,6 +543,16 @@ button.titleButton:active {
 /*#region SIDE */
 
 .sidePanel {
+	float: none;
+	width: auto;
+
+	margin: 0;
+	margin-bottom: 10px;
+	padding: 0.75em;
+
+	font-size: 95%;
+}
+.centerPanel {
 	float: none;
 	width: auto;
 

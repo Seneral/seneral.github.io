@@ -19,7 +19,7 @@ function initiateStickyPanels () {
 		var update = function () {
 			//$(".debug").text ($window.width () + " > " + (90*defaultFontSize) +" && " + $window.scrollTop() + " > " + (defaultOffset - padding + defaultMargin));
 			if ($window.width () > (90*defaultFontSize) && $window.scrollTop() > (defaultOffset + defaultMargin - padding)) {
-				$sideNav.css('marginTop', $window.scrollTop() - (defaultOffset - padding)); // Overwrite css margin-top to push sideNav down
+				//$sideNav.css('marginTop', $window.scrollTop() - (defaultOffset - padding)); // Overwrite css margin-top to push sideNav down
 				//$(".debug").text ("Adjusting with current offset " + $sideNav.offset ().top + " and current margin " + parseFloat ($sideNav.css('margin-top')) + 
 				//	" and with defaultOffset: " + defaultOffset + " and defaultMargin " + defaultMargin + "!");
 			} else {
@@ -28,8 +28,8 @@ function initiateStickyPanels () {
 				//$(".debug").text ("Reset to defaultOffset: " + defaultOffset + " and defaultMargin " + defaultMargin + "!");
 			}
 		};
-		$(window).scroll(update);
-		$(window).resize(function () {
+		$(window).on("scroll", update);
+		$(window).on("resize", function () {
 			/* Update default values  */
 			resetProperty ($sideNav, 'marginTop');
 			resetProperty ($sideNav, 'margin-top');
@@ -72,7 +72,7 @@ function setupHiSrc () {
 
 	// Screen size can increase, usually due to moving window to a higher-res second screen or changing orientation
 	var initialWidth = screen.width;
-	$(window).resize(function () {
+	$(window).on("resize", function () {
 		if (screen.width > initialWidth)
 		{ // Reload higher quality content suitable for the new resolution, but only if it is needed
 			initialWidth = screen.width;
@@ -88,7 +88,7 @@ $.hisrc.speedTest ({
 	minKbpsForHighBandwidth: 200,
 	speedTestUri: "https://www.seneral.dev/img/50K.jpg",
 	speedTestKB: 50,
-	speedTestExpireMinutes: 20,
+	speedTestExpireMinutes: 1,
 	secondChance: true, // Enable second chance for desktop
 	/*forcedBandwidth: 'high',*/ // Debug
 });
@@ -99,4 +99,4 @@ $.hisrc.speedTest ({
 // Start JS Routines
 $(".hideOnStart").removeClass ("hideOnStart");
 setupHiSrc ();
-initiateStickyPanels ();
+//initiateStickyPanels ();
