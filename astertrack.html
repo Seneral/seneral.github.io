@@ -99,7 +99,7 @@ There are three main components to the AsterTrack system: <br>
 This system can track the position of markers - both active markers (LEDs) as well as passive (retroreflective) markers - as well as fully tracked targets composed of unique sets of such markers, enabling rotational tracking without an IMU.
 Each AsterTrack Camera only sees these markers in 2D as bright dots, and by associating them between frames and multiple calibrated cameras it is possible to infer their 3D position. <br>
 Targets are seen by the cameras as clusters of bright dots, much like asterisms are seen through a telescope, hence the name AsterTrack.
-Asterisms are small stars clusters in the sky, derived from the Greek word for star, asteris.
+Asterisms are small star clusters in the sky, derived from the Greek word for star, asteris.
 Humans have long assigned meaning to these 2D structures, but their 3D positions can be inferred only now using multiple viewpoints (parallax).
 
 <h4> How is this possible? </h4>
@@ -119,36 +119,39 @@ Ethernet with PoE was not chosen due to component cost and lacking user experien
 The rest of the magic happens in the host software, including the user-friendly calibration system and innovative tracking algorithms.
 Calibration requires only one marker to be waved around in front of at least three AsterTrack Cameras (or two with the same lens).
 After that, a constellation of markers can be calibrated as a target to be used for positional and rotational tracking.
-Targets can be created by the user, applying markers of retroreflective tape or infrared LEDs to a tracker base, provided the constellation of markers is sufficiently unique.
+Targets can be created by the user, by applying markers of special retroreflective tape or infrared LEDs to a tracker base, provided the constellation of markers is sufficiently unique.
 This can be used to track almost any everyday object with little to no intrusion.
 </p>
 
 <h4> Roadmap </h4>
-Hardware is mostly designed and verified. <br>
-Software is almost ready, but work is still in progress to better calibrate targets. <br>
+The hardware is mostly designed and verified. <br>
+The software is almost ready, but work is still in progress to better calibrate targets. <br>
 We plan to launch a crowdfunding campaign in 2023 and release sources and designs at that point. <br>
 <br>
 
 <form method="post" action="https://mailinglist.seneral.dev/subscription/form" class="listmonk-form">
-	<div>
-		<p class="listmonk-title">Get Updates</p>
-		<p class="listmonk-subtitle">Sign up for updates on the project status</p>
-		<input type="hidden" name="nonce" />
-		<p><input class="listmonk-input-text" type="email" name="email" required placeholder="E-mail" /></p>
+	<p class="listmonk-title">Get Updates</p>
+	<p class="listmonk-subtitle">Sign up for updates on the project status</p>
+	<input type="hidden" name="nonce" />
+	<input class="listmonk-input-text" type="email" name="email" required placeholder="E-mail"/>
 
-		<p class="listmonk-subtext">You can unsubscribe anytime. <br/> By subscribing, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-		
-		<p>
-			<input id="a2c59" type="checkbox" name="l" value="a2c591a2-c52f-474f-bbc6-e613e3e87e9a" />
-			<label for="a2c59">Important Launch Events</label><br /><span>We will send you information about important launch events of the project. This could include source code release, crowdfunding launch and product launches.</span>
-		</p>
-		<p>
-			<input id="cb9cf" type="checkbox" name="l" value="cb9cf8df-0097-4fe6-9b76-ab28842207a5" />
-			<label for="cb9cf">Updates</label><br /><span>We will send you occasional emails about the status of the project, not guaranteed to be regular.</span>
-		</p>
+	<p class="listmonk-subtext">
+		You can unsubscribe anytime. <br/>
+		By subscribing, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.
+	</p>
+	
+	<p>
+		<input id="a2c59" type="checkbox" name="l" value="a2c591a2-c52f-474f-bbc6-e613e3e87e9a"/>
+		<label for="a2c59">Important Launch Events</label> <br/>
+		<span>We will send you information about important launch events of the project. This could include source code release, crowdfunding launch and product launches.</span>
+	</p>
+	<p>
+		<input id="cb9cf" type="checkbox" name="l" value="cb9cf8df-0097-4fe6-9b76-ab28842207a5"/>
+		<label for="cb9cf">Updates</label> <br/>
+		<span>We will send you occasional emails about the status of the project, not guaranteed to be regular.</span>
+	</p>
 
-		<p><input class="listmonk-submit" type="submit" value="Subscribe" /></p>
-	</div>
+	<input class="listmonk-submit" type="submit" value="Subscribe"/>
 </form>
 <br>
 <br>
