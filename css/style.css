@@ -714,3 +714,67 @@ footer {
 	.sidePanel.left { width: 17.5%; float: left; margin-left: 0.5%; }
 	.sidePanel.right { width: 17.5%; float: right; margin-right: 0.5%; }
 }
+
+
+
+.listmonk-form {
+	background-color: #EEEEEE;
+	background-color: var(--frontCol);
+	font-family: 'Dejavu Sans', Calibri, sans-serif;
+	padding: 1em;
+	max-width: 30em;
+	font-size: 80%;
+}
+
+.listmonk-title {
+	color: #000000;
+	font-size: 200%;
+	line-height: 30%;
+}
+.listmonk-subtitle {
+	font-size: 100%;
+}
+.listmonk-subtext {
+	font-size: 90%;
+}
+
+.listmonk-input-text {
+	width: 100%;
+	padding: 0.6em
+}
+.listmonk-submit {
+	font-weight: bold;
+	font-size: 120%;
+	width: 100%;
+	padding: 0.25em 0.5em;
+	margin: 0.5em 0.4em;
+	border-style: solid;
+	border-width: 0.1em;
+	border-radius: 0.25em;
+	border-color: #B4B4B4;
+	border-color: var(--secondaryCol);
+	background-color: #222222;
+	background-color: var(--backCol);
+	color: #EEEEEE;
+	color: var(--frontCol);
+}
+
+.listmonk-submit:hover {
+	background-color: #383838;
+	background-color: var(--primaryCol);
+}
+
+.listmonk-submit:active {
+	background-color: #222222;
+	background-color: var(--backCol);
+}
+
+.listmonk-form label { /* Option Labels */
+	font-size: 100%;
+	font-weight: bold;
+	line-height: 300%;
+}
+.listmonk-form label ~ span { /* Descriptions */
+	font-size: 90%;
+	font-style: italic;
+}

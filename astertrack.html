@@ -124,21 +124,28 @@ Hardware is mostly designed and verified. <br>
 Software is nearly done, but a better target calibration is still being worked on. <br>
 The plan is to launch a crowdfunding campaign in 2023 and release sources and designs at that point. <br>
 <br>
-<big>Sign up to receive updates:</big> <br>
-<button id="newsletter-subscription-load" class="base pageButton" onclick="
-	/* Hide this button */
-	document.getElementById('newsletter-subscription-form').style.display = '';
-	document.getElementById('newsletter-subscription-load').style.display = 'none';
-	/* This loads the universal script in a new script tag, which will setup the form. */
-	(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-	.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-	n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-	(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-	ml('account', '362900');
-	">Load third-party newsletter subscription form</button>
-<div id="newsletter-subscription-form" class="ml-embedded" data-form="4NQfWf" style="display: none;">
-	If you can't see the form, please make sure scripts by "mailerlite.com"/"mlcdn.com" aren't blocked.
-</div>
+
+<form method="post" action="https://mailinglist.seneral.dev/subscription/form" class="listmonk-form">
+	<div>
+		<p class="listmonk-title">Get Updates</p>
+		<p class="listmonk-subtitle">Sign up for updates on the project status</p>
+		<input type="hidden" name="nonce" />
+		<p><input class="listmonk-input-text" type="email" name="email" required placeholder="E-mail" /></p>
+
+		<p class="listmonk-subtext">You can unsubscribe anytime. <br/> By subscribing, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+		
+		<p>
+			<input id="a2c59" type="checkbox" name="l" checked value="a2c591a2-c52f-474f-bbc6-e613e3e87e9a" />
+			<label for="a2c59">Important Launch Events</label><br /><span>We will send you information about important launch events of the project. This could include source code release, crowdfunding launch and product launches.</span>
+		</p>
+		<p>
+			<input id="cb9cf" type="checkbox" name="l" checked value="cb9cf8df-0097-4fe6-9b76-ab28842207a5" />
+			<label for="cb9cf">Updates</label><br /><span>We will send you occasional emails about the status of the project, not guaranteed to be regular.</span>
+		</p>
+
+		<p><input class="listmonk-submit" type="submit" value="Subscribe" /></p>
+	</div>
+</form>
 <br>
 <br>
 
