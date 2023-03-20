@@ -315,7 +315,7 @@ img.ratioDynamic {
 
 	font-size: 320%;
 	font-size: 3vw;
-	font-size: calc(8px + 2.5vw);
+	font-size: calc(6px + 3.2vw);
 
 	color: #EEEEEE;
 	color: var(--frontCol);
@@ -360,9 +360,9 @@ html.supports-cssgradients .bannerShadowBottom
 	background: var(--primaryCol);
 }
 .mainContent {
-	/*padding: 10px 40px 80px 20px;*/
-	padding: 1em 1em 4em 1em;
-	padding: 1vh 4vw 6vh 2vw;
+	/*padding: 10px 20px 80px 20px;
+	padding: 1em 1em 4em 1em;*/
+	padding: 1vh 2vw 6vh 2vw;
 	margin: 0 0 1em 0;
 
 	background: #FFFFFF;
@@ -720,9 +720,10 @@ footer {
 .listmonk-form {
 	background-color: #EEEEEE;
 	background-color: var(--frontCol);
-	font-family: 'Dejavu Sans', Calibri, sans-serif;
+	font-family: 'Noto Sans', 'Dejavu Sans', sans-serif;
+	margin: 0 auto;
 	padding: 1em;
-	max-width: 30em;
+	max-width: 33em;
 	font-size: 80%;
 }
 
@@ -730,24 +731,28 @@ footer {
 	color: #000000;
 	font-size: 200%;
 	line-height: 30%;
+	text-align: center;
 }
 .listmonk-subtitle {
 	font-size: 100%;
+	text-align: center;
 }
 .listmonk-subtext {
 	font-size: 90%;
+	text-align: center;
 }
 
 .listmonk-input-text {
 	width: 100%;
-	padding: 0.6em
+	padding: 0.6em;
+	text-align: center;
 }
 .listmonk-submit {
 	font-weight: bold;
 	font-size: 120%;
 	width: 100%;
 	padding: 0.25em 0.5em;
-	margin: 0.5em 0.4em;
+	margin: 0.5em 0.0em;
 	border-style: solid;
 	border-width: 0.1em;
 	border-radius: 0.25em;
@@ -772,7 +777,7 @@ footer {
 .listmonk-form label { /* Option Labels */
 	font-size: 100%;
 	font-weight: bold;
-	line-height: 300%;
+	line-height: 200%;
 }
 .listmonk-form label ~ span { /* Descriptions */
 	font-size: 90%;
