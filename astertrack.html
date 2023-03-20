@@ -87,42 +87,46 @@
 					
 <h4> What is AsterTrack? </h4>
 AsterTrack is a custom multi-camera system designed to track a set of markers in 3D space.
-This so-called optical tracking is commonly used for professional Motion Capture and VR setups, but usually costs multiple thousands of euros.
-AsterTrack aims to implement the same concept using much cheaper hardware, and pioneer a user-friendly multi-camera experience. <br>
-The advantage over other consumer Tracking Systems for VR is that it is external and accurate like Lighthouse, while allowing for cheap and light passive trackers that users could create themselves, even from everyday objects.
+This so-called optical tracking is commonly used in professional motion capture and virtual reality setups, but typically costs several thousands of euros.
+AsterTrack aims to implement the same concept with much less expensive hardware, and pioneer a user-friendly multi-camera experience.
+The advantage over other consumer VR tracking systems is that it is external and accurate like SteamVR tracking, while allowing for inexpensive and lightweight passive trackers that users can create themselves, even from everyday objects.
 
 <h4> How does it work? </h4>
-There are three major components to the AsterTrack system: <br>
+There are three main components to the AsterTrack system: <br>
 <b>AsterTrack Cameras</b> - Raspberry Pi based tracking cameras with onboard marker processing <br>
-<b>AsterTrack Controller</b> - Hub that synchronises the cameras and connects them to the PC <br>
-<b>AsterTrack Configurator</b> - PC Software that performs the tracking and interfacing <br>
-This system can track marker positions - both active markers (LEDs) as well as passive (retroreflective) markers - as well as fully tracked targets composed of unique sets of such markers, enabling rotation tracking without an IMU.
-Each AsterTrack Camera only sees these markers in 2D as bright dots, and by associating them between cameras and frames it is possible to infer their 3D position given multiple calibrated cameras. <br>
-Targets are seen by the cameras as a cluster of bright dots, just as asterisms are seen by a telescope, thus the name AsterTrack. Asterisms are small groups of stars in the sky, derived from the greek word for star, asteris. Humanity has assigned meaning to these 2D structures for a very long time, but their 3D position can be inferred only now through multiple viewpoints (parallax).
+<b>AsterTrack Controller</b> - Hub that synchronises the cameras and connects them to a computer <br>
+<b>AsterTrack Configurator</b> - PC software that performs the tracking and interfacing <br>
+This system can track the position of markers - both active markers (LEDs) as well as passive (retroreflective) markers - as well as fully tracked targets composed of unique sets of such markers, enabling rotational tracking without an IMU.
+Each AsterTrack Camera only sees these markers in 2D as bright dots, and by associating them between frames and multiple calibrated cameras it is possible to infer their 3D position. <br>
+Targets are seen by the cameras as clusters of bright dots, much like asterisms are seen through a telescope, hence the name AsterTrack.
+Asterisms are small stars clusters in the sky, derived from the Greek word for star, asteris.
+Humans have long assigned meaning to these 2D structures, but their 3D positions can be inferred only now using multiple viewpoints (parallax).
 
 <h4> How is this possible? </h4>
 <p>
-The main goal is to keep the quality high while bringing the cost as low as possible.
-The key to this is the processing hardware of the AsterTrack Cameras, without which all images would have to be processed on the host PC, which is infeasible at any meaningful quality and not scalable. <br>
-Instead, the processing happens on a Raspberry Pi Zero, which was commonly considered the cheapest Single Board Computer (SBC) on the market prior to the chip shortage.
-Using low-level assembly code on the QPU, a high throughput and low processing latency has been achieved. <br>
-The OV9281-based cameras are global-shutter and externally synchronised, providing accurate tracking with ~1MP frames at 120Hz.
+The main goal is to maintain the high quality expected from optical tracking while bringing the cost down as much as possible.
+Key to this is the processing hardware of the AsterTrack Cameras, without which all images would need to be processed on the host computer, which is infeasible at any meaningful quality and not scalable.
+Instead, the image processing happens on a Raspberry Pi Zero, which was widely considered the cheapest single board computer (SBC) on the market prior to the chip shortage.
+Using low-level assembly code on the internal QPU a high throughput and low processing latency have been achieved.
+The OV9281 camera sensor we use has a global-shutter and is externally synchronised, enabling accurate tracking with 0.9 MP frames at 120Hz.
 </p>
 <p>
-The AsterTrack Controller is functionally simple, but crucial to the low-latency communication between the Cameras and the host, and the synchronisation of the Cameras. The Controller communicates with the Cameras via UART over RS-422 (differential pairs) and with the PC over USB 2.0 HS. Ethernet with PoE wasn't chosen due to component costs and lacking user experience during setup.
+The AsterTrack Controller is functionally simple, but crucial to the low-latency communication between the Cameras and the host, and the synchronisation of the Cameras.
+The Controller communicates with the Cameras via UART over RS-422 (differential pairs) and with the computer via USB 2.0 HS.
+Ethernet with PoE was not chosen due to component cost and lacking user experience during setup.
 </p>
 <p>
-The rest of the magic happens in the host software, including an easy-to-use calibration system and innovative tracking algorithms.
-Calibration currently requires only one marker to be waved around in front of at least three AsterTrack Cameras (or two with the same lens).
-After that, a constellation of markers can be calibrated as a target for 6-DOF tracking. <br>
-Targets can be created by the user, using retroreflective tape on any object or using infrared LEDs, as long as the constellation of markers is sufficiently unique.
-This can be used to track nearly anything with little to no intrusion.
+The rest of the magic happens in the host software, including the user-friendly calibration system and innovative tracking algorithms.
+Calibration requires only one marker to be waved around in front of at least three AsterTrack Cameras (or two with the same lens).
+After that, a constellation of markers can be calibrated as a target to be used for positional and rotational tracking.
+Targets can be created by the user, applying markers of retroreflective tape or infrared LEDs to a tracker base, provided the constellation of markers is sufficiently unique.
+This can be used to track almost any everyday object with little to no intrusion.
 </p>
 
 <h4> Roadmap </h4>
 Hardware is mostly designed and verified. <br>
-Software is nearly done, but a better target calibration is still being worked on. <br>
-The plan is to launch a crowdfunding campaign in 2023 and release sources and designs at that point. <br>
+Software is almost ready, but work is still in progress to better calibrate targets. <br>
+We plan to launch a crowdfunding campaign in 2023 and release sources and designs at that point. <br>
 <br>
 
 <form method="post" action="https://mailinglist.seneral.dev/subscription/form" class="listmonk-form">
@@ -161,7 +165,7 @@ The plan is to launch a crowdfunding campaign in 2023 and release sources and de
 
 <a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_Camera_V0.3_Tripod_Blue_HQ.jpg" target="_blank">
 	<img class="hisrc" src="img/AsterTrack/HW_Prototype_Camera_V0.3_Tripod_Blue_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_Camera_V0.3_Tripod_Blue_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_Camera_V0.3_Tripod_Blue_HQ.jpg" alt="Prototype Tracking Camera on Tripod">
-<br> Prototype Tracking Camera V0.3 with all final features <br>
+<br> Prototype Tracking Camera V0.3 with all final capabilities <br>
 </a> 
 <br>
 
@@ -174,7 +178,7 @@ The plan is to launch a crowdfunding campaign in 2023 and release sources and de
 			<img class="hisrc" src="img/AsterTrack/HW_Prototype_Camera_V0.3_Internals_Angle_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_Camera_V0.3_Internals_Angle_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_Camera_V0.3_Internals_Angle_HQ.jpg" alt="Internals of the prototype camera without the LED board, showing the custom camera PCB">
 		</a>
 	</div>
-	<br> Prototype Tracking Camera V0.3 introduces our custom camera PCB <br>
+	<br> Prototype Tracking Camera V0.3 introduced our custom camera PCB <br>
 </div> 
 <br>
 <a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_Controller_V0.4_Angle_HQ.jpg" target="_blank">
@@ -206,7 +210,7 @@ The plan is to launch a crowdfunding campaign in 2023 and release sources and de
 
 <a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Prototype_Camera_V0.1_Angle_HQ.jpg" target="_blank">
 	<img class="hisrc" src="img/AsterTrack/HW_Prototype_Camera_V0.1_Angle_LQ.jpg" data-1x="img/AsterTrack/HW_Prototype_Camera_V0.1_Angle_MQ.jpg" data-2x="img/AsterTrack/HW_Prototype_Camera_V0.1_Angle_HQ.jpg" alt="Tracking Camera in black and pink enclosure with IR LEDs around the camera lens">
-<br> Prototype Tracking Camera V0.1 uses custom PCBs and adds support for passive markers<br>
+<br> Prototype Tracking Camera V0.1 uses custom PCBs and adds support for passive markers <br>
 </a> 
 <br>
 
@@ -228,7 +232,7 @@ The plan is to launch a crowdfunding campaign in 2023 and release sources and de
 
 <a class="noLinkStyle centerBlock" href="img/AsterTrack/HW_Early_Prototype_Annotated_HQ.jpg" target="_blank">
 	<img class="hisrc" src="img/AsterTrack/HW_Early_Prototype_Annotated_LQ.jpg" data-1x="img/AsterTrack/HW_Early_Prototype_Annotated_MQ.jpg" data-2x="img/AsterTrack/HW_Early_Prototype_Annotated_HQ.jpg" alt="Raspberry Pi camera and Blue Pill Development board connected with CAT cables and jumper wires">
-<br> First proof-of-concept hardware, including Tracking Camera and Tracking Controller <br>
+<br> First proof-of-concept hardware, including Tracking Camera (Marker Detector) and Tracking Controller (Marker Tracker) <br>
 </a> 
 <br> <br>
 
