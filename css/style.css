@@ -86,9 +86,13 @@ body {
 	vertical-align: middle;
 	width: 1.4em;
 	height: 1.4em;
-	max-width: 10vw;
-	max-height: 10vw;
+	/*max-width: 10vw;
+	max-height: 10vw;*/
 	margin: 0 0.2em;
+}
+.headerLogo.wide img {
+	width: 1.8em;
+	height: auto;
 }
 .headerLogo span {
 	display: inline-block;
