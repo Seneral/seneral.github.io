@@ -751,6 +751,9 @@ footer {
 	padding: 0.6em;
 	text-align: center;
 }
+.listmonk-input-text:focus::placeholder {
+	color: transparent;
+}
 .listmonk-submit {
 	font-weight: bold;
 	font-size: 120%;
