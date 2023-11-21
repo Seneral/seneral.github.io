@@ -15,8 +15,6 @@
 	
 	<link rel="icon" type="image/ico" href="../img/Icon/favicon.ico?v=2">
 
-	<script async type="text/javascript" src="../js/modernizr.min.js"></script>
-
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
 </head>
 <body>
@@ -61,8 +59,12 @@
 <div class="headerheight"> </div>
 
 		
-<div class="banner banner16-6 hisrc">
-	<img class="bannerImg ratio16-7" src="../img/Banner_NP_LQ.jpg" data-1x="../img/Banner_NP_MQ.jpg" data-2x="../img/Banner_NP_HQ.jpg">
+<div class="banner banner16-6">
+	<picture>
+		<source media="(min-width: 2000px)" srcset="../img/Banner_NP_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="../img/Banner_NP_MQ.jpg"/>
+		<img class="bannerImg ratio16-7" src="../img/Banner_NP_LQ.jpg"/>
+	</picture>
 	<div class="bannerOverlay">
 		<div class="bannerText">
 			<div class="bannerTextCentered">
@@ -148,8 +150,14 @@
 
 <h2 class="section" id="Interface">Interface Explanation</h2>
 <p>
-	<a href="../img/NodePainter/Documentation/1.1/Screen_GUI_HQ.png" target="_blank"><img class="sideImg hisrc" src="../img/NodePainter/Documentation/1.1/Screen_GUI_LQ.jpg" data-1x="../img/NodePainter/Documentation/1.1/Screen_GUI_MQ.jpg" data-2x="../img/NodePainter/Documentation/1.1/Screen_GUI_HQ.png" alt="NodePainter Interface"></a>
-
+	<a href="../img/NodePainter/Documentation/1.1/Screen_GUI_HQ.png" target="_blank">
+		<picture>
+			<source media="(min-width: 2400px)" srcset="../img/NodePainter/Documentation/1.1/Screen_GUI_HQ.png"/>
+			<source media="(min-width: 1800px)" srcset="../img/NodePainter/Documentation/1.1/Screen_GUI_MQ.jpg"/>
+			<img class="sideImg" src="../img/NodePainter/Documentation/1.1/Screen_GUI_LQ.jpg"
+				alt="NodePainter Interface"/>
+		</picture>
+	</a>
 	<h4> Canvas IO </h4>
 	<p>
 		This section is for creating, loading and saving the canvas. <br>
@@ -334,17 +342,13 @@
 			</div>
 		</div>
 
-		<span class="debug"></span>
-
 		<footer>
 			<br> <br>
 			Page developed by Seneral
 			<br> <br>
-			Copyright &#169; 2022 Seneral
+			Copyright &#169; 2023 Seneral
 			<br> <br>
 		</footer>
-
-		<script type="text/javascript" src="../js/page-scripts.min.js"></script>
 
 		
 

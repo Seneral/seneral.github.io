@@ -17,8 +17,6 @@
 	
 	<link rel="icon" type="image/ico" href="img/Icon/favicon.ico?v=2">
 
-	<script async type="text/javascript" src="js/modernizr.min.js"></script>
-
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
 </head>
 <body>
@@ -63,24 +61,35 @@
 <div class="headerheight"> </div>
 
 		
-<div class="banner hisrc"> 
-	<img class="bannerImg ratio16-7" src="img/Banner_NP_LQ.jpg" data-1x="img/Banner_NP_MQ.jpg" data-2x="img/Banner_NP_HQ.jpg">
+<div class="banner">
+	<picture>
+		<source media="(min-width: 2000px)" srcset="img/Banner_NP_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="img/Banner_NP_MQ.jpg"/>
+		<img class="bannerImg" src="img/Banner_NP_LQ.jpg"/>
+	</picture>
 	<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
 		<br> <big>TC2 Node Painter</big> 
 		<br> <small>Paint on TC2 nodes right inside the editor! <br> An advanced brush for whole forests and biomes </small> <br>
 		<small> <a href="NodePainter/index.html"><button class="base titleButton">More Information </button></a> </small>
 	</div> </div> </div>
 </div>
-<div class="banner hisrc"> 
-	<img class="bannerImg ratio16-7" src="img/Banner_SIM_LQ.jpg" data-1x="img/Banner_SIM_MQ.jpg" data-2x="img/Banner_SIM_HQ.jpg">
+<div class="banner">
+	<picture>
+		<source media="(min-width: 2000px)" srcset="img/Banner_SIM_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="img/Banner_SIM_MQ.jpg"/>
+		<img class="bannerImg" src="img/Banner_SIM_LQ.jpg"/>
+	</picture>
 	<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
 		<br> <big>Terrain Simulation Suite</big> 
 		<br> <small>A toolset for terrain erosion and modelling<br> Interactive and performant terrain erosion and water simulation</small> <br>
 		<small> <a href="Simulation/index.html"><button class="base titleButton">More Information </button></a> </small>
 	</div> </div> </div>
 </div>
-<div class="banner hisrc"> 
-	<img class="bannerImg ratio16-7" src="img/Banner_NE_LQ.png" data-1x="img/Banner_NE_MQ.png" data-2x="img/Banner_NE_MQ.png">
+<div class="banner"> 
+	<picture>
+		<source media="(min-width: 1300px)" srcset="img/Banner_NE_MQ.png"/>
+		<img class="bannerImg" src="img/Banner_NE_LQ.png"/>
+	</picture>
 	<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
 		<br> <big>Node Editor Framework</big> 
 		<br> <small>Modular opensource node framework <br> for creating node based displays and editors</small> <br>
@@ -141,17 +150,13 @@ It integrates right into the Unity undo system and thus requires no further work
 			</div>
 		</div>
 
-		<span class="debug"></span>
-
 		<footer>
 			<br> <br>
 			Page developed by Seneral
 			<br> <br>
-			Copyright &#169; 2022 Seneral
+			Copyright &#169; 2023 Seneral
 			<br> <br>
 		</footer>
-
-		<script type="text/javascript" src="js/page-scripts.min.js"></script>
 
 		
 

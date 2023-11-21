@@ -17,8 +17,6 @@
 	
 	<link rel="icon" type="image/ico" href="img/Icon/favicon.ico?v=2">
 
-	<script async type="text/javascript" src="js/modernizr.min.js"></script>
-
 	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
 </head>
 <body>
@@ -63,8 +61,12 @@
 <div class="headerheight"> </div>
 
 		
-<div class="banner hisrc"> 
-	<img class="bannerImg" src="img/Banner_AT_LQ.jpg" data-1x="img/Banner_AT_MQ.jpg" data-2x="img/Banner_AT_HQ.jpg">
+<div class="banner bannerDynamic"> 
+	<picture>
+		<source media="(min-width: 2000px)" srcset="img/Banner_AT_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="img/Banner_AT_MQ.jpg"/>
+		<img class="bannerImg" src="img/Banner_AT_LQ.jpg"/>
+	</picture>
 	<a href="astertrack.html">
 		<div class="bannerOverlay"> <div class="bannerText dark"> <div class="bannerTextCentered">
 			<br> 
@@ -74,9 +76,13 @@
 		</div> </div> </div>
 	</a>
 </div>
-
-<div class="banner hisrc"> 
-	<img class="bannerImg" src="img/Banner_NP_LQ.jpg" data-1x="img/Banner_NP_MQ.jpg" data-2x="img/Banner_NP_HQ.jpg">
+<br>
+<div class="banner bannerDynamic"> 
+	<picture>
+		<source media="(min-width: 2000px)" srcset="img/Banner_NP_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="img/Banner_NP_MQ.jpg"/>
+		<img class="bannerImg" src="img/Banner_NP_LQ.jpg"/>
+	</picture>
 	<a href="unity.html">
 		<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
 			<br> <br> <big>Unity Editor Tools</big> 
@@ -110,17 +116,13 @@ In the past, my main focus was <a href="unity.html">Unity Editor development</a>
 			</div>
 		</div>
 
-		<span class="debug"></span>
-
 		<footer>
 			<br> <br>
 			Page developed by Seneral
 			<br> <br>
-			Copyright &#169; 2022 Seneral
+			Copyright &#169; 2023 Seneral
 			<br> <br>
 		</footer>
-
-		<script type="text/javascript" src="js/page-scripts.min.js"></script>
 
 		
 
