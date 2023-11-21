@@ -8,7 +8,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from watchdog.events import PatternMatchingEventHandler
 
-reURL = re.compile(r"(?:src|href|data(?:-?[A-Za-z0-9]{0,6})?)\s*=\s*[\"\']([^\"\']*)[\"\']")
+reURL = re.compile(r"(?:src|srcset|href|data(?:-?[A-Za-z0-9]{0,6})?)\s*=\s*[\"\']([^\"\']*)[\"\']")
 curPageID = "$CURPAGE"
 config = None
 frame = None
@@ -65,11 +65,13 @@ class Config:
 class ConfigChange(FileSystemEventHandler):
 	patterns = [ '*.json', '*.html' ]
 	def on_any_event(self, event):
-		if not event.is_directory:
+		if event.event_type != 'opened' and not event.is_directory:
 			build()
 
 class SourceChange(FileSystemEventHandler):
 	def on_any_event(self, event):
+		if event.event_type == 'opened':
+			return
 		if not event.is_directory:
 			changedPath = None
 			buildPath = os.path.join(config.buildFolder, event.src_path[len(config.sourceFolder)+1:])

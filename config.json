@@ -33,6 +33,11 @@
 			"source": "$CURPAGE"
 		},
 		{
+			"match": "<!--%ENDING-->",
+			"select": "<!--START%ENDING-->(.*?)<!--END%ENDING-->",
+			"source": "$CURPAGE"
+		},
+		{
 			"match": "<!--%SIDE-->",
 			"select": "<!--START%SIDE-->(.*?)<!--END%SIDE-->",
 			"source": "$CURPAGE"

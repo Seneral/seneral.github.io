@@ -1,101 +1,52 @@
 
 <!--START%HEAD-->
 <title>Seneral Homepage</title>
-<meta name="description" content="Homepage of Unity Editor Developer Seneral. Projects: TC2 Node Painter, Opensource Node Editor Framework, GPU Erosion Simulation and more.">
-<meta name="keywords" content="TC2 Painter, TC2 Node Painter, Node Painter, Node Editor Framework, GPU Erosion Simulation">
+<meta name="description" content="Homepage of Seneral">
+<meta name="keywords" content="">
 
 <!--<link rel="stylesheet" type="text/css" href="css/unslider.css">-->
 <!--END%HEAD-->
 
 <!--START%BANNER-->
-<!-- Big banner slideshow at the top -->
-<div class="banner hisrc">
-	<!-- Big navigation buttons on the sides for navigating the slideshow -->
-	<button class="slidebtn left hideOnStart"> < </button>
-	<button class="slidebtn right hideOnStart"> > </button>
-	<!-- Slideshow content -->
-	<ul>
-		<li> <div class="banner"> 
-			<img class="bannerImg ratio16-7" src="img/Banner_NP_LQ.jpg" data-1x="img/Banner_NP_MQ.jpg" data-2x="img/Banner_NP_HQ.jpg">
-			<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
-				<br> <big>TC2 Node Painter</big> 
-				<br> <small>Paint on TC2 nodes right inside the editor! <br> Advanced brush for whole forests and biomes! </small> <br>
-				<small> <a href="NodePainter/index.html"><button class="base titleButton">More Information </button></a> </small>
-			</div> </div> </div>
-		</div> </li>
-
-		<li> <div class="banner hideOnStart"> 
-			<img class="bannerImg ratio16-7" src="img/Banner_SIM_LQ.jpg" data-1x="img/Banner_SIM_MQ.jpg" data-2x="img/Banner_SIM_HQ.jpg">
-			<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
-				<br> <big>Terrain Simulation Suite</big> 
-				<br> <small> The complete suite for simulating terrain processes! <br> Interactive and immediate terrain erosion simulation! </small> <br>
-				<small> <a href="Simulation/index.html"><button class="base titleButton">More Information </button></a> </small>
-			</div> </div> </div>
-		</div> </li>
-
-		<li> <div class="banner hideOnStart"> 
-			<img class="bannerImg ratio16-7" src="img/Banner_NE_LQ.png" data-1x="img/Banner_NE_MQ.png" data-2x="img/Banner_NE_MQ.png">
-			<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
-				<br> <big>Node Editor Framework</big> 
-				<br> <small> Modular opensource node framework <br> for creating node based displays and editors </small> <br>
-				<small> <a href="https://nodeeditor.seneral.dev/index.html"><button class="base titleButton">More Information </button></a> </small>
-			</div> </div> </div>
-		</div> </li>
-		
-	</ul>
-	
-	<div class="bannerShadowBottom"></div>
-
+<div class="banner bannerDynamic"> 
+	<picture>
+		<source media="(min-width: 2000px)" srcset="img/Banner_AT_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="img/Banner_AT_MQ.jpg"/>
+		<img class="bannerImg" src="img/Banner_AT_LQ.jpg"/>
+	</picture>
+	<a href="astertrack.html">
+		<div class="bannerOverlay"> <div class="bannerText dark"> <div class="bannerTextCentered">
+			<br> 
+			<img src="img/AsterTrack/astertrack_logo.png" style="height: 1.8em"/>
+			<br> <big>AsterTrack</big> 
+			<br> <small> Optical Tracking for VR and Mocap <br> Open Source and Open Hardware implementation </small>
+		</div> </div> </div>
+	</a>
+</div>
+<br>
+<div class="banner bannerDynamic"> 
+	<picture>
+		<source media="(min-width: 2000px)" srcset="img/Banner_NP_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="img/Banner_NP_MQ.jpg"/>
+		<img class="bannerImg" src="img/Banner_NP_LQ.jpg"/>
+	</picture>
+	<a href="unity.html">
+		<div class="bannerOverlay"> <div class="bannerText"> <div class="bannerTextCentered">
+			<br> <br> <big>Unity Editor Tools</big> 
+			<br> <small>Terrain modelling tools<br> Node Editor Framework </small>
+		</div> </div> </div>
+	</a>
 </div>
 <!--END%BANNER-->
 
 <!--START%CONTENT-->
 <h2> Welcome to my developer profile! </h2>
-My name is Seneral, usually known as Seneral, and I'm a passionate Unity Editor Developer - Here are some of my projects: <br>
+My name is Seneral, and I'm working on Open Source projects for game development and VR. <br>
+My current focus is electronics and computer vision with my current project, <a href="astertrack.html">AsterTrack</a>. <br>
+In the past, my main focus was <a href="unity.html">Unity Editor development</a>, with some <a href="https://flagplayer.seneral.dev/">web development</a>. <br>
 <br>
 <br>
-
-<h2>TC2 Node Painter - A Terrain Composer 2 extension</h2>
-TC2 Node Painter allows you to paint TC2 nodes directly in the editor, greatly improving your terrain creation workflow, both procedual and painted. <br>
-It helps procedural terrain creators wanting more control over their terrain aswell as terrain painters laying out there terrain manually by offering more options on what to paint.
-Using this tool you can paint everything, from simple heights and splats over stone fields and forests to whole biomes with little setup required thanks to TC2's simple node editor interface. <br>
-<a href="NodePainter/index.html"><button class="base pageButton">More Information</button></a>
-<br>
-<br>
-<h2>Terrain Simulation Suite</h2>
-This planned tool is a GPU-powered shallow water simulation used to simulate processes like thermal/hydraulic erosion on terrains right inside Unity. <br>
-Currently being WIP, it is intended to havea both filter (immediate) as well as interactive capabilities in order to directly shape your terrain. <br>
-Internally the simulation works on 4 different terrain material layers, which allows for complex and realistic terrain simulations. <br>
-<a href="Simulation/index.html"><button class="base pageButton">More Information</button></a>
-<br>
-<br>
-<h2>Open Source Node Editor Framework</h2>
-A project started by me in March 2015 that aims to provide a fully-featured, open source framework for node-based displays and routines. <br>
-Through ongoing developement over the past years and many contributors it has now become very flexible and easy to extend. <br>
-Working both in the editor and at runtime, it is one of the few editors suitable for runtime applications. <br>
-Some unique features have been developed to power the GUI such as the GUI scale hack <a href="https://gist.github.com/Seneral/2c8e7dfe712b9f53c60f80722fbce5bd" target="_blank">GUIScaleUtility</a>. <br>
-<a href="https://nodeeditor.seneral.dev/index.html"><button class="base pageButton">More Information</button></a>
 <!--END%CONTENT-->
 
 <!--START%SCRIPTS-->
-<!-- Inline because it's the only page that uses unslider -->
-<script type="text/javascript">
-	!function($){return $?($.Unslider=function(t,n){var e=this;return e._="unslider",e.defaults={autoplay:!1,delay:3e3,speed:750,easing:"swing",keys:{prev:37,next:39},nav:!0,arrows:{prev:'<a class="'+e._+'-arrow prev">Prev</a>',next:'<a class="'+e._+'-arrow next">Next</a>'},animation:"horizontal",selectors:{container:"ul:first",slides:"li"},animateHeight:!1,activeClass:e._+"-active",swipe:!0,swipeThreshold:.2},e.$context=t,e.options={},e.$parent=null,e.$container=null,e.$slides=null,e.$nav=null,e.$arrows=[],e.total=0,e.current=0,e.prefix=e._+"-",e.eventSuffix="."+e.prefix+~~(2e3*Math.random()),e.interval=null,e.init=function(t){return e.options=$.extend({},e.defaults,t),e.$container=e.$context.find(e.options.selectors.container).addClass(e.prefix+"wrap"),e.$slides=e.$container.children(e.options.selectors.slides),e.setup(),$.each(["nav","arrows","keys","infinite"],function(t,n){e.options[n]&&e["init"+$._ucfirst(n)]()}),jQuery.event.special.swipe&&e.options.swipe&&e.initSwipe(),e.options.autoplay&&e.start(),e.calculateSlides(),e.$context.trigger(e._+".ready"),e.animate(e.options.index||e.current,"init")},e.setup=function(){e.$context.addClass(e.prefix+e.options.animation).wrap('<div class="'+e._+'" />'),e.$parent=e.$context.parent("."+e._);var t=e.$context.css("position");"static"===t&&e.$context.css("position","relative"),e.$context.css("overflow","hidden")},e.calculateSlides=function(){if(e.total=e.$slides.length,"fade"!==e.options.animation){var t="width";"vertical"===e.options.animation&&(t="height"),e.$container.css(t,100*e.total+"%").addClass(e.prefix+"carousel"),e.$slides.css(t,100/e.total+"%")}},e.start=function(){return e.interval=setTimeout(function(){e.next()},e.options.delay),e},e.stop=function(){return clearTimeout(e.interval),e},e.initNav=function(){var t=$('<nav class="'+e.prefix+'nav"><ol /></nav>');e.$slides.each(function(n){var i=this.getAttribute("data-nav")||n+1;$.isFunction(e.options.nav)&&(i=e.options.nav.call(e.$slides.eq(n),n,i)),t.children("ol").append('<li data-slide="'+n+'">'+i+"</li>")}),e.$nav=t.insertAfter(e.$context),e.$nav.find("li").on("click"+e.eventSuffix,function(){var t=$(this).addClass(e.options.activeClass);t.siblings().removeClass(e.options.activeClass),e.animate(t.attr("data-slide"))})},e.initArrows=function(){e.options.arrows===!0&&(e.options.arrows=e.defaults.arrows),$.each(e.options.arrows,function(t,n){e.$arrows.push($(n).insertAfter(e.$context).on("click"+e.eventSuffix,e[t]))})},e.initKeys=function(){e.options.keys===!0&&(e.options.keys=e.defaults.keys),$(document).on("keyup"+e.eventSuffix,function(t){$.each(e.options.keys,function(n,i){t.which===i&&$.isFunction(e[n])&&e[n].call(e)})})},e.initSwipe=function(){var t=e.$slides.width();"fade"!==e.options.animation&&e.$container.on({movestart:function(t){return t.distX>t.distY&&t.distX<-t.distY||t.distX<t.distY&&t.distX>-t.distY?!!t.preventDefault():void e.$container.css("position","relative")},move:function(n){e.$container.css("left",-(100*e.current)+100*n.distX/t+"%")},moveend:function(n){Math.abs(n.distX)/t>e.options.swipeThreshold?e[n.distX<0?"next":"prev"]():e.$container.animate({left:-(100*e.current)+"%"},e.options.speed/2)}})},e.initInfinite=function(){var t=["first","last"];$.each(t,function(n,i){e.$slides.push.apply(e.$slides,e.$slides.filter(':not(".'+e._+'-clone")')[i]().clone().addClass(e._+"-clone")["insert"+(0===n?"After":"Before")](e.$slides[t[~~!n]]()))})},e.destroyArrows=function(){$.each(e.$arrows,function(t,n){n.remove()})},e.destroySwipe=function(){e.$container.off("movestart move moveend")},e.destroyKeys=function(){$(document).off("keyup"+e.eventSuffix)},e.setIndex=function(t){return 0>t&&(t=e.total-1),e.current=Math.min(Math.max(0,t),e.total-1),e.options.nav&&e.$nav.find('[data-slide="'+e.current+'"]')._active(e.options.activeClass),e.$slides.eq(e.current)._active(e.options.activeClass),e},e.animate=function(t,n){if("first"===t&&(t=0),"last"===t&&(t=e.total),isNaN(t))return e;e.options.autoplay&&e.stop().start(),e.setIndex(t),e.$context.trigger(e._+".change",[t,e.$slides.eq(t)]);var i="animate"+$._ucfirst(e.options.animation);return $.isFunction(e[i])&&e[i](e.current,n),e},e.next=function(){var t=e.current+1;return t>=e.total&&(t=0),e.animate(t,"next")},e.prev=function(){return e.animate(e.current-1,"prev")},e.animateHorizontal=function(t){var n="left";return"rtl"===e.$context.attr("dir")&&(n="right"),e.options.infinite&&e.$container.css("margin-"+n,"-100%"),e.slide(n,t)},e.animateVertical=function(t){return e.options.animateHeight=!0,e.options.infinite&&e.$container.css("margin-top",-e.$slides.outerHeight()),e.slide("top",t)},e.slide=function(t,n){if(e.options.animateHeight&&e._move(e.$context,{height:e.$slides.eq(n).outerHeight()},!1),e.options.infinite){var i;n===e.total-1&&(i=e.total-3,n=-1),n===e.total-2&&(i=0,n=e.total-2),"number"==typeof i&&(e.setIndex(i),e.$context.on(e._+".moved",function(){e.current===i&&e.$container.css(t,-(100*i)+"%").off(e._+".moved")}))}var o={};return o[t]=-(100*n)+"%",e._move(e.$container,o)},e.animateFade=function(t){var n=e.$slides.eq(t).addClass(e.options.activeClass);e._move(n.siblings().removeClass(e.options.activeClass),{opacity:0}),e._move(n,{opacity:1},!1)},e._move=function(t,n,i,o){return i!==!1&&(i=function(){e.$context.trigger(e._+".moved")}),t._move(n,o||e.options.speed,e.options.easing,i)},e.init(n)},$.fn._active=function(t){return this.addClass(t).siblings().removeClass(t)},$._ucfirst=function(t){return(t+"").toLowerCase().replace(/^./,function(t){return t.toUpperCase()})},$.fn._move=function(){return this.stop(!0,!0),$.fn[$.fn.velocity?"velocity":"animate"].apply(this,arguments)},void($.fn.unslider=function(t){return this.each(function(){var n=$(this);if("string"==typeof t&&n.data("unslider")){t=t.split(":");var e=n.data("unslider")[t[0]];if($.isFunction(e))return e.apply(n,t[1]?t[1].split(","):null)}return n.data("unslider",new $.Unslider(n,t))})})):console.warn("Unslider needs jQuery")}(window.jQuery);
-	// Start slideshow with UnSlider
-	var bannerSlider = $('.banner').unslider({
-		autoplay: true,
-		delay: 8000,
-		speed: 500,
-		animation: 'horizontal',
-		infinite: true,
-		arrows: false
-	});
-	// Setup additional controls
-	$('.slidebtn.left').click (function () {
-		bannerSlider.data('unslider').prev ()
-	});
-	$('.slidebtn.right').click (function () {
-		bannerSlider.data('unslider').next ()
-	});
-</script>
 <!--END%SCRIPTS-->

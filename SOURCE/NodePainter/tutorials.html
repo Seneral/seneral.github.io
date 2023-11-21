@@ -5,8 +5,12 @@
 <!--END%HEAD-->
 
 <!--START%BANNER-->
-<div class="banner banner16-6 hisrc">
-	<img class="bannerImg ratio16-7" src="img/Banner_NP_LQ.jpg" data-1x="img/Banner_NP_MQ.jpg" data-2x="img/Banner_NP_HQ.jpg">
+<div class="banner banner16-6">
+	<picture>
+		<source media="(min-width: 2000px)" srcset="img/Banner_NP_HQ.jpg"/>
+		<source media="(min-width: 1300px)" srcset="img/Banner_NP_MQ.jpg"/>
+		<img class="bannerImg ratio16-7" src="img/Banner_NP_LQ.jpg"/>
+	</picture>
 	<div class="bannerOverlay">
 		<div class="bannerText">
 			<div class="bannerTextCentered">
