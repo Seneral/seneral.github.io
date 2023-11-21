@@ -61,22 +61,25 @@
 <div class="headerheight"> </div>
 
 		
-<div class="banner bannerDynamic"> 
+<div class="banner bannerDynamic">
 	<picture>
+		<source media="(min-width: 1300px) and (orientation: portrait)" srcset="img/Banner_AT_MQ_Portrait.jpg"/>
+		<source media="(orientation: portrait)" srcset="img/Banner_AT_LQ_Portrait.jpg"/>
 		<source media="(min-width: 2000px)" srcset="img/Banner_AT_HQ.jpg"/>
 		<source media="(min-width: 1300px)" srcset="img/Banner_AT_MQ.jpg"/>
 		<img class="bannerImg" src="img/Banner_AT_LQ.jpg"/>
 	</picture>
 	<a href="astertrack.html">
 		<div class="bannerOverlay"> <div class="bannerText dark"> <div class="bannerTextCentered">
+			<div style="height: 2em" class="portrait"></div> 
 			<br> 
-			<img src="img/AsterTrack/astertrack_logo.png" style="height: 1.8em"/>
+			<svg viewBox="0 0 30 20" style="height: 1.8em;" filter="url(#svg_shadow)"><use href="#astertrack_logo_icon"/></svg>
 			<br> <big>AsterTrack</big> 
-			<br> <small> Optical Tracking for VR and Mocap <br> Open Source and Open Hardware implementation </small>
+			<br> <small> Optical Tracking for VR and Mocap <br> Open Source and Open Hardware implementation </small> <br>
 		</div> </div> </div>
 	</a>
 </div>
-<br>
+<div style="height: 5px"></div> 
 <div class="banner bannerDynamic"> 
 	<picture>
 		<source media="(min-width: 2000px)" srcset="img/Banner_NP_HQ.jpg"/>
@@ -112,6 +115,37 @@ In the past, my main focus was <a href="unity.html">Unity Editor development</a>
 				</div>
 
 				
+<svg style="position: absolute; width: 0; height: 0;">
+	<defs>
+		<!-- Shadow Filter -->
+		<!--<filter id="svg_shadow" x="-50%" y="-50%" width="200%" height="200%">
+			<feDropShadow dx="0" dy="0" stdDeviation="3"/>
+		</filter>-->
+		<filter id='svg_shadow_light' x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
+			<feFlood flood-color='#FFFF'/>
+			<feComposite operator='in' in2='SourceGraphic'/>
+			<feGaussianBlur stdDeviation='8'/>
+			<feBlend in='SourceGraphic' in2='glow'/>
+		</filter>
+		<filter id='svg_shadow_dark' x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
+			<feFlood flood-color='#000F'/>
+			<feComposite operator='in' in2='SourceGraphic'/>
+			<feGaussianBlur stdDeviation='8'/>
+			<feBlend in='SourceGraphic' in2='glow'/>
+		</filter>
+		<!-- <filter id="svg_shadow" x="-25%" y="-25%" width="150%" height="150%" filterUnits="objectBoundingBox">
+			<feGaussianBlur result="blurOut" in="SourceAlpha" stdDeviation="5" />
+			<feColorMatrix result="colorOut" in="blurOut" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.4 0"/>
+			<feBlend in="SourceGraphic" in2="colorOut" mode="normal" />
+		</filter> -->
+		<g id="astertrack_logo_icon" viewBox="0 0 30 20" style="fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;">
+			<path d="M 6.9726484,15.057314 16.605668,0.60776749 29.128667,19.392206 Z"/>
+			<path d="M 22.763765,15.057314 13.130753,0.60776749 0.60774708,19.392206 Z"/>
+			<path d="M 14.869495,11.787182 V 8.3208102 m 3.012272,5.2054968 -3.012272,-1.739125 -3.017002,1.741868"/>
+		</g>
+	</defs>
+</svg>
+
 
 			</div>
 		</div>
